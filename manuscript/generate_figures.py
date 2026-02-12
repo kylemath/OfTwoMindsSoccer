@@ -79,9 +79,9 @@ def fig1_task_mapping():
         ax.text(x, y, label, ha='center', va='center', fontsize=8, fontweight='bold', color=color)
 
     # Shared components
-    ax.annotate('', xy=(3.7, 7.5), xytext=(6.3, 7.5),
+    ax.annotate('', xy=(5, 8.5), xytext=(8.5, 8.5),
                 arrowprops=dict(arrowstyle='<->', color=KEEPER_BLUE, lw=2))
-    ax.text(5, 8.4, 'Shared: Colour', ha='center', fontsize=7, color=KEEPER_BLUE, style='italic')
+    ax.text(6.75, 9.0, 'Shared: Colour', ha='center', fontsize=7, color=KEEPER_BLUE, style='italic')
 
     ax.annotate('', xy=(1.5, 6.6), xytext=(5, 6.6),
                 arrowprops=dict(arrowstyle='<->', color=WARN_ORANGE, lw=2))

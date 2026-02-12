@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Paper | Neural Subspaces</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .paper-toc { position: sticky; top: calc(var(--nav-height) + 1rem); max-height: calc(100vh - var(--nav-height) - 2rem); overflow-y: auto; }
+        .paper-toc a { display: block; padding: 0.3rem 0.75rem; color: var(--text-muted); font-size: 0.8rem; text-decoration: none; border-left: 2px solid transparent; transition: var(--transition); }
+        .paper-toc a:hover, .paper-toc a.active { color: var(--accent-blue); border-left-color: var(--accent-blue); }
+        .paper-layout { display: grid; grid-template-columns: 200px 1fr; gap: 2rem; }
+        @media (max-width: 1024px) { .paper-layout { grid-template-columns: 1fr; } .paper-toc { display: none; } }
+        .ref-num { color: var(--accent-blue); font-size: 0.8em; vertical-align: super; cursor: pointer; }
+        .figure-img-placeholder { background: var(--bg-secondary); border: 1px dashed var(--border-color); border-radius: var(--radius-sm); padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.85rem; min-height: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
+        .ext-fig { border-left: 3px solid var(--accent-purple); }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-brand">Neural Subspaces<span>Tafazoli et al. 2026</span></a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="task.html">Interactive Task</a></li>
+        <li><a href="paper.html" class="active">Full Paper</a></li>
+        <li><a href="theory.html">Theory & Model</a></li>
+        <li><a href="results.html">Results & Data</a></li>
+        <li><a href="future.html">Future Directions</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<main class="main-content">
+    <div class="hero" style="padding:2rem">
+        <h1 style="font-size:2rem">Building Compositional Tasks with Shared Neural Subspaces</h1>
+        <p class="authors" style="margin-top:1rem">
+            Sina Tafazoli<sup>1</sup>, Flora M. Bouchacourt<sup>1</sup>, Adel Ardalan<sup>1</sup>, 
+            Nikola T. Markov<sup>1</sup>, Motoaki Uchimura<sup>1</sup>, Marcelo G. Mattar<sup>2</sup>, 
+            Nathaniel D. Daw<sup>1,3</sup> &amp; Timothy J. Buschman<sup>1,3</sup>
+        </p>
+        <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.5rem">
+            <sup>1</sup>Princeton Neuroscience Institute, Princeton University &middot; 
+            <sup>2</sup>Department of Psychology, New York University &middot; 
+            <sup>3</sup>Department of Psychology, Princeton University
+        </p>
+        <p style="font-size:0.8rem;color:var(--text-muted);margin-top:0.25rem">
+            <em>Nature</em> volume 650, pages 164&ndash;172 (2026) &middot; Published 26 November 2025
+        </p>
+        <div style="margin-top:1rem;display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap">
+            <a href="https://www.nature.com/articles/s41586-025-09805-2" target="_blank" class="btn btn-primary">Nature Article</a>
+            <a href="https://doi.org/10.6084/m9.figshare.30276238.v1" target="_blank" class="btn btn-secondary">Data (FigShare)</a>
+            <a href="https://doi.org/10.5281/zenodo.17274345" target="_blank" class="btn btn-secondary">Code (Zenodo)</a>
+        </div>
+    </div>
+
+    <div class="container" style="max-width:1100px">
+        <div class="paper-layout">
+            <!-- Table of Contents -->
+            <nav class="paper-toc">
+                <a href="#abstract">Abstract</a>
+                <a href="#main">Main</a>
+                <a href="#composing-tasks">Composing tasks from subtasks</a>
+                <a href="#shared-representations">Representations shared across tasks</a>
+                <a href="#sequential">Tasks sequentially used shared subspaces</a>
+                <a href="#task-belief">Task belief engaged shared subspaces</a>
+                <a href="#scaling">Task belief scaled shared subspaces</a>
+                <a href="#discussion">Discussion</a>
+                <a href="#methods-summary">Methods Summary</a>
+                <a href="#figures">All Figures</a>
+                <a href="#references">References</a>
+            </nav>
+
+            <!-- Paper Body -->
+            <div class="paper-body">
+                <h2 id="abstract">Abstract</h2>
+                <div class="callout">
+                    <p>Cognition is highly flexible&mdash;we perform many different tasks and continually adapt our behaviour to changing demands. Artificial neural networks trained to perform multiple tasks will reuse representations and computational components across tasks. By composing tasks from these subcomponents, an agent can flexibly switch between tasks and rapidly learn new tasks. Yet, whether such compositionality is found in the brain is unclear.</p>
+                    <p style="margin-top:0.75rem">Here we show the same subspaces of neural activity represent task-relevant information across multiple tasks, with each task flexibly engaging these subspaces in a task-specific manner. We trained monkeys to switch between three compositionally related tasks. In neural recordings, we found that task-relevant information about stimulus features and motor actions were represented in subspaces of neural activity that were shared across tasks. When monkeys performed a task, neural representations in the relevant shared sensory subspace were transformed to the relevant shared motor subspace. Monkeys adapted to changes in the task by iteratively updating their internal belief about the current task and then, based on this belief, flexibly engaging the shared sensory and motor subspaces relevant to the task.</p>
+                    <p style="margin-top:0.75rem"><strong>In summary, our findings suggest that the brain can flexibly perform multiple tasks by compositionally combining task-relevant neural representations.</strong></p>
+                </div>
+
+                <h2 id="main">Main</h2>
+                <p>Humans and other animals can combine simple behaviours to create more complex behaviours. For example, learning to discriminate whether a piece of fruit is ripe can be used as a component of a variety of foraging, cooking and eating tasks. The ability to compositionally combine behaviours is thought to be central to generalized intelligence in humans and a necessary component for artificial neural networks to achieve human-level intelligence.</p>
+                <p>When artificial neural networks are trained to perform multiple tasks, they reuse representations and computational components in different tasks. Whether the brain similarly reuses sensory, cognitive and/or motor representations across tasks remains unclear. Furthermore, we do not yet understand how the brain flexibly engages these representations to continually adapt to the changing demands of the environment. To address these questions, we trained two monkeys to flexibly switch between three different compositionally related tasks.</p>
+
+                <h2 id="composing-tasks">Composing Tasks from Subtasks</h2>
+                <p>All three tasks followed the same general structure: the monkeys were presented with a visual stimulus and had to indicate its category with an eye movement (Fig. 1a). The stimuli were parametric morphs, independently varying in both shape and colour (Fig. 1b).</p>
+
+                <!-- Figure 1 -->
+                <div class="figure-container" id="fig1">
+                    <div class="figure-img-placeholder">
+                        <strong>Figure 1: The monkeys performed three compositional tasks</strong>
+                        <p>a, Task timeline schematic. b, Stimuli morphed in 2D feature space (shape &times; colour). c, Three task designs: S1 (shape&rarr;axis 1), C1 (colour&rarr;axis 1), C2 (colour&rarr;axis 2). d, Block sequence. e,f, Behavioural performance. g, Recording locations. h-m, CPD for task variables.</p>
+                        <a href="https://www.nature.com/articles/s41586-025-09805-2/figures/1" target="_blank" class="btn btn-secondary" style="margin-top:0.5rem">View on Nature &rarr;</a>
+                    </div>
+                    <div class="figure-caption">
+                        <strong>Fig. 1: The monkeys performed three compositional tasks.</strong> 
+                        <strong>a</strong>, Schematic of the task timeline. After fixation, a visual stimulus and four response targets were presented. The monkeys reported the stimulus category by saccading to one of the targets. 
+                        <strong>b</strong>, Stimuli were morphs in a two-dimensional feature space, independently varying in shape (left) and colour (right). 
+                        <strong>c</strong>, Schematic of the task design. Task S1 required categorizing stimuli by shape and responding on axis 1. Task C2 required categorizing by colour and responding on axis 2. Task C1 required categorizing by colour and responding on axis 1. The coloured backgrounds highlight shared subtasks: colour categorization for C1 and C2 (blue) and response axis for S1 and C1 (orange). 
+                        <strong>d</strong>, Example sequence of tasks. The task switched when performance was &ge;70%. 
+                        <strong>e,f</strong>, Behavioural performance. 
+                        <strong>g</strong>, The locations of neural recordings. 
+                        <strong>h&ndash;l</strong>, Information about task-relevant variables for all regions, estimated as CPD. 
+                        <strong>m</strong>, Time course of the average CPD across all recorded neurons.
+                    </div>
+                </div>
+
+                <p>The monkeys performed three categorization tasks. In the <strong>shape&ndash;axis 1 (S1) task</strong>, they categorized the shape of the stimulus and then responded on axis 1: when the shape was more similar to a &lsquo;bunny&rsquo;, the monkey made a saccade to the upper-left (UL) target, and when more similar to a &lsquo;tee&rsquo;, to the lower-right (LR) target.</p>
+                <p>The <strong>colour&ndash;axis 2 (C2) task</strong> required the monkey to categorize the colour of the stimulus and respond on axis 2: if &lsquo;red&rsquo;, saccade to upper-right (UR), and if &lsquo;green&rsquo;, saccade to lower-left (LL).</p>
+                <p>Finally, in the <strong>colour&ndash;axis 1 (C1) task</strong>, the monkeys categorized the colour (as in C2) and responded on axis 1 (as in S1; red = LR, green = UL). In this way, the tasks were compositionally related&mdash;C1 can be considered as combining the colour categorization subtask of C2 with the motor response subtask of S1.</p>
+                <p>Both monkeys performed all three tasks well (monkey Si/Ch: S1, 81%/77%; C1, 83%/78%; C2, 92%/92%; all <em>P</em> &lt; 0.001, binomial test). The monkeys were not instructed as to the identity of the new task. Thus, they had to learn which task was in effect on each new block.</p>
+
+                <h2 id="shared-representations">Representations Were Shared Across Tasks</h2>
+                <p>To understand the neural representations used during each task, we simultaneously recorded neural activity from five cortical and subcortical regions: the lateral prefrontal cortex (LPFC; 480 neurons), frontal eye fields (FEF; 149 neurons), parietal cortex (PAR; 64 neurons), anterior inferior temporal cortex (aIT; 239 neurons) and striatum (caudate nucleus; 149 neurons).</p>
+
+                <!-- Figure 2 -->
+                <div class="figure-container" id="fig2">
+                    <div class="figure-img-placeholder">
+                        <strong>Figure 2: Colour category and response representations were shared across tasks</strong>
+                        <p>a-c, Classifier accuracy for colour, shape, and response. d, Cross-task classifier schematic. e-f, Cross-temporal cross-task colour decoding. g, Shared colour onset delay. h-i, Cross-task response decoding.</p>
+                        <a href="https://www.nature.com/articles/s41586-025-09805-2/figures/2" target="_blank" class="btn btn-secondary" style="margin-top:0.5rem">View on Nature &rarr;</a>
+                    </div>
+                    <div class="figure-caption">
+                        <strong>Fig. 2: Colour category and response representations were shared across tasks.</strong>
+                        <strong>a&ndash;c</strong>, Accuracy of classifiers trained to decode colour category (a), shape category (b) and motor response (c) from LPFC neural activity.
+                        <strong>d</strong>, Schematic of cross-task classifiers.
+                        <strong>e</strong>, Cross-temporal cross-task classification of colour trained on C2 and tested on C1.
+                        <strong>f</strong>, Cross-task colour classification accuracy.
+                        <strong>g</strong>, Shared colour information is delayed in aIT, FEF, and PAR.
+                        <strong>h</strong>, Cross-temporal cross-task response classification trained on S1 and tested on C1.
+                        <strong>i</strong>, Cross-task response classification accuracy.
+                    </div>
+                </div>
+
+                <p>To test whether representational subspaces were reused across tasks, we quantified how well a classifier trained to decode the stimulus&rsquo; colour category or the animals&rsquo; motor response in one task generalized to the other tasks. Consistent with a shared representation in the LPFC, a classifier trained to decode the colour category during the C2 task was able to significantly decode colour category during the C1 task (65 ms after stimulus onset; <em>P</em> &lt; 0.001, permutation test).</p>
+                <p>Motor response representations also generalized across tasks. A classifier trained to decode response direction in the S1 task generalized to decode response direction in the C1 task (and vice versa; 128 ms after stimulus onset; <em>P</em> &lt; 0.001).</p>
+
+                <h2 id="sequential">Tasks Sequentially Used Shared Subspaces</h2>
+
+                <!-- Figure 3 -->
+                <div class="figure-container" id="fig3">
+                    <div class="figure-img-placeholder">
+                        <strong>Figure 3: Shared representations were transformed into shared motor representations</strong>
+                        <p>a, Sequential processing of shared colour and response information. b, Transformation prediction schematic. c-d, Cross-temporal trial-by-trial correlations. e, Average correlation curves. f, TDR dynamics.</p>
+                        <a href="https://www.nature.com/articles/s41586-025-09805-2/figures/3" target="_blank" class="btn btn-secondary" style="margin-top:0.5rem">View on Nature &rarr;</a>
+                    </div>
+                    <div class="figure-caption">
+                        <strong>Fig. 3: Shared representations were transformed into shared motor representations during the task.</strong>
+                        <strong>a</strong>, Sequential processing of shared colour category and response direction information in LPFC.
+                        <strong>b</strong>, Schematic: shared colour representation is transformed to axis 1 and axis 2 during C1 and C2 tasks.
+                        <strong>c,d</strong>, Cross-temporal trial-by-trial correlations between shared colour encoding and response encoding.
+                        <strong>e</strong>, Average cross-temporal correlation showing colour predicts future motor response.
+                        <strong>f</strong>, Dynamics of LPFC activity projected onto colour, axis 1, and axis 2 dimensions.
+                    </div>
+                </div>
+
+                <p>If the representation of both the category of the stimulus and the motor response were shared across tasks then performing a task requires selectively transforming representations from one subspace to another. Consistent with this, there was a sequential representation of the stimulus colour in the shared colour subspace followed by the motor response in the shared motor subspace during the C1 task (63 ms difference in onset time; <em>P</em> &lt; 0.001, <em>t</em>-test).</p>
+                <p>To directly test whether this reflected the transformation of information between subspaces, we tested whether information about the stimulus colour in the shared colour subspace predicted the response in the shared response subspace on a trial-by-trial basis. The correlation was shifted upward with respect to the diagonal line (36 ms before saccade start), indicating that the encoding in the shared colour subspace predicted the future encoding in the shared response subspace.</p>
+                <p>Importantly, the transformation of stimulus information into response was specific to the task: during the C1 task, the shared colour representation did not predict the associated response direction along axis 2. This is consistent with the shared colour representation being selectively transformed into a motor response along axis 1, and not axis 2, when the monkey was performing the C1 task.</p>
+
+                <h2 id="task-belief">Task Belief Engaged Shared Subspaces</h2>
+
+                <!-- Figure 4 -->
+                <div class="figure-container" id="fig4">
+                    <div class="figure-img-placeholder">
+                        <strong>Figure 4: Shared subspaces are dynamically engaged during task discovery</strong>
+                        <p>a, Behavioural performance by task sequence. b, PFC task history encoding. c, Task belief evolution. d, Sequence effects on belief. e, Belief-performance correlation. f-l, Evolution of colour, shape, and response decoding.</p>
+                        <a href="https://www.nature.com/articles/s41586-025-09805-2/figures/4" target="_blank" class="btn btn-secondary" style="margin-top:0.5rem">View on Nature &rarr;</a>
+                    </div>
+                    <div class="figure-caption">
+                        <strong>Fig. 4: Shared subspaces are dynamically engaged during task discovery.</strong>
+                        <strong>a</strong>, Behavioural performance during C1 after different task sequences.
+                        <strong>b</strong>, PFC encodes history of task identities.
+                        <strong>c,d</strong>, Task belief decoder accuracy evolves during block.
+                        <strong>e</strong>, Correlation of behavioural performance and decoded task belief.
+                        <strong>f,g</strong>, Colour category decoding increases during task discovery.
+                        <strong>h</strong>, Task belief correlates with colour encoding.
+                        <strong>i,j</strong>, Shape category decoding decreases during C1 task discovery.
+                        <strong>k,l</strong>, Response direction remains stable.
+                    </div>
+                </div>
+
+                <p>Theoretical modelling suggests that shared subspaces could facilitate cognitive flexibility by allowing the brain to engage previously learned, task-appropriate representations. If true, then this predicts that task-appropriate shared subspaces should be engaged as the animal discovers the task in effect.</p>
+                <p>We trained a classifier to decode the identity of the S1 and C1 tasks using neural activity in the LPFC during the fixation period. As the animals discovered the current task, the performance of the task classifier increased. During the S1&ndash;C2&ndash;C1 sequences, the classifier increased from 42% to 54% accuracy (<em>P</em> = 0.0079, permutation test).</p>
+                <p>The strength of the representation in the shared colour subspace increased as the monkeys discovered the C1 task (64% to 69%, &Delta; = 5%; <em>P</em> = 0.0478). This increase was predicted by the strength of internal task representation in the LPFC during fixation (<em>P</em> = 0.0478).</p>
+                <p>In contrast to shared colour and shape subspaces, the animals&rsquo; motor response was stably decoded in a shared subspace throughout the block. This makes sense, as both S1 and C1 tasks used the same motor response.</p>
+
+                <h2 id="scaling">Task Belief Scaled Shared Subspaces</h2>
+
+                <!-- Figure 5 -->
+                <div class="figure-container" id="fig5">
+                    <div class="figure-img-placeholder">
+                        <strong>Figure 5: Irrelevant sensory and motor representations were suppressed</strong>
+                        <p>a,b, Distance along colour/shape encoding axes. c,d, Compression index (CPI). e,f, CPI correlations with task belief. g, Axis-selective neuron firing rates. h, Response axis decoding over trials.</p>
+                        <a href="https://www.nature.com/articles/s41586-025-09805-2/figures/5" target="_blank" class="btn btn-secondary" style="margin-top:0.5rem">View on Nature &rarr;</a>
+                    </div>
+                    <div class="figure-caption">
+                        <strong>Fig. 5: Irrelevant sensory and motor representations were suppressed during flexible behaviour.</strong>
+                        <strong>a,b</strong>, Distance along shared colour and shape encoding axes during task discovery.
+                        <strong>c,d</strong>, Compression index (CPI) over time and trials, showing task-relevant amplification.
+                        <strong>e,f</strong>, CPI correlated with task belief and colour category encoding.
+                        <strong>g</strong>, Axis-selective neurons suppressed during incorrect-axis responses.
+                        <strong>h</strong>, Response axis rapidly decoded after switch.
+                    </div>
+                </div>
+
+                <p>Previous research suggests tasks may modulate the gain of stimulus features, depending on their relevance for the current task. Similarly, we found stimulus information was attenuated when irrelevant. Furthermore, this attenuation depended on the animals&rsquo; internal belief about the task: as they discovered the C1 task was in effect, the representation of colour category was magnified, while shape representation was attenuated and delayed in time.</p>
+                <p>We defined a <strong>compression index (CPI)</strong> as the log of the ratio between the separability of stimuli in the colour subspace versus the shape subspace. Colour and shape representations were scaled in all three tasks. CPI was positively correlated with the strength of the task representation and colour category encoding in the LPFC (z-scored Kendall&rsquo;s &tau; = 2.328, <em>P</em> = 0.008).</p>
+                <p>In addition to selecting sensory information, the three tasks also require selecting the appropriate motor response. Neurons selective for each motor axis were suppressed when the animal performed a task requiring a response on the other axis. In contrast to the gradual suppression of sensory representations during task discovery, the incorrect response axis representation was quickly suppressed after a change in task (within 3&ndash;6 trials).</p>
+
+                <h2 id="discussion">Discussion</h2>
+                <p>Our results suggest the brain can perform a task by compositionally engaging a series of representational subspaces. Subspaces of neural activity within prefrontal cortex represented task-relevant information. These subspaces were shared across multiple tasks, suggesting they act as task components. Subspaces were sequentially engaged, such that information from the relevant sensory subspace was transformed into the appropriate motor response subspace.</p>
+                <p>Although our study is limited to three tasks, the underlying mechanism has the ability to be highly expressive&mdash;flexibly sequencing task components together could implement a wide variety of behaviours (a form of sequential compositionality). In this framework, the representation of the task acts as a control input that selects the appropriate representations and computations.</p>
+                <p>If the brain can reuse representations and computations across tasks, then this could allow one to rapidly adapt to changes in the environment, either by learning the appropriate task representation through reward feedback or by recalling it from long-term memory.</p>
+                <p>Several previous studies have found different tasks use representations specific to that task. Such task-unique representations have the advantage of minimizing interference, but limit generalization. By contrast, shared subspaces increase interference but could speed learning by allowing knowledge to generalize across tasks.</p>
+                <p>One reason shared representations were found (rather than task-unique ones) may be because the task required continuous learning. The scaling of neural representations may facilitate continual learning by constraining learning to task-relevant representations&mdash;neural learning rules are activity dependent and gated by reward, so suppressing irrelevant representations may limit learning to task-relevant ones (addressing the credit assignment problem).</p>
+
+                <h2 id="methods-summary">Methods Summary</h2>
+                <div class="callout callout-purple">
+                    <div class="callout-title">Key Methodological Details</div>
+                    <p>Two adult male rhesus macaques. Recordings from LPFC (480 neurons), FEF (149), PAR (64), aIT (239), and STR (149). Stimuli were parametric morphs on circular continua in colour (CIELAB) and shape spaces. Binary logistic regression classifiers with L2 regularization decoded task variables from pseudopopulations. Cross-task generalization tested by training on one task, testing on another. Cluster mass correction for multiple comparisons across time. Targeted dimensionality reduction (TDR) for visualization.</p>
+                </div>
+                <p>Full methods including surgical procedures, signal preprocessing, GLM analysis, classifier construction, pseudopopulation methods, cross-validation, CPI calculation, and TDR analysis are available in the <a href="https://www.nature.com/articles/s41586-025-09805-2" target="_blank">full article</a>.</p>
+
+                <h2 id="figures">Supplementary &amp; Extended Data Figures</h2>
+                <p>The paper includes 5 main figures and 10 extended data figures covering additional analyses:</p>
+                <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))">
+                    <div class="card ext-fig">
+                        <h4 style="margin-top:0">ED Fig. 1</h4>
+                        <p style="font-size:0.85rem;color:var(--text-secondary)">Individual monkey psychometric curves showing both animals perform all three tasks accurately.</p>
+                    </div>
+                    <div class="card ext-fig">
+                        <h4 style="margin-top:0">ED Fig. 2</h4>
+                        <p style="font-size:0.85rem;color:var(--text-secondary)">Congruent vs incongruent stimulus effects on behaviour.</p>
+                    </div>
+                    <div class="card ext-fig">
+                        <h4 style="margin-top:0">ED Fig. 3</h4>
+                        <p style="font-size:0.85rem;color:var(--text-secondary)">Task variables distributed across neurons and regions (mixed selectivity).</p>
+                    </div>
+                    <div class="card ext-fig">
+                        <h4 style="margin-top:0">ED Fig. 4</h4>
+                        <p style="font-size:0.85rem;color:var(--text-secondary)">Colour, shape, and response decoding across all brain regions.</p>
+                    </div>
+                    <div class="card ext-fig">
+                        <h4 style="margin-top:0">ED Fig. 5</h4>
+                        <p style="font-size:0.85rem;color:var(--text-secondary)">Cross-task colour decoding controls (nonlinear, balanced response, cross-axis).</p>
+                    </div>
+                    <div class="card ext-fig">
+                        <h4 style="margin-top:0">ED Fig. 6</h4>
+                        <p style="font-size:0.85rem;color:var(--text-secondary)">Colour shared across tasks in LPFC but more task-specific in other regions.</p>
+                    </div>
+                    <div class="card ext-fig">
+                        <h4 style="margin-top:0">ED Fig. 7</h4>
+                        <p style="font-size:0.85rem;color:var(--text-secondary)">Shared colour in C2 task transformed into axis 2 response, not axis 1.</p>
+                    </div>
+                    <div class="card ext-fig">
+                        <h4 style="margin-top:0">ED Fig. 8</h4>
+                        <p style="font-size:0.85rem;color:var(--text-secondary)">Task sequence effects on behaviour and neural representations.</p>
+                    </div>
+                    <div class="card ext-fig">
+                        <h4 style="margin-top:0">ED Fig. 9</h4>
+                        <p style="font-size:0.85rem;color:var(--text-secondary)">Classifier hyperplane alignment and CPI across regions with TDR.</p>
+                    </div>
+                    <div class="card ext-fig">
+                        <h4 style="margin-top:0">ED Fig. 10</h4>
+                        <p style="font-size:0.85rem;color:var(--text-secondary)">Response axis suppression across all brain regions.</p>
+                    </div>
+                </div>
+
+                <h2 id="references">Key References</h2>
+                <div class="reference-list">
+                    <ol>
+                        <li>Yang, G. et al. Task representations in neural networks trained to perform many cognitive tasks. <em>Nat. Neurosci.</em> 22, 297&ndash;306 (2019).</li>
+                        <li>Driscoll, L. N. et al. Flexible multitask computation in recurrent networks utilizes shared dynamical motifs. <em>Nat. Neurosci.</em> 27, 1349&ndash;1363 (2024).</li>
+                        <li>Goudar, V. et al. Schema formation in a neural population subspace underlies learning-to-learn. <em>Nat. Neurosci.</em> 26, 879&ndash;890 (2023).</li>
+                        <li>Mante, V. et al. Context-dependent computation by recurrent dynamics in prefrontal cortex. <em>Nature</em> 503, 78&ndash;84 (2013).</li>
+                        <li>Rigotti, M. et al. The importance of mixed selectivity in complex cognitive tasks. <em>Nature</em> 497, 585&ndash;590 (2013).</li>
+                        <li>Flesch, T. et al. Orthogonal representations for robust context-dependent task performance. <em>Neuron</em> 110, 1258&ndash;1270 (2022).</li>
+                        <li>Bouchacourt, F. et al. Fast rule switching and slow rule updating. <em>eLife</em> 11, e82531 (2022).</li>
+                        <li>Panichello, M. F. &amp; Buschman, T. J. Shared mechanisms underlie the control of working memory and attention. <em>Nature</em> 592, 601&ndash;605 (2021).</li>
+                        <li>Kirkpatrick, J. et al. Overcoming catastrophic forgetting in neural networks. <em>PNAS</em> 114, 3521&ndash;3526 (2019).</li>
+                    </ol>
+                </div>
+                <p style="margin-top:1rem"><a href="https://www.nature.com/articles/s41586-025-09805-2#ref-CR1" target="_blank">View all 69 references on Nature &rarr;</a></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Tafazoli, S. et al. <em>Nature</em> 650, 164&ndash;172 (2026). 
+        <a href="https://doi.org/10.1038/s41586-025-09805-2" target="_blank">DOI: 10.1038/s41586-025-09805-2</a></p>
+    </footer>
+</main>
+
+<script>
+// Scroll spy for TOC
+const sections = document.querySelectorAll('.paper-body h2[id]');
+const tocLinks = document.querySelectorAll('.paper-toc a');
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    tocLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,483 @@
+Country,player_id,player_name,Kicker_Foot,Kicker_Side,Goalie_Side,Outcome,goalkeeper_name,goalkeeper_id,Home_Goals,Away_Goals,Minute,Team_Type
+Portugal,1.0,Galeno ,R,L,L,1,Andrew,1.0,0,0,30,H
+Portugal,2.0,Namaso,R,L,R,1,Andrew,1.0,0,0,70,H
+Portugal,3.0,Safira,R,R,L,1,Dani Figueira,2.0,1,0,70,A
+Portugal,4.0,Reisinho,L,L,R,1,Ricardo Batista,3.0,0,0,77,A
+Portugal,1.0,Galeno ,R,L,R,1,Gabriel Batista,4.0,1,0,25,A
+Portugal,5.0,Alan,R,L,L,1,Nico Mantl,5.0,1,1,45,H
+Portugal,6.0,Fujimoto,L,C,R,1,Simao,6.0,2,2,90,H
+Portugal,7.0,Clayton,R,R,R,1,Nico Mantl,5.0,0,0,43,H
+Portugal,8.0,M. Leonardo,R,L,L,1,Kewin,7.0,0,1,90,A
+Portugal,1.0,Galeno ,R,L,L,1,Velho,8.0,0,0,48,H
+Portugal,9.0,Ángel Di María,L,L,R,1,Lucas França,9.0,0,0,59,A
+Portugal,10.0,Cassiano,R,L,L,1,Andrew,1.0,1,0,85,A
+Portugal,10.0,Cassiano,R,R,L,1,Varela,10.0,0,0,39,H
+Portugal,11.0,G. Assunçao,R,C,R,1,Nico Mantl,5.0,0,1,77,H
+Portugal,4.0,Reisinho,L,R,L,1,Varela,10.0,2,0,90,A
+Portugal,4.0,Reisinho,L,C,L,1,Varela,10.0,2,1,90,A
+Portugal,12.0,T. Silva,R,L,L,1,Bruno Brigiido,11.0,1,1,69,A
+Portugal,13.0,R. Pinho,L,L,R,1,Varela,10.0,1,2,84,H
+Portugal,14.0,R. Macedo,R,C,L,1,Gabriel Batista,4.0,1,0,13,H
+Portugal,15.0,Bruma,R,L,R,1,Nico Mantl,5.0,0,0,16,A
+Portugal,10.0,Cassiano,R,R,L,1,Velho,8.0,0,1,32,H
+Portugal,16.0,O. Aranda,R,R,L,1,Robles,12.0,2,0,45,A
+Portugal,9.0,Ángel Di María,L,R,L,1,Nico Mantl,5.0,0,1,71,A
+Portugal,15.0,Bruma,R,C,R,1,Robles,12.0,1,0,56,H
+Portugal,17.0,A. Marques,R,R,L,1,Matheus,13.0,2,0,68,A
+Portugal,11.0,G. Assunçao,R,R,R,1,Patrick S.,14.0,1,0,72,A
+Portugal,4.0,Reisinho,L,L,R,1,Velho,8.0,0,1,90,H
+Portugal,12.0,T. Silva,R,C,R,1,Lucas França,9.0,0,1,24,H
+Portugal,17.0,A. Marques,R,R,L,1,Caio Seco,15.0,0,1,22,H
+Portugal,18.0,G. Silva,R,L,R,1,Lazar,16.0,0,0,32,A
+Portugal,7.0,Clayton,R,L,R,1,Lucas França,9.0,1,1,73,H
+Portugal,5.0,Alan,R,R,L,1,Simao,6.0,0,0,9,H
+Portugal,19.0,Jason ,R,L,L,1,Cesar,17.0,0,0,45,A
+Portugal,20.0,Yalcin,R,R,L,1,Cesar,17.0,1,1,90,A
+Portugal,21.0,B.Costa,R,L,L,1,Guillermo Ochoa,18.0,0,0,20,H
+Portugal,22.0,Hjulmand,R,R,R,1,Miszta,19.0,0,1,23,A
+Portugal,23.0,F.Navarro,R,L,L,1,Cesar,17.0,2,0,69,H
+Portugal,24.0,Tomane ,R,C,L,1,Miszta,19.0,0,2,82,H
+Portugal,25.0,H. Araujo,R,R,L,1,Lucas França,9.0,0,1,26,A
+Portugal,26.0,Y.Begraouri,R,R,L,1,Andrew,1.0,1,0,45,A
+Portugal,27.0,Pavlidis,R,L,R,1,Kewin,7.0,0,0,7,H
+Portugal,5.0,Alan,R,R,L,1,Patrick S.,14.0,0,0,12,H
+Portugal,5.0,Alan,R,L,L,1,Patrick S.,14.0,1,0,26,H
+Portugal,25.0,H. Araujo,R,R,R,1,Rui Silva,20.0,1,1,45,A
+Portugal,28.0,Dudu ,R,R,L,1,Robles,12.0,0,1,45,H
+Portugal,9.0,Ángel Di María,L,R,L,1,Diogo Costa,21.0,3,1,82,H
+Portugal,17.0,A. Marques,R,L,L,1,Zlobin,22.0,1,0,30,H
+Portugal,15.0,Bruma,R,L,R,1,Gabriel Batista,4.0,0,1,77,A
+Portugal,16.0,O. Aranda,R,C,L,1,Velho,8.0,0,2,80,H
+Portugal,29.0,F. Correia,R,R,R,1,Diogo Costa,21.0,2,1,90,H
+Portugal,9.0,Ángel Di María,L,R,L,1,Patrick S.,14.0,0,0,14,A
+Portugal,30.0,Kokcu,R,L,L,1,Vaclik,23.0,2,0,77,H
+Portugal,31.0,Samu,R,L,R,1,João Valido,24.0,0,0,13,A
+Portugal,32.0,Ze Luís,L,L,L,1,Velho,8.0,0,0,90,A
+Portugal,9.0,Ángel Di María,L,L,R,1,Andrew,1.0,0,2,90,A
+Portugal,30.0,Kokcu,R,L,R,1,Lucas França,9.0,1,0,23,H
+Portugal,33.0,Van ginkel,R,L,R,1,Varela,10.0,0,0,45,H
+Portugal,12.0,T. Silva,R,L,L,1,Vaclik,23.0,1,1,76,A
+Portugal,27.0,Pavlidis,R,L,R,1,Lucas França,9.0,2,0,90,H
+Portugal,5.0,Alan,R,L,R,1,Vaclik,23.0,0,0,31,H
+Portugal,16.0,O. Aranda,R,L,R,1,Rui Silva,20.0,1,0,35,A
+Portugal,27.0,Pavlidis,R,R,L,1,Miszta,19.0,0,1,53,A
+Portugal,17.0,A. Marques,R,R,R,1,Nico Mantl,5.0,1,0,90,A
+Portugal,26.0,Y.Begraouri,R,R,R,1,Diogo Costa,21.0,0,0,15,H
+Portugal,31.0,Samu,R,L,L,1,Kevin,25.0,1,0,45,A
+Portugal,34.0,Bozenik,R,L,L,1,Andrew,1.0,0,3,90,H
+Portugal,16.0,O. Aranda,R,C,L,1,Nico Mantl,5.0,0,0,35,A
+Portugal,25.0,H. Araujo,R,C,L,1,Lazar,16.0,0,1,71,H
+Portugal,20.0,Yalcin,R,L,R,1,Trublin,109.0,1,0,72,A
+Portugal,29.0,F. Correia,R,L,R,1,Lucas França,9.0,0,2,82,A
+Portugal,35.0,Justin,L,R,L,1,Hornicek,27.0,0,0,8,H
+Portugal,10.0,Cassiano,R,L,R,1,Robles,12.0,0,1,43,H
+Portugal,36.0,Alan Ruiz,L,R,L,1,Claudio ,28.0,1,0,62,H
+Portugal,29.0,F. Correia,R,L,L,1,Rui Silva,20.0,0,0,26,A
+Portugal,31.0,Samu,R,L,L,1,Caio Seco,15.0,1,1,70,H
+Portugal,7.0,Clayton,R,L,R,1,João Costa,29.0,0,0,79,H
+Portugal,4.0,Reisinho,L,L,R,1,Diogo Costa,21.0,0,2,34,H
+Portugal,37.0,Zalazar ,R,L,L,1,Trublin,109.0,0,0,24,H
+Portugal,38.0,Neto,R,R,R,1,Gabriel Batista,4.0,0,2,45,H
+Portugal,31.0,Samu,R,C,L,1,Rui Enc.,30.0,1,0,69,H
+Portugal,39.0,Gyokeres,R,R,L,1,Lucas França,9.0,1,2,51,A
+Portugal,39.0,Gyokeres,R,L,L,1,Velho,8.0,0,1,41,A
+Portugal,39.0,Gyokeres,R,L,R,1,Diogo Costa,21.0,0,0,72,H
+Portugal,39.0,Gyokeres,R,R,L,1,Nico Mantl,5.0,0,1,73,A
+Portugal,39.0,Gyokeres,R,R,R,1,Patrick S.,14.0,1,0,80,H
+Portugal,39.0,Gyokeres,R,L,R,1,Bruno Brigiido,11.0,2,1,42,H
+Portugal,39.0,Gyokeres,R,L,L,1,Kewin,7.0,0,0,12,A
+Portugal,39.0,Gyokeres,R,L,L,1,Robles,12.0,2,1,90,H
+Portugal,39.0,Gyokeres,R,L,R,1,Patrick S.,14.0,1,2,77,A
+Portugal,39.0,Gyokeres,R,R,L,1,Lazar,16.0,1,1,64,H
+Portugal,39.0,Gyokeres,R,L,L,1,João Costa,29.0,0,0,52,A
+Portugal,39.0,Gyokeres,R,L,L,1,João Costa,29.0,0,2,89,A
+Portugal,26.0,Y.Begraouri,R,L,L,0,Velho,8.0,0,0,15,A
+Portugal,19.0,Jason ,R,L,L,0,Robles,12.0,3,1,80,A
+Portugal,3.0,Safira,R,L,R,0,Andrew,1.0,2,1,90,H
+Portugal,40.0,Jovane,R,L,R,0,Lucas França,9.0,0,0,57,H
+Portugal,15.0,Bruma,R,R,R,0,Simao,6.0,0,1,79,A
+Portugal,16.0,O. Aranda,R,L,L,0,Diogo Costa,21.0,1,1,78,H
+Portugal,41.0,Nené,R,L,L,0,Lucas França,9.0,3,1,86,A
+Portugal,1.0,Galeno ,R,R,L,0,Gabriel Batista,4.0,0,1,72,H
+Portugal,1.0,Galeno ,R,L,L,0,Gabriel Batista,4.0,1,1,90,H
+Portugal,42.0,Arthur Cabral,R,R,R,0,Marko,31.0,2,3,87,A
+Portugal,28.0,Dudu ,R,L,L,0,Samuel,32.0,2,0,45,A
+Portugal,43.0,T. Morais,R,L,L,0,Patrick S.,14.0,2,1,87,A
+Portugal,19.0,Jason ,R,R,R,0,Lazar,16.0,0,0,26,H
+Portugal,13.0,R. Pinho,L,R,R,0,Kaique,33.0,0,0,40,H
+Portugal,44.0,Brian,L,R,R,0,João Costa,29.0,1,0,81,H
+Portugal,26.0,Y.Begraouri,R,L,L,0,Trublin,109.0,0,2,66,H
+Portugal,45.0,Rony,L,R,R,0,Varela,10.0,1,1,81,A
+Portugal,46.0,Joel Tagueu,L,L,L,0,Diogo Costa,21.0,1,0,12,A
+Portugal,32.0,Ze Luís,L,R,L,1,Rui Silva,20.0,0,2,71,H
+Portugal,47.0,Vinícius,R,R,L,0,Varela,10.0,1,0,90,H
+England,48.0,João Pedro,R,R,R,1,Kaminski,34.0,1,0,71,H
+England,49.0,Morris,R,L,R,1,Steele,35.0,2,0,81,A
+England,50.0,Mbeumo,L,L,R,1,Vicario,36.0,0,1,26,H
+England,50.0,Mbeumo,L,L,C,1,Leno,37.0,0,1,66,A
+England,51.0,Douglas L.,R,R,R,1,Pickford,38.0,1,0,24,H
+England,52.0,Paqueta,L,R,L,1,Sanchez,39.0,2,1,90,H
+England,53.0,Odegard,L,L,R,1,Sam ,40.0,0,0,53,A
+England,54.0,Saka,L,R,L,1,Leno,37.0,0,1,70,H
+England,55.0,Bruno F.,R,L,L,1,Turner,41.0,2,2,76,H
+England,56.0,Haaland,L,L,R,1,Leno,37.0,3,1,70,H
+England,51.0,Douglas L.,R,L,R,1,Sam ,40.0,1,1,90,H
+England,57.0,Callum W.,R,R,R,1,Flekken,42.0,0,0,64,H
+England,49.0,Morris,R,L,R,1,José Sá,43.0,0,1,65,H
+England,54.0,Saka,L,C,L,1,Vicario,36.0,1,1,54,H
+England,58.0,Salah,L,R,L,1,Areola,44.0,0,0,16,H
+England,,Isak,R,R,L,1,Trafford,45.0,1,0,76,H
+England,53.0,Odegard,L,L,R,1,Neto,46.0,0,1,44,A
+England,60.0,Kai,L,L,R,1,Neto,46.0,0,2,53,A
+England,58.0,Salah,L,L,L,1,Verbruggen,47.0,1,1,45,A
+England,61.0,Palmer,L,R,L,1,Trafford,45.0,1,1,50,A
+England,61.0,Palmer,L,L,L,1,Raya,48.0,0,0,15,H
+England,62.0,McBrunie,R,R,R,1,André Onana,49.0,0,1,34,H
+England,51.0,Douglas L.,R,C,L,1,Areola,44.0,1,0,51,H
+England,58.0,Salah,L,R,C,1,Pickford,38.0,0,0,75,H
+England,56.0,Haaland,L,R,L,1,André Onana,49.0,0,0,26,A
+England,57.0,Callum W.,R,L,L,1,José Sá,43.0,1,1,45,A
+England,63.0,Fabio Viera,L,R,L,1,Wes,50.0,3,0,88,H
+England,61.0,Palmer,L,R,R,1,Vicario,36.0,1,0,35,A
+England,64.0,Oliver N.,R,C,L,1,José Sá,43.0,1,1,90,H
+England,65.0,Eze,R,R,C,1,Pickford,38.0,0,1,5,H
+England,56.0,Haaland,L,L,R,1,Sanchez,39.0,0,0,25,A
+England,61.0,Palmer,L,L,L,1,Ederson,51.0,3,4,90,H
+England,66.0,Jay R.,R,C,R,1,Areola,44.0,0,0,49,H
+England,67.0,Rashford,R,L,L,1,Pickford,38.0,0,1,56,A
+England,68.0,Willian,R,R,L,1,José Sá,43.0,1,1,59,H
+England,69.0,Hee-chang,R,C,R,1,Leno,37.0,2,1,75,A
+England,48.0,João Pedro,R,L,R,1,Ody V.,52.0,1,2,58,A
+England,70.0,Morgan G.,R,L,R,1,Verbruggen,47.0,1,3,73,H
+England,68.0,Willian,R,L,L,1,José Sá,43.0,2,2,90,H
+England,71.0,Enzo,R,C,L,1,Steele,35.0,2,1,65,H
+England,50.0,Mbeumo,L,L,R,1,Steele,35.0,0,0,27,A
+England,72.0,Mateta,R,C,L,1,Alisson,53.0,0,0,57,H
+England,73.0,Son,R,L,L,1,Dubravaka,54.0,3,0,85,H
+England,74.0,Olise,L,L,R,1,Ederson,51.0,2,1,90,A
+England,48.0,João Pedro,R,L,R,1,Vicario,36.0,1,0,23,H
+England,,Isak,R,R,R,1,Turner,41.0,0,0,23,H
+England,75.0,Solanke,R,R,L,1,Leno,37.0,1,0,62,H
+England,76.0,Alvarez,R,C,L,1,Pickford,38.0,1,1,64,A
+England,48.0,João Pedro,R,R,L,1,Vicario,36.0,3,0,75,H
+England,77.0,Madueke,L,L,R,1,Dean H.,55.0,1,1,89,H
+England,58.0,Salah,L,L,R,1,Dubravaka,54.0,3,2,86,H
+England,51.0,Douglas L.,R,C,R,1,Trafford,45.0,2,2,89,H
+England,61.0,Palmer,L,R,L,1,Leno,37.0,0,0,45,H
+England,78.0,James W.,R,C,L,1,Wes,50.0,1,1,79,A
+England,62.0,McBrunie,R,L,L,1,Areola,44.0,1,2,90,H
+England,78.0,James W.,R,C,L,1,Neto,46.0,0,1,61,H
+England,79.0,Sarabia,L,C,R,1,André Onana,49.0,0,2,71,H
+England,49.0,Morris,R,R,L,1,Dubravaka,54.0,2,2,59,A
+England,80.0,Cunha,R,R,L,1,Petrovic,56.0,1,3,82,A
+England,81.0,Grob,R,L,R,1,Vicario,36.0,0,0,17,A
+England,82.0,McAtee,L,R,L,1,Kaminski,34.0,0,1,36,A
+England,54.0,Saka,L,R,L,1,Areola,44.0,0,1,41,A
+England,49.0,Morris,R,R,L,1,Wes,50.0,0,2,52,H
+England,54.0,Saka,L,R,R,1,Trafford,45.0,0,1,41,A
+England,83.0,Gordon,R,R,R,1,Neto,46.0,0,1,58,H
+England,72.0,Mateta,R,R,L,1,Trafford,45.0,2,0,79,H
+England,55.0,Bruno F.,R,R,R,1,Pickford,38.0,0,0,12,H
+England,67.0,Rashford,R,L,R,1,Pickford,38.0,1,0,36,H
+England,84.0,Mac Allister,R,L,L,1,Ederson,51.0,0,1,50,H
+England,85.0,Jacob,R,L,L,1,Flekken,42.0,0,0,10,H
+England,55.0,Bruno F.,R,L,R,1,Wes,50.0,1,2,61,H
+England,,Isak,R,L,R,1,Areola,44.0,0,0,6,H
+England,61.0,Palmer,L,C,L,1,Muric,57.0,0,0,44,H
+England,,Isak,R,L,R,1,Fabianski,58.0,1,3,77,H
+England,61.0,Palmer,L,R,L,1,André Onana,49.0,1,0,19,H
+England,86.0,Dominic,R,L,L,1,Dubravaka,54.0,1,0,88,A
+England,61.0,Palmer,L,R,L,1,André Onana,49.0,2,3,90,H
+England,54.0,Saka,L,R,L,1,Verbruggen,47.0,0,0,33,A
+England,79.0,Sarabia,L,R,R,1,Fabianski,58.0,0,0,33,H
+England,52.0,Paqueta,L,R,R,1,José Sá,43.0,1,0,63,A
+England,58.0,Salah,L,L,R,1,André Onana,49.0,2,1,84,A
+England,61.0,Palmer,L,R,L,1,Pickford,38.0,4,0,64,H
+England,55.0,Bruno F.,R,R,L,1,Neto,46.0,2,1,65,A
+England,56.0,Haaland,L,L,R,1,Kaminski,34.0,2,0,76,H
+England,75.0,Solanke,R,L,L,1,Martinez,,0,0,31,A
+England,56.0,Haaland,L,L,R,1,Vicario,36.0,0,1,90,A
+England,,Isak,R,R,C,1,Wes,50.0,2,1,61,H
+England,87.0,Amdouni,R,R,L,1,André Onana,49.0,1,0,87,A
+England,73.0,Son,R,L,L,1,Raya,48.0,1,3,87,H
+England,56.0,Haaland,L,L,R,1,José Sá,43.0,0,0,12,H
+England,88.0,Diaz,R,C,R,1,Sels,60.0,0,0,17,H
+England,86.0,Dominic,R,C,L,1,Kaminski,34.0,0,0,24,A
+England,54.0,Saka,L,L,R,1,Travers,61.0,0,0,45,H
+England,56.0,Haaland,L,L,L,1,José Sá,43.0,2,0,45,H
+England,76.0,Alvarez,R,R,L,1,Leno,37.0,0,3,90,A
+England,49.0,Morris,R,R,L,1,Leno,37.0,0,1,45,H
+England,58.0,Salah,L,L,R,0,Neto,46.0,2,1,35,H
+England,71.0,Enzo,R,L,L,0,Areola,44.0,1,1,43,A
+England,56.0,Haaland,L,R,L,0,Wes,50.0,0,0,37,A
+England,55.0,Bruno F.,R,L,L,0,Sanchez,39.0,0,0,9,H
+England,89.0,Said,R,R,R,0,Raya,48.0,0,2,90,A
+England,58.0,Salah,L,C,C,0,Dubravaka,54.0,0,0,22,H
+England,90.0,Darwin,R,R,L,0,Petrovic,56.0,2,0,45,H
+England,91.0,Beto,R,R,R,0,Areola,44.0,0,0,45,H
+England,75.0,Solanke,R,L,L,0,Ivo G.,62.0,0,0,14,H
+England,,Isak,R,L,L,0,Muric,57.0,0,3,52,A
+England,48.0,João Pedro,R,L,L,0,Olsen,63.0,1,0,87,H
+Italy,92.0,Theo Hernández,L,L,R,1,Marco Silvestri,64.0,0,1,11,H
+Italy,93.0,Marko Arnautovic,R,R,L,1,Luís Maximiano,65.0,0,0,38,A
+Italy,94.0,Dušan Vlahović,L,C,L,1,Andrea Consigli,66.0,1,0,43,H
+Italy,95.0,M'Bala Nzola,L,R,L,1,Andrea Consigli,66.0,1,1,45,H
+Italy,96.0,Teun Koopmeiners,L,C,L,1,Vanja Milinkovič-Savič,67.0,0,0,45,H
+Italy,93.0,Marko Arnautovic,R,L,R,1,Luigi Sepe,68.0,0,0,52,H
+Italy,96.0,Teun Koopmeiners,L,R,R,1,Vanja Milinkovič-Savič,67.0,2,1,84,H
+Italy,97.0,Krzysztof Piatek,R,R,L,1,Mattia Perin,69.0,0,1,45,A
+Italy,98.0,Olivier Giroud,L,L,R,1,Emil Audero,70.0,1,1,67,A
+Italy,99.0,Ciro Immobile,R,R,L,1,Ionuţ Radu,71.0,0,1,21,A
+Italy,100.0,Matteo Politano,L,L,L,1,Mike Maignan,72.0,0,0,55,A
+Italy,101.0,Daniel Ciofani,R,R,R,1,Wladimiro Falcone,73.0,0,0,19,A
+Italy,102.0,Andrea Pinamonti,R,L,L,1,Luigi Sepe,68.0,1,0,39,A
+Italy,103.0,Gabriel Strefezza,R,R,L,1,Ionuţ Radu,71.0,0,1,42,H
+Italy,100.0,Matteo Politano,L,L,R,1,Ionuţ Radu,71.0,0,0,26,A
+Italy,104.0,Paulo Dybala,L,L,R,1,Wladimiro Falcone,73.0,1,1,48,H
+Italy,105.0,Luis Muriel,R,L,L,1,Marco Silvestri,64.0,0,1,56,A
+Italy,106.0,Lorenzo Pellegrini,R,L,L,1,Emil Audero,70.0,0,0,9,A
+Italy,93.0,Marko Arnautovic,R,L,R,1,Wladimiro Falcone,73.0,0,0,13,H
+Italy,42.0,Arthur Cabral,R,R,L,1,André Onana,49.0,0,2,33,H
+Italy,107.0,Lautaro Martínez,R,R,L,1,Pietro Terracciano,74.0,2,2,73,A
+Italy,108.0,Andrea Petagna,L,R,L,1,Lukasz Skorupski,75.0,0,0,57,H
+Italy,109.0,Ademola Lookman,R,R,L,1,Alex Meret,76.0,0,0,19,H
+Italy,110.0,Saša Lukić,R,L,L,1,Lukasz Skorupski,75.0,0,0,26,A
+Italy,111.0,Hakan Çalhanoğlu,R,R,L,1,Lukasz Skorupski,75.0,4,1,59,H
+Italy,112.0,Hirving Lozano,R,L,L,1,Vicario,36.0,0,0,69,H
+Italy,109.0,Ademola Lookman,L,R,R,1,André Onana,49.0,0,0,25,H
+Italy,113.0,Matteo Pessina,L,R,L,1,Luigi Sepe,68.0,2,0,76,H
+Italy,106.0,Lorenzo Pellegrini,R,R,L,1,Lukasz Skorupski,75.0,0,0,6,H
+Italy,114.0,Domenico Berardi,L,R,R,1,Emil Audero,70.0,0,2,64,H
+Italy,114.0,Domenico Berardi,L,R,L,1,Pietro Terracciano,74.0,1,0,57,A
+Italy,115.0,Eljif Elmas,R,L,R,1,Emil Audero,70.0,0,1,82,A
+Italy,116.0,Nico González,L,R,R,1,Andrea Consigli,66.0,1,1,90,H
+Italy,117.0,Gianluca Caprari,R,L,R,1,Marco Carnesechi,77.0,0,1,19,A
+Italy,109.0,Ademola Lookman,R,R,R,1,Guillermo Ochoa,18.0,1,1,20,H
+Italy,95.0,M'Bala Nzola,L,R,R,1,Vanja Milinkovič-Savič,67.0,0,0,28,A
+Italy,118.0,Mattia Zaccagni,R,L,L,1,Gianluca Pegolo,78.0,0,0,45,A
+Italy,9.0,Ángel Di María,L,R,L,1,Juan Musso,79.0,0,1,25,H
+Italy,119.0,David Okereke,R,C,L,1,Lukasz Skorupski,75.0,0,0,50,A
+Italy,120.0,Luis Alberto,R,C,L,1,Ciprian Tătărușanu,80.0,2,0,67,H
+Italy,121.0,Armand Laurienté,R,L,L,1,Ciprian Tătărușanu,80.0,1,3,47,A
+Italy,122.0,Riccardo Orsolini,L,R,L,1,Pietro Terracciano,74.0,0,0,14,A
+Italy,94.0,Dušan Vlahović,L,R,R,1,Guillermo Ochoa,18.0,0,0,26,A
+Italy,123.0,Khvicha Kvaratskhelia,R,R,R,1,Bartlomiej Dragowski,81.0,0,0,47,A
+Italy,113.0,Matteo Pessina,L,R,R,1,Emil Audero,70.0,1,2,90,H
+Italy,104.0,Paulo Dybala,L,R,R,1,Wladimiro Falcone,73.0,1,0,17,A
+Italy,124.0,Daniele Verde,L,L,L,1,Vicario,36.0,0,0,25,A
+Italy,125.0,Romelu Lukaku,L,R,R,1,Marco Silvestri,64.0,0,0,20,H
+Italy,126.0,Antonio Sanabria,R,L,R,1,Marco Carnesechi,77.0,0,0,41,H
+Italy,127.0,Abdelhamid Sabiri,R,C,R,1,Lukasz Skorupski,75.0,0,1,68,H
+Italy,99.0,Ciro Immobile,R,R,R,1,Luigi Sepe,68.0,0,1,69,A
+Italy,101.0,Daniel Ciofani,R,L,L,1,Rui Patrício,82.0,1,1,83,H
+Italy,116.0,Nico González,L,R,L,1,Mike Maignan,72.0,0,0,49,H
+Italy,114.0,Domenico Berardi,L,L,R,1,Rui Patrício,82.0,1,2,45,A
+Italy,125.0,Romelu Lukaku,L,R,L,1,Bartlomiej Dragowski,81.0,1,0,83,A
+Italy,95.0,M'Bala Nzola,L,R,R,1,Samir Handanovič,83.0,1,1,87,H
+Italy,123.0,Khvicha Kvaratskhelia,R,C,L,1,Vanja Milinkovič-Savič,67.0,0,1,35,A
+Italy,128.0,Zlatan Ibrahimović,R,C,R,1,Marco Silvestri,64.0,1,0,45,A
+Italy,114.0,Domenico Berardi,L,R,R,1,Bartlomiej Dragowski,81.0,0,0,71,H
+Italy,101.0,Daniel Ciofani,R,C,L,1,Juan Musso,79.0,0,1,56,H
+Italy,129.0,Francesco Caputo,R,C,R,1,Wladimiro Falcone,73.0,0,0,62,H
+Italy,104.0,Paulo Dybala,L,L,R,1,Nicola Ravaglia,84.0,1,0,88,H
+Italy,104.0,Paulo Dybala,L,C,L,1,Vanja Milinkovič-Savič,67.0,0,0,8,A
+Italy,91.0,Beto,R,R,L,1,Michele Di Gregorio,85.0,1,2,90,H
+Italy,99.0,Ciro Immobile,R,L,R,1,Bartlomiej Dragowski,81.0,0,0,36,A
+Italy,42.0,Arthur Cabral,R,L,R,1,Marco Sportiello,86.0,0,1,56,H
+Italy,130.0,Simone Verdi,R,L,R,1,Lukasz Skorupski,75.0,0,0,45,H
+Italy,113.0,Matteo Pessina,L,R,L,1,Pietro Terracciano,74.0,2,2,59,H
+Italy,122.0,Riccardo Orsolini,L,R,L,1,Wojciech Szczesny,87.0,0,0,10,H
+Italy,103.0,Gabriel Strefezza,L,R,L,1,Marco Silvestri,64.0,0,0,62,H
+Italy,114.0,Domenico Berardi,L,R,R,1,Vicario,36.0,1,1,90,H
+Italy,131.0,Assan Ceesay,L,R,R,1,Wojciech Szczesny,87.0,1,0,37,A
+Italy,,Boulaye Dia,L,R,R,1,Pietro Terracciano,74.0,2,2,81,H
+Italy,122.0,Riccardo Orsolini,L,L,R,1,Vicario,36.0,3,0,88,A
+Italy,133.0,Victor Osimhen,R,L,R,1,Pietro Terracciano,74.0,0,0,74,H
+Italy,129.0,Francesco Caputo,R,L,L,1,Wojciech Szczesny,87.0,0,0,18,H
+Italy,98.0,Olivier Giroud,L,L,R,1,Nicola Ravaglia,84.0,2,1,29,H
+Italy,114.0,Domenico Berardi,L,R,L,1,Michele Di Gregorio,85.0,0,0,45,H
+Italy,99.0,Ciro Immobile,R,R,L,1,Marco Silvestri,64.0,0,0,61,A
+Italy,134.0,Lorenzo Colombo,L,C,R,1,Michele Di Gregorio,85.0,0,0,90,A
+Italy,135.0,Cristian Buonaiuto,R,R,L,1,Guillermo Ochoa,18.0,0,0,26,H
+Italy,98.0,Olivier Giroud,L,L,R,1,Lorenzo Montipò,88.0,0,0,45,H
+Italy,133.0,Victor Osimhen,R,R,R,1,Martin Turk,89.0,0,0,64,H
+Italy,114.0,Domenico Berardi,L,L,R,1,Michele Cerofolini,90.0,0,1,71,H
+Italy,104.0,Paulo Dybala,L,L,L,1,Jeroen Zoet,91.0,1,1,90,H
+Italy,114.0,Domenico Berardi,L,L,L,0,Mike Maignan,72.0,0,0,23,H
+Italy,134.0,Lorenzo Colombo,L,R,R,0,Alex Meret,76.0,0,0,25,A
+Italy,136.0,Luka Jovic,R,L,L,0,Mattia Perin,69.0,1,1,44,A
+Italy,106.0,Lorenzo Pellegrini,R,L,L,0,Vicario,36.0,1,2,80,A
+Italy,137.0,Leonardo Bonucci,R,L,L,0,Luigi Sepe,68.0,2,2,90,H
+Italy,138.0,Cristiano Biraghi,L,R,R,0,Lorenzo Montipò,88.0,1,0,26,H
+Italy,99.0,Ciro Immobile,R,L,L,0,Bartlomiej Dragowski,81.0,0,0,3,H
+Italy,139.0,Cyriel Dessers,R,R,R,0,Emil Audero,70.0,0,0,7,H
+Italy,96.0,Teun Koopmeiners,L,C,L,0,Vicario,36.0,0,1,42,A
+Italy,101.0,Daniel Ciofani,R,C,C,0,Luigi Sepe,68.0,2,2,89,A
+Italy,140.0,Andrea Belotti,R,C,R,0,Vanja Milinkovič-Savič,67.0,0,1,90,H
+Italy,100.0,Matteo Politano,L,R,R,0,Emil Audero,70.0,0,0,6,A
+Italy,96.0,Teun Koopmeiners,L,R,R,0,Guillermo Ochoa,18.0,3,1,38,H
+Italy,124.0,Daniele Verde,L,R,R,0,Vicario,36.0,0,0,22,A
+Italy,127.0,Abdelhamid Sabiri,R,R,R,0,Lukasz Skorupski,75.0,1,1,71,H
+Italy,120.0,Luis Alberto,R,L,L,0,Luigi Sepe,68.0,0,2,90,A
+Italy,107.0,Lautaro Martínez,R,R,R,0,Bartlomiej Dragowski,81.0,0,0,14,A
+Italy,94.0,Dušan Vlahović,L,L,R,0,Martin Turk,89.0,3,2,69,H
+Italy,141.0,Bryan Cristante,R,R,L,0,Marco Silvestri,64.0,1,0,37,H
+Italy,142.0,Roberto Pereyra,R,L,L,0,Rui Patrício,82.0,2,0,69,A
+Italy,143.0,Arkadiusz Milik,L,L,L,0,Lukasz Skorupski,75.0,1,1,31,H
+Italy,133.0,Victor Osimhen,R,R,R,0,Pietro Terracciano,74.0,1,0,48,H
+Italy,103.0,Gabriel Strefezza,R,L,L,0,Ivan Provedel,92.0,2,2,23,A
+Italy,144.0,Christian Gytkjær,R,L,L,0,Wladimiro Falcone,73.0,0,1,84,H
+Italy,128.0,Zlatan Ibrahimović,R,R,R,1,Lukasz Skorupski,75.0,1,0,51,H
+Italy,145.0,Jordan Veretout,R,L,L,1,Wojciech Szczesny,87.0,0,0,31,H
+Italy,146.0,Cristiano Ronaldo,R,R,L,1,Antonio Mirante,93.0,1,0,44,A
+Italy,147.0,Franck Kessié,R,L,R,1,Alex Cordaz,94.0,0,0,45,A
+Italy,114.0,Domenico Berardi,L,C,R,1,Jeroen Zoet,91.0,1,1,64,A
+Italy,148.0,Fabio Quagliarella,R,L,C,1,Bartlomiej Dragowski,81.0,0,0,42,A
+Italy,149.0,Simy,R,L,R,1,Andrea Consigli,66.0,1,0,49,A
+Italy,129.0,Francesco Caputo,R,R,R,1,Alex Cordaz,94.0,1,1,58,H
+Italy,150.0,Lorenzo Insigne,R,L,R,1,Gianluigi Buffon,95.0,2,0,90,A
+Italy,140.0,Andrea Belotti,R,L,R,1,Alessio Cragno,96.0,0,0,4,H
+Italy,149.0,Simy,R,R,L,1,Gianluigi Buffon,95.0,0,0,12,H
+Italy,145.0,Jordan Veretout,R,L,R,1,Lorenzo Montipò,88.0,2,2,69,H
+Italy,145.0,Jordan Veretout,R,L,L,1,Ciprian Tătărușanu,80.0,2,1,71,A
+Italy,128.0,Zlatan Ibrahimović,R,L,R,1,Antonio Mirante,93.0,2,2,79,H
+Italy,151.0,Duván Zapata,R,R,L,1,Emil Audero,70.0,0,2,80,H
+Italy,152.0,Juraj Kucka,R,R,L,1,Ivan Provedel,92.0,1,2,90,H
+Italy,140.0,Andrea Belotti,R,C,L,1,Pepe Reina,97.0,1,1,24,H
+Italy,153.0,Rodrigo De Paul,R,L,L,1,Gianluigi Donnarumma,98.0,0,1,48,H
+Italy,154.0,Manuel Locatelli,R,L,R,1,David Ospina,99.0,0,0,59,A
+Italy,146.0,Cristiano Ronaldo,R,C,R,1,Ivan Provedel,92.0,1,3,76,A
+Italy,99.0,Ciro Immobile,R,L,R,1,Salvatore Sirigu,100.0,3,2,90,A
+Italy,48.0,João Pedro,R,L,L,1,Emil Audero,70.0,0,0,48,H
+Italy,155.0,Cristian Ansaldi,L,R,R,1,Samir Handanovič,83.0,0,1,62,A
+Italy,125.0,Romelu Lukaku,L,R,L,1,Salvatore Sirigu,100.0,2,2,84,H
+Italy,147.0,Franck Kessié,R,L,R,1,Bartlomiej Dragowski,81.0,1,0,28,H
+Italy,156.0,Miguel Veloso,L,R,L,1,Pierluigi Gollini,101.0,0,0,62,A
+Italy,99.0,Ciro Immobile,R,L,L,1,Juan Musso,79.0,0,3,74,H
+Italy,95.0,M'Bala Nzola,R,L,R,1,Alessio Cragno,96.0,2,1,90,A
+Italy,147.0,Franck Kessié,R,C,R,1,Emil Audero,70.0,0,0,45,A
+Italy,114.0,Domenico Berardi,L,R,L,1,Lorenzo Montipò,88.0,0,0,8,H
+Italy,146.0,Cristiano Ronaldo,R,L,R,1,Mattia Perin,69.0,1,1,78,A
+Italy,146.0,Cristiano Ronaldo,R,L,R,1,Mattia Perin,69.0,1,2,89,A
+Italy,94.0,Dušan Vlahović,L,L,R,1,Andrea Consigli,66.0,0,1,35,H
+Italy,145.0,Jordan Veretout,R,R,R,1,Vanja Milinkovič-Savič,67.0,1,0,43,H
+Italy,118.0,Mattia Zaccagni,R,L,R,1,Emil Audero,70.0,0,2,70,H
+Italy,125.0,Romelu Lukaku,L,L,R,1,David Ospina,99.0,0,0,73,H
+Italy,156.0,Miguel Veloso,L,R,L,1,Bartlomiej Dragowski,81.0,0,0,8,A
+Italy,94.0,Dušan Vlahović,L,L,R,1,Marco Silvestri,64.0,0,1,19,H
+Italy,149.0,Simy,R,R,R,1,Emil Audero,70.0,2,0,45,A
+Italy,125.0,Romelu Lukaku,L,R,L,1,Ivan Provedel,92.0,1,0,71,H
+Italy,157.0,Marco Sal,R,R,L,1,Mattia Perin,69.0,1,0,89,H
+Italy,111.0,Hakan Çalhanoğlu,R,R,L,1,Pepe Reina,97.0,1,0,17,H
+Italy,105.0,Luis Muriel,R,L,R,1,Angelo da Costa,102.0,0,0,22,A
+Italy,158.0,Domenico Criscito,L,L,L,1,Ivan Provedel,92.0,1,1,73,A
+Italy,48.0,João Pedro,R,L,L,1,Antonio Mirante,93.0,3,1,90,A
+Italy,147.0,Franck Kessié,R,L,R,1,Lorenzo Montipò,88.0,0,0,15,A
+Italy,99.0,Ciro Immobile,R,R,L,1,Mattia Perin,69.0,0,0,15,A
+Italy,159.0,Vladimir Golemić,R,R,R,1,Samir Handanovič,83.0,2,1,36,A
+Italy,150.0,Lorenzo Insigne,R,L,L,1,Alessio Cragno,96.0,1,3,86,A
+Italy,160.0,Antonio Candreva,R,L,R,1,Samir Handanovič,83.0,0,0,23,H
+Italy,161.0,Henrikh Mkhitaryan,R,L,L,1,Alex Cordaz,94.0,0,2,35,A
+Italy,95.0,M'Bala Nzola,L,R,L,1,David Ospina,99.0,1,0,68,A
+Italy,94.0,Dušan Vlahović,L,R,R,1,Thomas Strakosha,103.0,2,0,88,A
+Italy,150.0,Lorenzo Insigne,R,L,L,1,Juan Musso,79.0,0,0,15,A
+Italy,147.0,Franck Kessié,R,R,L,1,Salvatore Sirigu,100.0,1,0,36,H
+Italy,95.0,M'Bala Nzola,L,R,L,1,Emil Audero,70.0,1,1,61,H
+Italy,128.0,Zlatan Ibrahimović,R,L,R,1,Alessio Cragno,96.0,0,0,7,A
+Italy,122.0,Riccardo Orsolini,L,R,L,1,Marco Silvestri,64.0,0,0,18,H
+Italy,160.0,Antonio Candreva,R,C,L,1,Juan Musso,79.0,0,1,67,H
+Italy,150.0,Lorenzo Insigne,R,R,R,1,Bartlomiej Dragowski,81.0,4,0,72,H
+Italy,162.0,Filip Djuričić,R,R,L,1,Luigi Sepe,68.0,0,1,90,H
+Italy,163.0,Nicolas Viola,L,R,L,1,Salvatore Sirigu,100.0,0,0,31,H
+Italy,164.0,Josip Iličić,L,R,R,1,Gianluigi Donnarumma,98.0,0,1,53,A
+Italy,153.0,Rodrigo De Paul,R,L,R,1,Ivan Provedel,92.0,0,0,52,A
+Italy,147.0,Franck Kessié,R,R,C,1,Lukasz Skorupski,75.0,0,1,55,A
+Italy,152.0,Juraj Kucka,R,L,L,1,Marco Silvestri,64.0,0,0,8,A
+Italy,125.0,Romelu Lukaku,L,L,R,1,Pepe Reina,97.0,0,0,22,H
+Italy,145.0,Jordan Veretout,R,R,L,1,Juan Musso,79.0,1,0,25,H
+Italy,150.0,Lorenzo Insigne,R,L,R,1,Wojciech Szczesny,87.0,0,0,31,H
+Italy,129.0,Francesco Caputo,R,L,L,1,Alex Cordaz,94.0,1,1,49,A
+Italy,152.0,Juraj Kucka,R,L,L,1,Juan Musso,79.0,1,0,32,H
+Italy,147.0,Franck Kessié,R,R,R,1,Pau López,104.0,0,0,42,A
+Italy,48.0,João Pedro,R,L,L,1,Alex Cordaz,94.0,0,1,60,A
+Italy,114.0,Domenico Berardi,L,C,R,1,Alex Meret,76.0,1,1,45,H
+Italy,150.0,Lorenzo Insigne,R,L,R,1,Andrea Consigli,66.0,2,2,90,A
+Italy,129.0,Francesco Caputo,R,R,R,1,Alex Meret,76.0,2,3,90,H
+Italy,147.0,Franck Kessié,R,R,L,1,Juan Musso,79.0,0,1,90,H
+Italy,149.0,Simy,R,L,R,1,Salvatore Sirigu,100.0,0,0,27,H
+Italy,152.0,Juraj Kucka,R,L,L,1,Bartlomiej Dragowski,81.0,1,0,32,A
+Italy,165.0,Álvaro Morata,R,R,R,1,Pepe Reina,97.0,2,1,60,H
+Italy,146.0,Cristiano Ronaldo,R,L,L,1,Alessio Cragno,96.0,0,1,25,A
+Italy,153.0,Rodrigo De Paul,R,C,R,1,Mattia Perin,69.0,1,0,30,A
+Italy,149.0,Simy,R,L,R,1,Pepe Reina,97.0,2,1,50,A
+Italy,166.0,Hernani,R,R,L,1,Pau López,104.0,1,0,55,H
+Italy,125.0,Romelu Lukaku,L,R,L,1,Salvatore Sirigu,100.0,0,0,62,A
+Italy,167.0,Ruslan Malinovskyi,L,L,R,1,Marco Silvestri,64.0,0,0,33,A
+Italy,149.0,Simy,R,R,L,1,Lukasz Skorupski,75.0,1,0,40,H
+Italy,106.0,Lorenzo Pellegrini,R,L,R,1,Andrea Consigli,66.0,0,0,26,A
+Italy,168.0,Felipe Caicedo,L,L,R,1,Jeroen Zoet,91.0,1,1,88,H
+Italy,140.0,Andrea Belotti,R,C,R,1,Juan Musso,79.0,0,0,61,A
+Italy,164.0,Josip Iličić,L,C,R,1,Bartlomiej Dragowski,81.0,2,2,70,A
+Italy,122.0,Riccardo Orsolini,L,L,L,1,Ivan Provedel,92.0,0,0,12,H
+Italy,169.0,Joaquín Correa,R,R,L,1,Lorenzo Montipò,88.0,2,0,36,H
+Italy,114.0,Domenico Berardi,L,L,L,1,Bartlomiej Dragowski,81.0,0,1,59,H
+Italy,163.0,Nicolas Viola,L,R,L,1,Pepe Reina,97.0,4,1,62,A
+Italy,114.0,Domenico Berardi,L,L,R,1,Bartlomiej Dragowski,81.0,1,1,62,H
+Italy,149.0,Simy,R,C,L,1,Juan Musso,79.0,0,1,68,H
+Italy,170.0,Manolo Gabbiadini,L,L,R,1,Marco Silvestri,64.0,1,1,73,H
+Italy,163.0,Nicolas Viola,L,L,R,1,Mattia Perin,69.0,0,0,5,A
+Italy,150.0,Lorenzo Insigne,R,L,R,1,Pepe Reina,97.0,0,0,7,H
+Italy,94.0,Dušan Vlahović,L,L,L,1,Marco Silvestri,64.0,0,0,45,A
+Italy,48.0,João Pedro,R,L,L,1,Juan Musso,79.0,0,0,55,A
+Italy,94.0,Dušan Vlahović,L,C,R,1,Wojciech Szczesny,87.0,0,0,29,H
+Italy,163.0,Nicolas Viola,L,L,R,1,Juan Musso,79.0,0,2,34,H
+Italy,105.0,Luis Muriel,R,R,C,1,Lukasz Skorupski,75.0,1,0,44,H
+Italy,149.0,Simy,R,L,R,1,Simone Colombi,105.0,3,3,69,A
+Italy,94.0,Dušan Vlahović,L,R,R,1,Lukasz Skorupski,75.0,0,0,21,A
+Italy,99.0,Ciro Immobile,R,L,R,1,Mattia Perin,69.0,1,0,43,H
+Italy,114.0,Domenico Berardi,L,R,C,1,Pierluigi Gollini,101.0,0,1,52,H
+Italy,171.0,Gianluca Scamacca,R,C,L,1,Pepe Reina,97.0,4,1,80,A
+Italy,146.0,Cristiano Ronaldo,R,L,L,1,Simone Scuffet,106.0,1,0,83,A
+Italy,107.0,Lautaro Martínez,R,R,R,1,Emil Audero,70.0,4,1,70,H
+Italy,122.0,Riccardo Orsolini,L,R,R,1,Juan Musso,79.0,1,0,82,A
+Italy,147.0,Franck Kessié,R,R,L,1,Salvatore Sirigu,100.0,0,1,26,A
+Italy,171.0,Gianluca Scamacca,R,R,L,1,Federico Ravaglia,107.0,0,1,61,A
+Italy,154.0,Manuel Locatelli,R,R,L,1,Luigi Sepe,68.0,0,0,25,A
+Italy,125.0,Romelu Lukaku,L,L,R,1,Wojciech Szczesny,87.0,1,0,38,A
+Italy,95.0,M'Bala Nzola,L,R,L,1,Salvatore Sirigu,100.0,1,0,41,H
+Italy,140.0,Andrea Belotti,R,R,L,1,Jeroen Zoet,91.0,2,0,54,A
+Italy,172.0,Goran Pandev,L,R,L,1,Pierluigi Gollini,101.0,1,4,67,H
+Italy,173.0,Juan Cuadrado,R,L,C,1,Samir Handanovič,83.0,2,2,88,H
+Italy,148.0,Fabio Quagliarella,R,R,L,1,Juan Musso,79.0,0,0,88,A
+Italy,147.0,Franck Kessié,R,L,C,1,Pierluigi Gollini,101.0,0,0,43,A
+Italy,107.0,Lautaro Martínez,R,L,L,1,Juan Musso,79.0,2,0,55,H
+Italy,114.0,Domenico Berardi,L,R,L,1,Thomas Strakosha,103.0,1,0,78,H
+Italy,142.0,Roberto Pereyra,L,L,R,1,Samir Handanovič,83.0,5,0,79,A
+Italy,147.0,Franck Kessié,R,R,L,1,Pierluigi Gollini,101.0,0,1,90,A
+Italy,128.0,Zlatan Ibrahimović,R,L,L,0,Samir Handanovič,83.0,0,0,13,A
+Italy,174.0,Gianluca Lapadula,R,L,L,0,Antonio Mirante,93.0,2,1,55,A
+Italy,148.0,Fabio Quagliarella,R,L,L,0,Marco Sportiello,86.0,0,1,45,A
+Italy,128.0,Zlatan Ibrahimović,R,L,L,0,Marco Silvestri,64.0,1,2,66,H
+Italy,147.0,Franck Kessié,R,R,R,0,Bartlomiej Dragowski,81.0,2,0,38,H
+Italy,146.0,Cristiano Ronaldo,R,R,R,0,Pierluigi Gollini,101.0,1,1,61,H
+Italy,175.0,Musa Barrow,R,R,R,0,Ivan Provedel,92.0,2,2,90,A
+Italy,99.0,Ciro Immobile,R,L,L,0,Gianluigi Donnarumma,98.0,2,0,27,A
+Italy,117.0,Gianluca Caprari,R,L,R,0,Gianluigi Donnarumma,98.0,0,2,61,H
+Italy,176.0,Alexis Sánchez,R,L,L,0,Emil Audero,70.0,0,0,12,A
+Italy,48.0,João Pedro,R,R,R,0,Bartlomiej Dragowski,81.0,0,0,37,A
+Italy,128.0,Zlatan Ibrahimović,R,L,L,0,Lukasz Skorupski,75.0,0,1,26,A
+Italy,140.0,Andrea Belotti,R,L,L,0,Pierluigi Gollini,101.0,3,0,42,A
+Italy,99.0,Ciro Immobile,R,R,R,0,Lukasz Skorupski,75.0,0,0,17,A
+Italy,99.0,Ciro Immobile,R,L,L,0,Salvatore Sirigu,100.0,0,0,84,H
+Italy,177.0,Andrey Galabinov,R,R,R,0,Wojciech Szczesny,87.0,3,0,90,A
+Italy,99.0,Ciro Immobile,R,L,L,0,Lorenzo Montipò,88.0,4,1,55,H
+Italy,178.0,Edin Džeko,R,R,R,0,Emil Audero,70.0,2,0,71,A
+Italy,105.0,Luis Muriel,R,C,L,0,Andrea Consigli,66.0,1,1,77,A
+Italy,147.0,Franck Kessié,R,R,R,0,Wojciech Szczesny,87.0,0,1,58,A
+Italy,114.0,Domenico Berardi,L,R,R,0,Gianluigi Buffon,95.0,0,0,16,H
+Italy,146.0,Cristiano Ronaldo,R,L,L,0,Samir Handanovič,83.0,1,0,24,H
+Italy,150.0,Lorenzo Insigne,R,L,L,0,Pietro Terracciano,74.0,0,0,56,A
+Portugal,9.0,Ángel Di María,L,L,L,0,Hugo Souza,108.0,0,0,26,H
+Portugal,179.0,Fellipe Cardoso,R,R,R,0,Trublin,109.0,1,0,54,A
+Portugal,31.0,Samu,L,L,L,0,Luiz Júnior,110.0,0,0,49,H
+Portugal,180.0,Cristo,R,R,R,0,João Gonçalves,111.0,0,0,24,H

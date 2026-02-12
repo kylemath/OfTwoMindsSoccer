@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Directions | Neural Subspaces</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-brand">Neural Subspaces<span>Tafazoli et al. 2026</span></a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="task.html">Interactive Task</a></li>
+        <li><a href="paper.html">Full Paper</a></li>
+        <li><a href="theory.html">Theory & Model</a></li>
+        <li><a href="results.html">Results & Data</a></li>
+        <li><a href="future.html" class="active">Future Directions</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<main class="main-content">
+    <div class="container">
+        <div class="section-header">
+            <h2>Future Directions</h2>
+            <p>Open questions raised by the paper and ideas for extending the work</p>
+        </div>
+
+        <!-- From the Paper's Discussion -->
+        <h3>Directions Proposed in the Paper</h3>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-title"><div class="icon icon-purple">1</div> Transfer Learning Across Tasks</div>
+                <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:0.75rem">
+                    The paper hypothesizes that shared subspaces could speed learning of new tasks by allowing knowledge to generalize. For example, learning C2 (colour categorization) shapes the computations needed for colour, which could transfer to C1.
+                </p>
+                <div class="callout callout-purple" style="margin:0">
+                    <div class="callout-title">Proposed Analysis</div>
+                    <p style="font-size:0.85rem">Train monkeys on a <strong>novel fourth task</strong> that shares a component with existing tasks (e.g., shape categorization on axis 2: S2). Measure whether learning is faster when the task shares subspaces with previously learned tasks. Track how shared representations emerge during learning versus being immediately available.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title"><div class="icon icon-blue">2</div> Hippocampal Contributions</div>
+                <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:0.75rem">
+                    The paper notes that "other regions, such as the hippocampus, are probably involved" in task compositionality and context-dependent learning.
+                </p>
+                <div class="callout" style="margin:0">
+                    <div class="callout-title">Proposed Analysis</div>
+                    <p style="font-size:0.85rem">Record from hippocampus during the same task paradigm. Test whether hippocampus encodes task context in a way that complements PFC representations. Examine whether hippocampal replay during inter-trial intervals maintains task-relevant associations.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title"><div class="icon icon-green">3</div> Role of Experience Replay</div>
+                <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:0.75rem">
+                    The discussion mentions "replaying experiences across tasks" as a potential mechanism for continual learning, alongside the demonstrated gain modulation.
+                </p>
+                <div class="callout callout-green" style="margin:0">
+                    <div class="callout-title">Proposed Analysis</div>
+                    <p style="font-size:0.85rem">Analyze neural activity during the inter-trial interval and the 50-second delay between blocks for replay signatures. Use Bayesian decoding to detect compressed replay of stimulus-response sequences. Test whether replay content correlates with subsequent task performance.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title"><div class="icon icon-orange">4</div> Credit Assignment via Suppression</div>
+                <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:0.75rem">
+                    The paper suggests that suppressing irrelevant features constrains learning to task-relevant neural populations, since "neural learning rules are activity dependent and gated by reward."
+                </p>
+                <div class="callout callout-orange" style="margin:0">
+                    <div class="callout-title">Proposed Analysis</div>
+                    <p style="font-size:0.85rem">Develop a computational model with Hebbian-like learning rules gated by reward prediction errors. Show that gain modulation (as observed) selectively updates weights for task-relevant feature-action associations while protecting irrelevant ones. Compare with EWC-style regularization approaches.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title"><div class="icon icon-cyan">5</div> Long-Term Memory Recall</div>
+                <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:0.75rem">
+                    The paper discusses "recalling context-specific associations from long-term memory" as an alternative to the iterative discovery process shown.
+                </p>
+                <div class="callout" style="margin:0;border-color:var(--accent-cyan);background:rgba(6,182,212,0.05)">
+                    <div class="callout-title">Proposed Analysis</div>
+                    <p style="font-size:0.85rem">Introduce explicit task cues on some blocks. Compare the speed and neural dynamics of cued task switching vs. uncued task discovery. Test whether cued switching bypasses the iterative belief update process and directly reinstates task-specific subspace configurations.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title"><div class="icon icon-red">6</div> Scaling Beyond Three Tasks</div>
+                <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:0.75rem">
+                    "Although our study is limited to three tasks, the underlying mechanism has the ability to be highly expressive." The paper suggests flexible sequencing of task components could implement many behaviours.
+                </p>
+                <div class="callout" style="margin:0;border-color:var(--accent-red);background:rgba(239,68,68,0.05)">
+                    <div class="callout-title">Proposed Analysis</div>
+                    <p style="font-size:0.85rem">Train artificial RNNs on a larger set of compositional tasks (e.g., 6+ tasks from combinations of 3 sensory features and 3 response axes). Test whether the network discovers shared subspaces. Then use the model predictions to design follow-up monkey experiments with additional tasks.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extended Ideas -->
+        <h3>Additional Ideas for Future Work</h3>
+
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-title"><div class="icon icon-purple">A</div> Perturbation Studies</div>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    Use optogenetic or pharmacological inactivation of LPFC during specific task phases to causally test the role of shared subspaces. If LPFC maintains the task belief signal that gates subspace engagement, then disrupting LPFC during the fixation period should impair the animal's ability to correctly engage the colour vs. shape subspace.
+                </p>
+                <h4>Specific Predictions</h4>
+                <ul style="color:var(--text-secondary);font-size:0.85rem;padding-left:1.5rem;line-height:1.8">
+                    <li>LPFC inactivation during fixation: impaired task inference, random subspace engagement</li>
+                    <li>LPFC inactivation during stimulus: impaired transformation from sensory to motor subspace</li>
+                    <li>FEF inactivation: impaired motor execution but intact sensory categorization</li>
+                    <li>aIT inactivation: impaired stimulus encoding but intact task belief</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-title"><div class="icon icon-blue">B</div> Multi-Region Communication</div>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    Analyze inter-regional communication during task execution. The paper shows colour is shared primarily in LPFC while motor is shared across all regions, suggesting a broadcast from LPFC. Future work could examine:
+                </p>
+                <ul style="color:var(--text-secondary);font-size:0.85rem;padding-left:1.5rem;line-height:1.8">
+                    <li>Granger causality between LPFC and other regions during transformation</li>
+                    <li>Phase-locking between regions during subspace engagement</li>
+                    <li>Whether LPFC "instructs" FEF via shared subspace alignment</li>
+                    <li>Laminar profiles of information flow within columns</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-title"><div class="icon icon-green">C</div> Computational Model Extensions</div>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    The paper implicitly describes a computational model but does not provide a formal implementation. Future computational work could:
+                </p>
+                <ul style="color:var(--text-secondary);font-size:0.85rem;padding-left:1.5rem;line-height:1.8">
+                    <li>Train multi-task RNNs with varying degrees of weight sharing to find the regime that best matches the neural data</li>
+                    <li>Implement a Bayesian task inference model that reproduces the observed belief update dynamics</li>
+                    <li>Model the gain modulation mechanism as multiplicative gating in a neural network</li>
+                    <li>Compare predictions of shared vs. orthogonal models with the data</li>
+                    <li>Use LFADS or similar methods to extract latent dynamics from the neural recordings</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-title"><div class="icon icon-orange">D</div> Human fMRI / EEG Studies</div>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    Translate the paradigm to human neuroimaging. The task design is easily adaptable for human participants.
+                </p>
+                <ul style="color:var(--text-secondary);font-size:0.85rem;padding-left:1.5rem;line-height:1.8">
+                    <li>Use fMRI multivariate pattern analysis to test for shared representations across tasks in human PFC</li>
+                    <li>Use EEG decoding to track the millisecond-level dynamics of sensory-motor transformation</li>
+                    <li>Test whether individual differences in subspace sharing predict task switching ability</li>
+                    <li>Compare healthy controls with patients who have PFC lesions</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-title"><div class="icon icon-cyan">E</div> Relationship to Attention</div>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    The gain modulation described closely resembles feature-based attention. The relationship to Panichello & Buschman (2021), which showed shared mechanisms for working memory and attention, suggests:
+                </p>
+                <ul style="color:var(--text-secondary);font-size:0.85rem;padding-left:1.5rem;line-height:1.8">
+                    <li>Task belief may implement a form of "feature-based attention" that operates on internal representations</li>
+                    <li>The CPI metric could be a neural correlate of attentional weighting in decision-making models</li>
+                    <li>Compare with drift-diffusion models: does gain modulation affect drift rate, threshold, or both?</li>
+                    <li>Test whether externally-directed attention and task-directed gain modulation share neural substrates</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-title"><div class="icon icon-red">F</div> Catastrophic Forgetting & Continual Learning</div>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    The paper draws connections to the continual learning literature. Several concrete follow-up experiments could test these ideas:
+                </p>
+                <ul style="color:var(--text-secondary);font-size:0.85rem;padding-left:1.5rem;line-height:1.8">
+                    <li>Introduce a new task that conflicts with existing task-response mappings. Does the brain protect existing shared subspaces?</li>
+                    <li>Measure whether learning a new task degrades performance on previously learned tasks (interference)</li>
+                    <li>Compare biological continual learning with EWC, PackNet, and progressive neural networks</li>
+                    <li>Test whether the brain uses different strategies (shared vs. unique) depending on task similarity</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Analysis Pipeline Ideas -->
+        <h3>Proposed Analysis Pipelines for the Public Data</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem">
+            The data is available at <a href="https://doi.org/10.6084/m9.figshare.30276238.v1" target="_blank">FigShare</a> and code at <a href="https://doi.org/10.5281/zenodo.17274345" target="_blank">Zenodo</a>. Here are concrete analysis ideas to run on this dataset:
+        </p>
+
+        <div class="card">
+            <h4 style="margin-top:0">1. Latent Factor Analysis (LFADS / GPFA)</h4>
+            <p style="color:var(--text-secondary);font-size:0.9rem">Apply Latent Factor Analysis via Dynamical Systems (LFADS) to the simultaneously recorded neural populations. This could reveal low-dimensional dynamical structure that the linear classifiers may miss. Specifically:</p>
+            <div class="code-block">
+# Pseudocode for LFADS analysis
+1. Format spike trains from all neurons in each region
+2. Train LFADS model to infer latent factors
+3. Project latent factors onto task-relevant dimensions
+4. Test whether latent dynamics show compositional structure
+5. Compare latent trajectories across tasks for shared dynamics
+            </div>
+        </div>
+
+        <div class="card">
+            <h4 style="margin-top:0">2. Information-Theoretic Analysis</h4>
+            <p style="color:var(--text-secondary);font-size:0.9rem">Compute mutual information between neural populations and task variables. Use partial information decomposition (PID) to separate unique, redundant, and synergistic information about task variables.</p>
+            <div class="code-block">
+# Pseudocode for PID analysis
+1. Compute I(LPFC; colour), I(LPFC; shape), I(LPFC; task)
+2. Compute PID to decompose into:
+   - Unique info about colour
+   - Unique info about shape
+   - Redundant info (shared across features)
+   - Synergistic info (only available from combined features)
+3. Track PID components over time and across tasks
+4. Test whether synergistic info encodes task identity
+            </div>
+        </div>
+
+        <div class="card">
+            <h4 style="margin-top:0">3. Dynamic Causal Modelling</h4>
+            <p style="color:var(--text-secondary);font-size:0.9rem">Fit directed graphical models to the multi-region recordings to infer how information flows between regions during task execution.</p>
+            <div class="code-block">
+# Pseudocode for causal analysis
+1. Extract time series from each region
+2. Fit vector autoregressive (VAR) models
+3. Compute Granger causality between all region pairs
+4. Compare causal structure across tasks
+5. Test whether LPFC→FEF causality changes with task belief strength
+6. Compare task-specific vs shared causal connections
+            </div>
+        </div>
+
+        <div class="card">
+            <h4 style="margin-top:0">4. Representational Similarity Analysis (RSA)</h4>
+            <p style="color:var(--text-secondary);font-size:0.9rem">Construct representational dissimilarity matrices (RDMs) for each brain region and compare across tasks.</p>
+            <div class="code-block">
+# Pseudocode for RSA
+1. For each region and task, compute RDM across all stimulus conditions
+2. Compare RDMs across tasks using Kendall's tau
+3. Build model RDMs for:
+   - Colour-only model
+   - Shape-only model
+   - Task-identity model
+   - Combined model
+4. Regress neural RDMs against model RDMs
+5. Track which model best fits each region over time
+            </div>
+        </div>
+
+        <div class="card">
+            <h4 style="margin-top:0">5. Nonlinear Decoding & Manifold Analysis</h4>
+            <p style="color:var(--text-secondary);font-size:0.9rem">The paper primarily uses linear classifiers. Extending to nonlinear methods could reveal additional structure.</p>
+            <div class="code-block">
+# Pseudocode for manifold analysis
+1. Apply UMAP or t-SNE to neural population responses
+2. Color-code by task, stimulus, and response
+3. Quantify cluster separation in the embedding
+4. Apply topological data analysis (TDA) to characterize manifold structure
+5. Test whether the manifold has a "torus-like" structure
+   reflecting the circular stimulus space
+6. Compare manifold geometry across regions
+            </div>
+        </div>
+
+        <!-- Discussion -->
+        <h3>Broader Impact & Open Questions</h3>
+        <div class="card">
+            <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.8">
+                This work has implications beyond basic neuroscience:
+            </p>
+            <ul style="color:var(--text-secondary);font-size:0.9rem;padding-left:1.5rem;line-height:2">
+                <li><strong>AI/ML:</strong> Understanding how the brain composes tasks from shared subcomponents could inspire more efficient multi-task learning architectures. Current approaches like LoRA adapters and mixture-of-experts may already be implementing similar principles.</li>
+                <li><strong>Clinical:</strong> Disorders of cognitive flexibility (e.g., in schizophrenia, OCD, or frontal lobe damage) might reflect failures in the gain modulation or task belief mechanisms described here.</li>
+                <li><strong>Brain-Computer Interfaces:</strong> Shared subspaces could provide more stable decoding targets for BCIs, as the same subspace is used across multiple behaviours.</li>
+                <li><strong>Education:</strong> The finding that learning generalizes across tasks with shared components has implications for curriculum design and transfer learning in educational settings.</li>
+                <li><strong>Developmental:</strong> How do shared subspaces emerge during development? Are they present from birth or shaped by experience?</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Based on: Tafazoli, S. et al. <em>Nature</em> 650, 164&ndash;172 (2026). 
+        <a href="https://doi.org/10.1038/s41586-025-09805-2" target="_blank">DOI</a> &middot;
+        <a href="https://doi.org/10.6084/m9.figshare.30276238.v1" target="_blank">Data</a> &middot;
+        <a href="https://doi.org/10.5281/zenodo.17274345" target="_blank">Code</a></p>
+    </footer>
+</main>
+
+</body>
+</html>

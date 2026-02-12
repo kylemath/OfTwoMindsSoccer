@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results & Data | Neural Subspaces</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-brand">Neural Subspaces<span>Tafazoli et al. 2026</span></a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="task.html">Interactive Task</a></li>
+        <li><a href="paper.html">Full Paper</a></li>
+        <li><a href="theory.html">Theory & Model</a></li>
+        <li><a href="results.html" class="active">Results & Data</a></li>
+        <li><a href="future.html">Future Directions</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<main class="main-content">
+    <div class="container">
+        <div class="section-header">
+            <h2>Results & Data Analysis</h2>
+            <p>Simulated data reproducing the paper's main findings with interactive visualizations</p>
+        </div>
+
+        <div class="callout">
+            <div class="callout-title">About the Simulated Data</div>
+            <p>These visualizations use computationally generated data that reproduce the qualitative patterns reported in the paper. The original experimental data (neural recordings from 1,081 neurons across 5 brain regions) is available at <a href="https://doi.org/10.6084/m9.figshare.30276238.v1" target="_blank">FigShare</a> and analysis code at <a href="https://doi.org/10.5281/zenodo.17274345" target="_blank">Zenodo</a>.</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="tab-group">
+            <button class="tab-btn active" data-tab="behaviour">Behaviour</button>
+            <button class="tab-btn" data-tab="decoding">Cross-Task Decoding</button>
+            <button class="tab-btn" data-tab="transformation">Sensory-Motor Transform</button>
+            <button class="tab-btn" data-tab="discovery">Task Discovery</button>
+            <button class="tab-btn" data-tab="compression">Compression (CPI)</button>
+            <button class="tab-btn" data-tab="regions">Brain Regions</button>
+        </div>
+
+        <!-- Tab 1: Behaviour -->
+        <div class="tab-content active" id="tab-behaviour">
+            <h3>Behavioural Performance (Fig. 1e,f)</h3>
+            <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem">
+                Both monkeys performed all three tasks well. Performance improved over the first ~75 trials of S1 and C1 blocks as monkeys discovered which task was in effect. C2 performance was high immediately after switch.
+            </p>
+            <div class="two-col">
+                <div class="chart-container">
+                    <div class="chart-title">Psychometric Curves (Simulated)</div>
+                    <div class="chart-canvas"><canvas id="res-psychometric"></canvas></div>
+                    <div class="legend">
+                        <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> S1 (Shape)</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> C1 (Colour)</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> C2 (Colour)</div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">Performance After Block Switch</div>
+                    <div class="chart-canvas"><canvas id="res-learning"></canvas></div>
+                    <div class="legend">
+                        <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> S1</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> C1</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> C2</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="margin-top:1rem">
+                <h4 style="margin-top:0">Key Behavioural Findings</h4>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Task</th><th>Monkey Si</th><th>Monkey Ch</th><th>Combined</th><th>Significance</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="badge badge-orange">S1</span></td><td>81%</td><td>77%</td><td>79%</td><td>P &lt; 0.001</td></tr>
+                        <tr><td><span class="badge badge-green">C1</span></td><td>83%</td><td>78%</td><td>80.5%</td><td>P &lt; 0.001</td></tr>
+                        <tr><td><span class="badge badge-blue">C2</span></td><td>92%</td><td>92%</td><td>92%</td><td>P &lt; 0.001</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab 2: Cross-Task Decoding -->
+        <div class="tab-content" id="tab-decoding">
+            <h3>Cross-Task Classifier Generalization (Fig. 2)</h3>
+            <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem">
+                Classifiers trained on one task can decode the same variable in another task, demonstrating shared representational subspaces.
+            </p>
+            <div class="two-col">
+                <div class="chart-container">
+                    <div class="chart-title">Colour Decoding: Within-Task vs Cross-Task</div>
+                    <div class="chart-canvas"><canvas id="res-colour-decode"></canvas></div>
+                    <div class="legend">
+                        <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> C1 (within)</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> C2 (within)</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6"></div> C2→C1 (cross)</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#06b6d4"></div> C1→C2 (cross)</div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">Response Decoding: Within-Task vs Cross-Task</div>
+                    <div class="chart-canvas"><canvas id="res-response-decode"></canvas></div>
+                    <div class="legend">
+                        <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> S1 (within)</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> C1 (within)</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6"></div> S1→C1 (cross)</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#06b6d4"></div> C1→S1 (cross)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="callout callout-green">
+                <div class="callout-title">Key Finding</div>
+                <p>Cross-task decoding accuracy was significantly above chance for both colour (between C1 and C2) and motor response (between S1 and C1), confirming shared representational subspaces in LPFC. Motor responses generalized across all regions, while colour generalization was strongest in LPFC.</p>
+            </div>
+        </div>
+
+        <!-- Tab 3: Sensory-Motor Transformation -->
+        <div class="tab-content" id="tab-transformation">
+            <h3>Sensory-Motor Transformation (Fig. 3)</h3>
+            <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem">
+                Information flows sequentially from shared sensory subspaces to shared motor subspaces. Colour encoding precedes motor response encoding by ~63ms. Trial-by-trial correlation confirms the transformation.
+            </p>
+            <div class="two-col">
+                <div class="chart-container">
+                    <div class="chart-title">Sequential Processing: Colour → Motor</div>
+                    <div class="chart-canvas"><canvas id="res-sequential"></canvas></div>
+                    <div class="legend">
+                        <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> Shared Colour (C2→C1)</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> Shared Motor (S1→C1)</div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">Cross-Temporal Correlation Heatmap</div>
+                    <div class="chart-canvas"><canvas id="res-heatmap"></canvas></div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">TDR Projection: Neural Trajectory During C1 and C2 Tasks</div>
+                <div class="chart-canvas"><canvas id="res-tdr"></canvas></div>
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div> Red stimulus (C1)</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> Green stimulus (C1)</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:rgba(239,68,68,0.4)"></div> Red stimulus (C2)</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:rgba(16,185,129,0.4)"></div> Green stimulus (C2)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 4: Task Discovery -->
+        <div class="tab-content" id="tab-discovery">
+            <h3>Task Discovery Dynamics (Fig. 4)</h3>
+            <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem">
+                Monkeys discover which task is in effect through feedback. Task belief, colour subspace engagement, and shape subspace engagement all evolve systematically during the block.
+            </p>
+            <div class="two-col">
+                <div class="chart-container">
+                    <div class="chart-title">Task Belief Encoding Over Trials</div>
+                    <div class="chart-canvas"><canvas id="res-belief-evolution"></canvas></div>
+                    <div class="legend">
+                        <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6"></div> S1→C2→C1</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#06b6d4"></div> C1→C2→C1</div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">Colour Category Decoding Over Trials</div>
+                    <div class="chart-canvas"><canvas id="res-colour-evolution"></canvas></div>
+                    <div class="legend">
+                        <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> S1→C2→C1</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6"></div> C1→C2→C1</div>
+                    </div>
+                </div>
+            </div>
+            <div class="two-col">
+                <div class="chart-container">
+                    <div class="chart-title">Shape Category Decoding Over Trials</div>
+                    <div class="chart-canvas"><canvas id="res-shape-evolution"></canvas></div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">Response Direction Decoding (Stable)</div>
+                    <div class="chart-canvas"><canvas id="res-response-evolution"></canvas></div>
+                </div>
+            </div>
+            <div class="callout callout-orange">
+                <div class="callout-title">Key Finding</div>
+                <p>Task belief increases as monkeys discover the C1 task. This belief predicts the engagement of shared colour subspaces (positive correlation) and inversely predicts shape subspace engagement (negative correlation). Motor response decoding remains stable throughout, consistent with both S1 and C1 using axis 1.</p>
+            </div>
+        </div>
+
+        <!-- Tab 5: Compression -->
+        <div class="tab-content" id="tab-compression">
+            <h3>Compression & Gain Modulation (Fig. 5)</h3>
+            <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem">
+                Task-relevant dimensions are amplified while irrelevant dimensions are compressed. The Compression Index (CPI) tracks the relative strength of colour vs. shape representations.
+            </p>
+            <div class="two-col">
+                <div class="chart-container">
+                    <div class="chart-title">CPI by Task Over Time</div>
+                    <div class="chart-canvas"><canvas id="res-cpi-time"></canvas></div>
+                    <div class="legend">
+                        <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> S1 (shape relevant)</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> C1 (colour relevant)</div>
+                        <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> C2 (colour relevant)</div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">CPI vs Task Belief Correlation</div>
+                    <div class="chart-canvas"><canvas id="res-cpi-belief"></canvas></div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Axis-Selective Neuron Suppression (Simulated)</div>
+                <div class="chart-canvas"><canvas id="res-axis-suppression"></canvas></div>
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> Response on Axis 1 (correct)</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6"></div> Response on Axis 2 (incorrect)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab 6: Brain Regions -->
+        <div class="tab-content" id="tab-regions">
+            <h3>Regional Differences</h3>
+            <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem">
+                Neural recordings from five brain regions revealed different patterns of shared vs. task-specific representations.
+            </p>
+            <div class="chart-container">
+                <div class="chart-title">Cross-Task Colour Generalization by Region</div>
+                <div class="chart-canvas"><canvas id="res-region-colour"></canvas></div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Cross-Task Motor Response Generalization by Region</div>
+                <div class="chart-canvas"><canvas id="res-region-motor"></canvas></div>
+            </div>
+            <div class="card">
+                <h4 style="margin-top:0">Recording Summary</h4>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Region</th><th>Neurons</th><th>Colour Shared?</th><th>Motor Shared?</th><th>Key Role</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>LPFC</td><td>480</td><td><span class="badge badge-green">Strong</span></td><td><span class="badge badge-green">Strong</span></td><td>Task control, shared subspaces</td></tr>
+                        <tr><td>FEF</td><td>149</td><td><span class="badge badge-orange">Weak/Delayed</span></td><td><span class="badge badge-green">Strong</span></td><td>Motor preparation</td></tr>
+                        <tr><td>PAR</td><td>64</td><td><span class="badge badge-orange">Weak/Delayed</span></td><td><span class="badge badge-green">Strong</span></td><td>Spatial attention</td></tr>
+                        <tr><td>aIT</td><td>239</td><td><span class="badge badge-orange">Weak/Delayed</span></td><td><span class="badge badge-green">Strong</span></td><td>Veridical stimulus</td></tr>
+                        <tr><td>STR</td><td>149</td><td><span class="badge badge-red">Not significant</span></td><td><span class="badge badge-green">Strong</span></td><td>Reward/learning</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Based on: Tafazoli, S. et al. <em>Nature</em> 650, 164&ndash;172 (2026). 
+        <a href="https://doi.org/10.1038/s41586-025-09805-2" target="_blank">DOI</a></p>
+    </footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script src="results.js"></script>
+</body>
+</html>

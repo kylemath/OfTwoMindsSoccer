@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Task | Neural Subspaces</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-brand">Neural Subspaces<span>Tafazoli et al. 2026</span></a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="task.html" class="active">Interactive Task</a></li>
+        <li><a href="paper.html">Full Paper</a></li>
+        <li><a href="theory.html">Theory & Model</a></li>
+        <li><a href="results.html">Results & Data</a></li>
+        <li><a href="future.html">Future Directions</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<main class="main-content">
+    <div class="container-wide">
+        <div class="section-header">
+            <h2>Interactive Task Recreation</h2>
+            <p>Experience the three compositional categorization tasks from the experiment. Categorize stimuli and respond by clicking the correct target.</p>
+        </div>
+
+        <div class="task-description">
+            <strong>How it works:</strong> A stimulus (morphed shape+colour) appears at center. Click the correct response target based on the current task rule. 
+            The task switches after you reach &ge;70% correct over the last 15 trials. Like the monkeys, you are <em>not</em> told which task is active &mdash; you must infer it from feedback!
+        </div>
+
+        <div class="experiment-container">
+            <div class="experiment-panel">
+                <div class="trial-indicator" id="trial-indicator">Trial 0 / Block 1</div>
+                <div class="experiment-display" id="experiment-display">
+                    <canvas id="task-canvas" style="width:100%;height:100%;display:block"></canvas>
+                </div>
+                <div id="feedback-text" style="text-align:center;margin-top:0.75rem;font-size:1.1rem;min-height:1.5em">&nbsp;</div>
+            </div>
+            <div class="experiment-controls">
+                <div class="card">
+                    <div class="card-title">
+                        <div class="icon icon-green">&#9881;</div>
+                        Controls
+                    </div>
+                    <div class="control-group">
+                        <label>Mode</label>
+                        <select id="mode-select">
+                            <option value="auto">Auto (task switches like experiment)</option>
+                            <option value="S1">S1: Shape → Axis 1</option>
+                            <option value="C1">C1: Colour → Axis 1</option>
+                            <option value="C2">C2: Colour → Axis 2</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label>Stimulus Duration (ms) <span class="range-value" id="dur-val">1000</span></label>
+                        <input type="range" id="stim-duration" min="200" max="5000" value="1000" step="100">
+                    </div>
+                    <div class="control-group">
+                        <label>Shape Morph Level <span class="range-value" id="shape-val">Random</span></label>
+                        <input type="range" id="shape-morph" min="-1" max="8" value="-1" step="1">
+                    </div>
+                    <div class="control-group">
+                        <label>Colour Morph Level <span class="range-value" id="colour-val">Random</span></label>
+                        <input type="range" id="colour-morph" min="-1" max="8" value="-1" step="1">
+                    </div>
+                    <div class="control-group">
+                        <label>Show Task Rule</label>
+                        <select id="show-rule">
+                            <option value="0">Hidden (like the monkeys)</option>
+                            <option value="1">Show current rule</option>
+                        </select>
+                    </div>
+                    <div style="margin-top:1rem">
+                        <button class="btn btn-primary" onclick="startExperiment()" style="width:100%">Start / Restart</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">
+                        <div class="icon icon-orange">&#128200;</div>
+                        Performance
+                    </div>
+                    <div class="stats-row" style="margin-bottom:0.75rem">
+                        <div class="stat-box">
+                            <div class="stat-value" id="stat-accuracy">--</div>
+                            <div class="stat-label">Accuracy</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="stat-rt">--</div>
+                            <div class="stat-label">Avg RT (ms)</div>
+                        </div>
+                    </div>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="stat-value" id="stat-block">1</div>
+                            <div class="stat-label">Block</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-value" id="stat-trials">0</div>
+                            <div class="stat-label">Trials</div>
+                        </div>
+                    </div>
+                    <div id="current-task-display" style="text-align:center;margin-top:0.5rem;font-size:0.85rem;color:var(--text-muted)">
+                        Task: <span id="task-label" style="color:var(--accent-blue);font-weight:600">--</span>
+                    </div>
+                    <div style="margin-top:0.75rem">
+                        <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;margin-bottom:0.3rem">Recent 15 Accuracy</div>
+                        <div class="progress-bar"><div class="progress-fill" id="recent-progress" style="width:0%"></div></div>
+                        <div style="font-size:0.75rem;text-align:right;color:var(--text-muted)" id="recent-pct">0%</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">
+                        <div class="icon icon-blue">&#128203;</div>
+                        Task Rules
+                    </div>
+                    <div style="font-size:0.85rem;color:var(--text-secondary);line-height:1.6">
+                        <p><span class="badge badge-orange">S1</span> Shape → Axis 1: Bunny=UL, Tee=LR</p>
+                        <p style="margin-top:0.5rem"><span class="badge badge-green">C1</span> Colour → Axis 1: Green=UL, Red=LR</p>
+                        <p style="margin-top:0.5rem"><span class="badge badge-blue">C2</span> Colour → Axis 2: Red=UR, Green=LL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Psychometric Curves -->
+        <div style="margin-top:2rem">
+            <div class="section-header">
+                <h2>Your Psychometric Curves</h2>
+                <p>How your categorization responses vary with morph level, updated in real-time</p>
+            </div>
+            <div class="two-col">
+                <div class="chart-container">
+                    <div class="chart-title">Colour Psychometric</div>
+                    <div class="chart-canvas"><canvas id="psycho-colour"></canvas></div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">Shape Psychometric</div>
+                    <div class="chart-canvas"><canvas id="psycho-shape"></canvas></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Performance Over Time -->
+        <div class="chart-container">
+            <div class="chart-title">Accuracy Over Trials (sliding window of 15)</div>
+            <div class="chart-canvas"><canvas id="accuracy-timeline"></canvas></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Based on: Tafazoli, S. et al. <em>Nature</em> 650, 164&ndash;172 (2026). 
+        <a href="https://doi.org/10.1038/s41586-025-09805-2" target="_blank">DOI</a></p>
+    </footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script src="task.js"></script>
+</body>
+</html>

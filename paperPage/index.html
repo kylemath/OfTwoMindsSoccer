@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compositional Tasks & Shared Neural Subspaces</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-brand">Neural Subspaces<span>Tafazoli et al. 2026</span></a>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="task.html">Interactive Task</a></li>
+        <li><a href="paper.html">Full Paper</a></li>
+        <li><a href="theory.html">Theory & Model</a></li>
+        <li><a href="results.html">Results & Data</a></li>
+        <li><a href="future.html">Future Directions</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<main class="main-content">
+    <section class="hero">
+        <h1>Building Compositional Tasks with Shared Neural Subspaces</h1>
+        <p class="subtitle">How the brain flexibly performs multiple tasks by compositionally combining task-relevant neural representations in shared subspaces of neural activity.</p>
+        <p class="authors">Sina Tafazoli, Flora M. Bouchacourt, Adel Ardalan, Nikola T. Markov, Motoaki Uchimura, Marcelo G. Mattar, Nathaniel D. Daw &amp; Timothy J. Buschman</p>
+        <span class="journal-badge">Nature &middot; Volume 650 &middot; 2026</span>
+    </section>
+
+    <div class="container">
+        <!-- Quick Navigation Cards -->
+        <div class="card-grid" style="margin-top:2rem">
+            <a href="task.html" class="card" style="text-decoration:none;color:inherit">
+                <div class="card-title">
+                    <div class="icon icon-green">&#9654;</div>
+                    Interactive Task Recreation
+                </div>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    Experience the three compositional categorization tasks (S1, C1, C2) used in the monkey experiments. Categorize stimuli by shape or color and respond on the correct axis.
+                </p>
+                <div class="btn btn-secondary" style="margin-top:1rem">Try the Task &rarr;</div>
+            </a>
+            <a href="paper.html" class="card" style="text-decoration:none;color:inherit">
+                <div class="card-title">
+                    <div class="icon icon-blue">&#128196;</div>
+                    Full Paper Text
+                </div>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    Read the complete text with all figures, including main results on shared sensory and motor subspaces, cross-task generalization, and task belief encoding.
+                </p>
+                <div class="btn btn-secondary" style="margin-top:1rem">Read Paper &rarr;</div>
+            </a>
+            <a href="theory.html" class="card" style="text-decoration:none;color:inherit">
+                <div class="card-title">
+                    <div class="icon icon-purple">&#128300;</div>
+                    Computational Model
+                </div>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    Explore the theoretical framework with interactive simulations. Adjust parameters to see how shared subspaces, gain modulation, and task belief affect neural representations.
+                </p>
+                <div class="btn btn-secondary" style="margin-top:1rem">Explore Model &rarr;</div>
+            </a>
+            <a href="results.html" class="card" style="text-decoration:none;color:inherit">
+                <div class="card-title">
+                    <div class="icon icon-orange">&#128202;</div>
+                    Results & Data Analysis
+                </div>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    Examine key results with simulated data reproducing the paper's main findings: cross-task decoding, sensory-motor transformation, and dynamic subspace engagement.
+                </p>
+                <div class="btn btn-secondary" style="margin-top:1rem">View Results &rarr;</div>
+            </a>
+            <a href="future.html" class="card" style="text-decoration:none;color:inherit">
+                <div class="card-title">
+                    <div class="icon icon-cyan">&#128161;</div>
+                    Future Directions
+                </div>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    Explore proposed future experiments, analyses, and extensions discussed in the paper, plus additional ideas for computational and experimental work.
+                </p>
+                <div class="btn btn-secondary" style="margin-top:1rem">Explore Ideas &rarr;</div>
+            </a>
+            <div class="card">
+                <div class="card-title">
+                    <div class="icon icon-red">&#128279;</div>
+                    Resources
+                </div>
+                <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:0.75rem">
+                    External links to the original paper, data, and code.
+                </p>
+                <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem">
+                    <a href="https://www.nature.com/articles/s41586-025-09805-2" target="_blank">Nature Article (DOI: 10.1038/s41586-025-09805-2)</a>
+                    <a href="https://doi.org/10.6084/m9.figshare.30276238.v1" target="_blank">Data on FigShare</a>
+                    <a href="https://doi.org/10.5281/zenodo.17274345" target="_blank">Code on Zenodo</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Findings Summary -->
+        <div class="section-header">
+            <h2>Key Findings</h2>
+            <p>Core discoveries from neural recordings in five brain regions during three compositional tasks</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <h4>Shared Sensory Subspaces</h4>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    The same subspaces of LPFC neural activity represent colour category information across the C1 and C2 tasks. Classifiers trained on one task generalize to the other, indicating a shared representational geometry.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Shared Motor Subspaces</h4>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    Motor response representations in the S1 and C1 tasks occupy the same neural subspace. This shared motor code was found across all recorded brain regions (LPFC, FEF, PAR, aIT, STR).
+                </p>
+            </div>
+            <div class="card">
+                <h4>Sequential Transformation</h4>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    Tasks engage shared subspaces sequentially: sensory information in the shared colour subspace is transformed into the appropriate motor subspace in a task-specific manner.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Task Belief Modulation</h4>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    Monkeys maintain an internal belief about the current task. This belief dynamically scales the engagement of shared sensory subspaces &mdash; amplifying relevant and suppressing irrelevant representations.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Gain Modulation / Compression</h4>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    Task-relevant stimulus dimensions are amplified while irrelevant dimensions are compressed. The Compression Index (CPI) correlates with the strength of task belief in LPFC.
+                </p>
+            </div>
+            <div class="card">
+                <h4>Compositionality</h4>
+                <p style="color:var(--text-secondary);font-size:0.9rem">
+                    The C1 task is composed from components shared with C2 (colour categorization) and S1 (axis 1 response). This compositional structure enables flexible behavior and potential for rapid learning.
+                </p>
+            </div>
+        </div>
+
+        <!-- Task Design Overview -->
+        <div class="section-header">
+            <h2>Task Design Overview</h2>
+            <p>Three compositionally related categorization tasks sharing sensory and motor components</p>
+        </div>
+
+        <div class="card" id="task-overview-card">
+            <div style="text-align:center">
+                <svg viewBox="0 0 900 400" style="max-width:100%;height:auto" id="task-overview-svg">
+                    <!-- Background -->
+                    <defs>
+                        <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#1a2236"/>
+                            <stop offset="100%" stop-color="#111827"/>
+                        </linearGradient>
+                    </defs>
+                    <rect width="900" height="400" rx="12" fill="url(#bgGrad)" stroke="#2d3748"/>
+
+                    <!-- Title -->
+                    <text x="450" y="35" text-anchor="middle" fill="#e8eaf0" font-size="16" font-weight="600">Compositional Task Design</text>
+
+                    <!-- S1 Task -->
+                    <rect x="30" y="60" width="260" height="310" rx="10" fill="#1f2a40" stroke="#f59e0b" stroke-width="1.5" opacity="0.9"/>
+                    <text x="160" y="90" text-anchor="middle" fill="#f59e0b" font-size="15" font-weight="700">S1: Shape → Axis 1</text>
+                    <!-- Stimulus -->
+                    <text x="160" y="120" text-anchor="middle" fill="#9ca3af" font-size="11">Categorize SHAPE</text>
+                    <!-- Bunny shape -->
+                    <circle cx="100" cy="170" r="25" fill="none" stroke="#e8eaf0" stroke-width="1.5"/>
+                    <ellipse cx="90" cy="142" rx="5" ry="12" fill="none" stroke="#e8eaf0" stroke-width="1.5"/>
+                    <ellipse cx="110" cy="142" rx="5" ry="12" fill="none" stroke="#e8eaf0" stroke-width="1.5"/>
+                    <text x="100" y="210" text-anchor="middle" fill="#9ca3af" font-size="10">Bunny → UL</text>
+                    <!-- Tee shape -->
+                    <rect x="195" y="150" width="40" height="8" rx="2" fill="none" stroke="#e8eaf0" stroke-width="1.5"/>
+                    <rect x="211" y="155" width="8" height="35" rx="2" fill="none" stroke="#e8eaf0" stroke-width="1.5"/>
+                    <text x="220" y="210" text-anchor="middle" fill="#9ca3af" font-size="10">Tee → LR</text>
+                    <!-- Response axis -->
+                    <line x1="80" y1="250" x2="240" y2="320" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                    <circle cx="80" cy="250" r="12" fill="rgba(245,158,11,0.2)" stroke="#f59e0b"/>
+                    <text x="80" y="254" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">UL</text>
+                    <circle cx="240" cy="320" r="12" fill="rgba(245,158,11,0.2)" stroke="#f59e0b"/>
+                    <text x="240" y="324" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">LR</text>
+                    <text x="160" y="350" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="500">Axis 1</text>
+
+                    <!-- C1 Task -->
+                    <rect x="320" y="60" width="260" height="310" rx="10" fill="#1f2a40" stroke="#10b981" stroke-width="1.5" opacity="0.9"/>
+                    <text x="450" y="90" text-anchor="middle" fill="#10b981" font-size="15" font-weight="700">C1: Colour → Axis 1</text>
+                    <text x="450" y="120" text-anchor="middle" fill="#9ca3af" font-size="11">Categorize COLOUR</text>
+                    <!-- Red circle -->
+                    <circle cx="400" cy="170" r="25" fill="#ef4444" opacity="0.7"/>
+                    <text x="400" y="210" text-anchor="middle" fill="#9ca3af" font-size="10">Red → LR</text>
+                    <!-- Green circle -->
+                    <circle cx="500" cy="170" r="25" fill="#10b981" opacity="0.7"/>
+                    <text x="500" y="210" text-anchor="middle" fill="#9ca3af" font-size="10">Green → UL</text>
+                    <!-- Response axis -->
+                    <line x1="370" y1="250" x2="530" y2="320" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
+                    <circle cx="370" cy="250" r="12" fill="rgba(245,158,11,0.2)" stroke="#f59e0b"/>
+                    <text x="370" y="254" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">UL</text>
+                    <circle cx="530" cy="320" r="12" fill="rgba(245,158,11,0.2)" stroke="#f59e0b"/>
+                    <text x="530" y="324" text-anchor="middle" fill="#f59e0b" font-size="9" font-weight="600">LR</text>
+                    <text x="450" y="350" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="500">Axis 1</text>
+
+                    <!-- C2 Task -->
+                    <rect x="610" y="60" width="260" height="310" rx="10" fill="#1f2a40" stroke="#3b82f6" stroke-width="1.5" opacity="0.9"/>
+                    <text x="740" y="90" text-anchor="middle" fill="#3b82f6" font-size="15" font-weight="700">C2: Colour → Axis 2</text>
+                    <text x="740" y="120" text-anchor="middle" fill="#9ca3af" font-size="11">Categorize COLOUR</text>
+                    <!-- Red circle -->
+                    <circle cx="690" cy="170" r="25" fill="#ef4444" opacity="0.7"/>
+                    <text x="690" y="210" text-anchor="middle" fill="#9ca3af" font-size="10">Red → UR</text>
+                    <!-- Green circle -->
+                    <circle cx="790" cy="170" r="25" fill="#10b981" opacity="0.7"/>
+                    <text x="790" y="210" text-anchor="middle" fill="#9ca3af" font-size="10">Green → LL</text>
+                    <!-- Response axis -->
+                    <line x1="820" y1="250" x2="660" y2="320" stroke="#3b82f6" stroke-width="2" stroke-dasharray="6,4"/>
+                    <circle cx="820" cy="250" r="12" fill="rgba(59,130,246,0.2)" stroke="#3b82f6"/>
+                    <text x="820" y="254" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="600">UR</text>
+                    <circle cx="660" cy="320" r="12" fill="rgba(59,130,246,0.2)" stroke="#3b82f6"/>
+                    <text x="660" y="324" text-anchor="middle" fill="#3b82f6" font-size="9" font-weight="600">LL</text>
+                    <text x="740" y="350" text-anchor="middle" fill="#3b82f6" font-size="10" font-weight="500">Axis 2</text>
+
+                    <!-- Shared component labels -->
+                    <rect x="328" y="52" width="244" height="16" rx="4" fill="rgba(59,130,246,0.15)" stroke="none"/>
+                    <text x="450" y="64" text-anchor="middle" fill="#3b82f6" font-size="9">Shared: Colour Categorization</text>
+                    <rect x="618" y="52" width="244" height="16" rx="4" fill="rgba(59,130,246,0.15)" stroke="none"/>
+                    <text x="740" y="64" text-anchor="middle" fill="#3b82f6" font-size="9">Shared: Colour Categorization</text>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Based on: Tafazoli, S. et al. Building compositional tasks with shared neural subspaces. <em>Nature</em> 650, 164&ndash;172 (2026).</p>
+        <p style="margin-top:0.5rem"><a href="https://doi.org/10.1038/s41586-025-09805-2" target="_blank">DOI: 10.1038/s41586-025-09805-2</a> &middot; <a href="https://doi.org/10.6084/m9.figshare.30276238.v1" target="_blank">Data</a> &middot; <a href="https://doi.org/10.5281/zenodo.17274345" target="_blank">Code</a></p>
+    </footer>
+</main>
+
+</body>
+</html>

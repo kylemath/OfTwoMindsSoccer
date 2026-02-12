@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory & Model | Neural Subspaces</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-brand">Neural Subspaces<span>Tafazoli et al. 2026</span></a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="task.html">Interactive Task</a></li>
+        <li><a href="paper.html">Full Paper</a></li>
+        <li><a href="theory.html" class="active">Theory & Model</a></li>
+        <li><a href="results.html">Results & Data</a></li>
+        <li><a href="future.html">Future Directions</a></li>
+    </ul>
+    <button class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<main class="main-content">
+    <div class="container">
+        <div class="section-header">
+            <h2>Theoretical Framework & Computational Model</h2>
+            <p>Interactive simulations of the compositional subspace model with adjustable parameters</p>
+        </div>
+
+        <!-- Theory Overview -->
+        <div class="callout callout-purple">
+            <div class="callout-title">Core Theory: Compositional Task Execution via Shared Subspaces</div>
+            <p>The brain performs multiple tasks by reusing representational subspaces. Each task is executed by: (1) encoding the stimulus in a shared sensory subspace, (2) using a task-belief signal to selectively gate which sensory subspace is engaged, (3) transforming information from the relevant sensory subspace to the appropriate motor subspace, and (4) scaling (gain modulating) representations to amplify task-relevant and suppress task-irrelevant dimensions.</p>
+        </div>
+
+        <!-- Model Architecture Diagram -->
+        <div class="card">
+            <div class="card-title"><div class="icon icon-purple">&#9881;</div> Model Architecture</div>
+            <div style="text-align:center;margin:1rem 0">
+                <svg viewBox="0 0 800 320" style="max-width:100%;height:auto">
+                    <defs>
+                        <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+                        </marker>
+                        <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/>
+                        </marker>
+                    </defs>
+                    <!-- Stimulus Input -->
+                    <rect x="20" y="100" width="120" height="120" rx="10" fill="#1f2a40" stroke="#6b7280"/>
+                    <text x="80" y="135" text-anchor="middle" fill="#e8eaf0" font-size="13" font-weight="600">Stimulus</text>
+                    <text x="80" y="155" text-anchor="middle" fill="#9ca3af" font-size="10">Colour + Shape</text>
+                    <text x="80" y="175" text-anchor="middle" fill="#9ca3af" font-size="10">morph levels</text>
+                    <circle cx="60" cy="200" r="10" fill="#ef4444" opacity="0.6"/>
+                    <circle cx="80" cy="200" r="10" fill="#10b981" opacity="0.6"/>
+                    <rect x="95" y="191" width="16" height="16" rx="3" fill="none" stroke="#e8eaf0" stroke-width="1"/>
+
+                    <!-- Shared Sensory Subspaces -->
+                    <rect x="200" y="40" width="160" height="80" rx="10" fill="rgba(59,130,246,0.1)" stroke="#3b82f6"/>
+                    <text x="280" y="70" text-anchor="middle" fill="#3b82f6" font-size="12" font-weight="600">Colour Subspace</text>
+                    <text x="280" y="88" text-anchor="middle" fill="#6b7280" font-size="10">Shared C1 &amp; C2</text>
+
+                    <rect x="200" y="200" width="160" height="80" rx="10" fill="rgba(245,158,11,0.1)" stroke="#f59e0b"/>
+                    <text x="280" y="230" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">Shape Subspace</text>
+                    <text x="280" y="248" text-anchor="middle" fill="#6b7280" font-size="10">Used in S1</text>
+
+                    <!-- Arrows from stimulus -->
+                    <line x1="140" y1="140" x2="198" y2="80" stroke="#6b7280" marker-end="url(#arrow)"/>
+                    <line x1="140" y1="180" x2="198" y2="240" stroke="#6b7280" marker-end="url(#arrow)"/>
+
+                    <!-- Task Belief -->
+                    <rect x="220" y="130" width="120" height="50" rx="25" fill="rgba(139,92,246,0.15)" stroke="#8b5cf6" stroke-dasharray="4,3"/>
+                    <text x="280" y="152" text-anchor="middle" fill="#8b5cf6" font-size="11" font-weight="600">Task Belief</text>
+                    <text x="280" y="168" text-anchor="middle" fill="#6b7280" font-size="9">Gain modulation</text>
+
+                    <!-- Gain arrows -->
+                    <line x1="280" y1="130" x2="280" y2="122" stroke="#8b5cf6" stroke-dasharray="3,2" marker-end="url(#arrow)"/>
+                    <line x1="280" y1="180" x2="280" y2="198" stroke="#8b5cf6" stroke-dasharray="3,2" marker-end="url(#arrow)"/>
+
+                    <!-- Transformation -->
+                    <rect x="420" y="100" width="140" height="120" rx="10" fill="rgba(6,182,212,0.1)" stroke="#06b6d4"/>
+                    <text x="490" y="130" text-anchor="middle" fill="#06b6d4" font-size="12" font-weight="600">Transformation</text>
+                    <text x="490" y="150" text-anchor="middle" fill="#6b7280" font-size="10">Sensory → Motor</text>
+                    <text x="490" y="168" text-anchor="middle" fill="#6b7280" font-size="10">Task-specific</text>
+                    <text x="490" y="186" text-anchor="middle" fill="#6b7280" font-size="10">mapping</text>
+
+                    <!-- Arrows to transformation -->
+                    <line x1="360" y1="80" x2="418" y2="140" stroke="#3b82f6" marker-end="url(#arrow-blue)"/>
+                    <line x1="360" y1="240" x2="418" y2="180" stroke="#f59e0b" marker-end="url(#arrow)"/>
+
+                    <!-- Motor Subspaces -->
+                    <rect x="620" y="40" width="160" height="80" rx="10" fill="rgba(245,158,11,0.1)" stroke="#f59e0b"/>
+                    <text x="700" y="70" text-anchor="middle" fill="#f59e0b" font-size="12" font-weight="600">Axis 1 Response</text>
+                    <text x="700" y="88" text-anchor="middle" fill="#6b7280" font-size="10">Shared S1 &amp; C1</text>
+
+                    <rect x="620" y="200" width="160" height="80" rx="10" fill="rgba(59,130,246,0.1)" stroke="#3b82f6"/>
+                    <text x="700" y="230" text-anchor="middle" fill="#3b82f6" font-size="12" font-weight="600">Axis 2 Response</text>
+                    <text x="700" y="248" text-anchor="middle" fill="#6b7280" font-size="10">Used in C2</text>
+
+                    <!-- Arrows to motor -->
+                    <line x1="560" y1="140" x2="618" y2="80" stroke="#6b7280" marker-end="url(#arrow)"/>
+                    <line x1="560" y1="180" x2="618" y2="240" stroke="#6b7280" marker-end="url(#arrow)"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Interactive Simulations -->
+        <h3>Interactive Simulation 1: Gain Modulation & Compression</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem">
+            Adjust the task belief strength to see how gain modulation amplifies task-relevant dimensions and suppresses irrelevant ones. The Compression Index (CPI) measures the log-ratio of colour vs. shape separability.
+        </p>
+
+        <div class="two-col">
+            <div>
+                <div class="param-panel">
+                    <div class="param-row">
+                        <span class="param-label">Task</span>
+                        <select id="sim1-task" style="flex:1;padding:0.4rem;background:var(--bg-secondary);color:var(--text-primary);border:1px solid var(--border-color);border-radius:6px;font-family:var(--font-sans)">
+                            <option value="C1">C1 (Colour → Axis 1)</option>
+                            <option value="S1">S1 (Shape → Axis 1)</option>
+                            <option value="C2">C2 (Colour → Axis 2)</option>
+                        </select>
+                    </div>
+                    <div class="param-row">
+                        <span class="param-label">Task Belief Strength</span>
+                        <input type="range" class="param-slider" id="sim1-belief" min="0" max="100" value="80">
+                        <span class="param-value-display" id="sim1-belief-val">0.80</span>
+                    </div>
+                    <div class="param-row">
+                        <span class="param-label">Colour Gain</span>
+                        <input type="range" class="param-slider" id="sim1-colour-gain" min="10" max="200" value="100">
+                        <span class="param-value-display" id="sim1-colour-gain-val">1.00</span>
+                    </div>
+                    <div class="param-row">
+                        <span class="param-label">Shape Gain</span>
+                        <input type="range" class="param-slider" id="sim1-shape-gain" min="10" max="200" value="100">
+                        <span class="param-value-display" id="sim1-shape-gain-val">1.00</span>
+                    </div>
+                    <div class="param-row">
+                        <span class="param-label">Noise (σ)</span>
+                        <input type="range" class="param-slider" id="sim1-noise" min="5" max="100" value="30">
+                        <span class="param-value-display" id="sim1-noise-val">0.30</span>
+                    </div>
+                    <div class="param-row">
+                        <span class="param-label">N Neurons</span>
+                        <input type="range" class="param-slider" id="sim1-neurons" min="10" max="200" value="50">
+                        <span class="param-value-display" id="sim1-neurons-val">50</span>
+                    </div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <div class="stat-value" id="sim1-cpi">0.00</div>
+                        <div class="stat-label">CPI</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="sim1-colour-sep">0.00</div>
+                        <div class="stat-label">Colour Sep.</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="sim1-shape-sep">0.00</div>
+                        <div class="stat-label">Shape Sep.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Neural Population Geometry <span class="badge badge-blue" id="sim1-task-badge">C1</span></div>
+                <div class="chart-canvas"><canvas id="sim1-scatter"></canvas></div>
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div> Red-Bunny</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#f97316"></div> Red-Tee</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> Green-Bunny</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#06b6d4"></div> Green-Tee</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Simulation 2: Subspace Dynamics -->
+        <h3>Interactive Simulation 2: Sensory-Motor Transformation Dynamics</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem">
+            Visualize how neural representations evolve over time during a trial. Information flows from the sensory subspace to the motor subspace, with the transformation being task-specific.
+        </p>
+
+        <div class="param-panel">
+            <div class="param-row">
+                <span class="param-label">Task</span>
+                <select id="sim2-task" style="flex:1;padding:0.4rem;background:var(--bg-secondary);color:var(--text-primary);border:1px solid var(--border-color);border-radius:6px;font-family:var(--font-sans)">
+                    <option value="C1">C1 (Colour → Axis 1)</option>
+                    <option value="C2">C2 (Colour → Axis 2)</option>
+                    <option value="S1">S1 (Shape → Axis 1)</option>
+                </select>
+            </div>
+            <div class="param-row">
+                <span class="param-label">Transformation Speed</span>
+                <input type="range" class="param-slider" id="sim2-speed" min="10" max="100" value="50">
+                <span class="param-value-display" id="sim2-speed-val">0.50</span>
+            </div>
+            <div class="param-row">
+                <span class="param-label">Sensory Onset (ms)</span>
+                <input type="range" class="param-slider" id="sim2-sensory-onset" min="30" max="150" value="80">
+                <span class="param-value-display" id="sim2-onset-val">80</span>
+            </div>
+            <div class="param-row">
+                <span class="param-label">Motor Delay (ms)</span>
+                <input type="range" class="param-slider" id="sim2-motor-delay" min="20" max="150" value="60">
+                <span class="param-value-display" id="sim2-delay-val">60</span>
+            </div>
+            <div style="text-align:center;margin-top:0.75rem">
+                <button class="btn btn-primary" id="sim2-run">Run Trial Simulation</button>
+                <button class="btn btn-secondary" id="sim2-reset">Reset</button>
+            </div>
+        </div>
+
+        <div class="two-col">
+            <div class="chart-container">
+                <div class="chart-title">Subspace Encoding Over Time</div>
+                <div class="chart-canvas"><canvas id="sim2-timecourse"></canvas></div>
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> Colour Subspace</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> Shape Subspace</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> Motor Subspace</div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">3D State Space Trajectory</div>
+                <div class="chart-canvas"><canvas id="sim2-trajectory"></canvas></div>
+            </div>
+        </div>
+
+        <!-- Simulation 3: Task Discovery / Learning Dynamics -->
+        <h3>Interactive Simulation 3: Task Discovery Dynamics</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:1rem">
+            Simulate how task belief evolves during a block and how it modulates the engagement of shared subspaces. This models the S1→C2→C1 task sequence where monkeys must discover the new task from feedback.
+        </p>
+
+        <div class="param-panel">
+            <div class="param-row">
+                <span class="param-label">Learning Rate</span>
+                <input type="range" class="param-slider" id="sim3-lr" min="1" max="50" value="15">
+                <span class="param-value-display" id="sim3-lr-val">0.15</span>
+            </div>
+            <div class="param-row">
+                <span class="param-label">Initial Belief (C1 vs S1)</span>
+                <input type="range" class="param-slider" id="sim3-init" min="0" max="100" value="30">
+                <span class="param-value-display" id="sim3-init-val">0.30</span>
+            </div>
+            <div class="param-row">
+                <span class="param-label">Colour-Shape Gain Coupling</span>
+                <input type="range" class="param-slider" id="sim3-coupling" min="0" max="100" value="70">
+                <span class="param-value-display" id="sim3-coupling-val">0.70</span>
+            </div>
+            <div class="param-row">
+                <span class="param-label">Number of Trials</span>
+                <input type="range" class="param-slider" id="sim3-ntrials" min="20" max="200" value="110">
+                <span class="param-value-display" id="sim3-ntrials-val">110</span>
+            </div>
+            <div style="text-align:center;margin-top:0.75rem">
+                <button class="btn btn-success" id="sim3-run">Simulate Block</button>
+            </div>
+        </div>
+
+        <div class="two-col">
+            <div class="chart-container">
+                <div class="chart-title">Task Belief & Subspace Engagement Over Trials</div>
+                <div class="chart-canvas"><canvas id="sim3-belief"></canvas></div>
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6"></div> Task Belief (C1)</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#3b82f6"></div> Colour Subspace</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div> Shape Subspace</div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Behavioural Performance & CPI</div>
+                <div class="chart-canvas"><canvas id="sim3-performance"></canvas></div>
+                <div class="legend">
+                    <div class="legend-item"><div class="legend-dot" style="background:#10b981"></div> Accuracy</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#06b6d4"></div> CPI</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Theory Summary -->
+        <div class="section-header" style="margin-top:2rem">
+            <h2>Theory Summary</h2>
+        </div>
+
+        <div class="card-grid">
+            <div class="card">
+                <h4 style="margin-top:0">Sequential Compositionality</h4>
+                <p style="color:var(--text-secondary);font-size:0.9rem">Tasks are constructed by sequencing together shared subcomponents. For example, C1 = colour categorization (shared with C2) → axis 1 response (shared with S1). This is a form of "sequential compositionality" where the brain flexibly chains together operations from a library of shared computations.</p>
+            </div>
+            <div class="card">
+                <h4 style="margin-top:0">Task Belief as Control Signal</h4>
+                <p style="color:var(--text-secondary);font-size:0.9rem">The neural representation of the current task acts as a top-down control signal that selects which sensory and motor subspaces to engage. This belief is maintained in LPFC during fixation and updated via reward feedback. It enables the animal to navigate a "task manifold" parametrically modulating how different stimulus features influence decision-making.</p>
+            </div>
+            <div class="card">
+                <h4 style="margin-top:0">Gain Modulation for Interference Control</h4>
+                <p style="color:var(--text-secondary);font-size:0.9rem">Rather than using orthogonal/independent representations to avoid interference (as some models predict), the brain uses shared representations and dynamically modulates gain to amplify relevant and suppress irrelevant dimensions. This allows for both generalization across tasks and interference control within a single representational space.</p>
+            </div>
+            <div class="card">
+                <h4 style="margin-top:0">Continual Learning Implications</h4>
+                <p style="color:var(--text-secondary);font-size:0.9rem">Shared representations may facilitate continual learning. By suppressing irrelevant features, the brain constrains synaptic plasticity to task-relevant neural populations (since learning rules are activity-dependent and reward-gated). This addresses the credit assignment problem and may help explain resistance to catastrophic forgetting.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Based on: Tafazoli, S. et al. <em>Nature</em> 650, 164&ndash;172 (2026). 
+        <a href="https://doi.org/10.1038/s41586-025-09805-2" target="_blank">DOI</a></p>
+    </footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script src="theory.js"></script>
+</body>
+</html>

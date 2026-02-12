@@ -112,7 +112,7 @@ def run():
     ax.scatter(exp_group["gkexp"], exp_group["save_rate"],
                s=exp_group["n_penalties"] * 0.5, alpha=0.6,
                color=KEEPER_BLUE, edgecolor="white", linewidth=0.5,
-               label="Observed (size ∝ n)")
+               label="Observed (size prop. to n)")
 
     # Fitted curves
     x_pred = np.linspace(0, max_exp, 200)

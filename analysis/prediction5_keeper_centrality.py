@@ -24,6 +24,17 @@ from utils import (
 )
 
 
+def _wilson_ci(k, n, z=1.96):
+    """Wilson score interval for a binomial proportion."""
+    if n == 0:
+        return 0.0, 0.0, 0.0
+    p = k / n
+    denom = 1 + z**2 / n
+    centre = (p + z**2 / (2 * n)) / denom
+    margin = z * np.sqrt((p * (1 - p) + z**2 / (4 * n)) / n) / denom
+    return p, max(0, centre - margin), min(1, centre + margin)
+
+
 def run():
     print("\n" + "=" * 60)
     print("PREDICTION 5: Keeper centrality and striker interference")
@@ -84,9 +95,14 @@ def run():
     ns = [n_central, n_dive]
     colors = [FIELD_GREEN, KEEPER_BLUE]
 
-    bars = ax.bar(labels, convs, color=colors, edgecolor="white", linewidth=1.2, width=0.55)
+    goals_list = [central["Outcome"].sum(), dive["Outcome"].sum()]
+    cis = [_wilson_ci(int(g), int(n)) for g, n in zip(goals_list, ns)]
+    yerr_lo = [c - ci[1] for c, ci in zip(convs, cis)]
+    yerr_hi = [ci[2] - c for c, ci in zip(convs, cis)]
+    bars = ax.bar(labels, convs, yerr=[yerr_lo, yerr_hi], capsize=4,
+                  color=colors, edgecolor="white", linewidth=1.2, width=0.55, error_kw={"lw": 1.2})
     for bar, c, n in zip(bars, convs, ns):
-        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.02,
+        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.04,
                 f"{c:.1%}\n(n={n})", ha="center", va="bottom", fontsize=9)
 
     ax.set_ylabel("Conversion rate")

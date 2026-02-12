@@ -28,6 +28,17 @@ from utils import (
 )
 
 
+def _wilson_ci(k, n, z=1.96):
+    """Wilson score interval for a binomial proportion."""
+    if n == 0:
+        return 0.0, 0.0, 0.0
+    p = k / n
+    denom = 1 + z**2 / n
+    centre = (p + z**2 / (2 * n)) / denom
+    margin = z * np.sqrt((p * (1 - p) + z**2 / (4 * n)) / n) / denom
+    return p, max(0, centre - margin), min(1, centre + margin)
+
+
 def classify_congruence(row):
     """
     Classify shot as natural (cross-body) or unnatural.
@@ -119,8 +130,12 @@ def run():
         if len(sub) > 0:
             c = sub["conversion"].values[0]
             n = sub["total"].values[0]
-            bar = ax.bar(i, c, color=col, edgecolor="white", linewidth=1.2, width=0.6)
-            ax.text(i, c + 0.015, f"{c:.1%}\n(n={n})", ha="center", va="bottom", fontsize=9)
+            g = sub["goals"].values[0]
+            _, ci_lo, ci_hi = _wilson_ci(int(g), int(n))
+            yerr = [[c - ci_lo], [ci_hi - c]]
+            bar = ax.bar(i, c, yerr=yerr, capsize=4, color=col, edgecolor="white",
+                         linewidth=1.2, width=0.6, error_kw={"lw": 1.2})
+            ax.text(i, c + 0.03, f"{c:.1%}\n(n={n})", ha="center", va="bottom", fontsize=9)
 
     ax.set_xticks(range(len(order)))
     ax.set_xticklabels(order, fontsize=9)

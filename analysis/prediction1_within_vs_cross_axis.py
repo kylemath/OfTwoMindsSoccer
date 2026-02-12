@@ -22,6 +22,17 @@ from utils import (
 )
 
 
+def _wilson_ci(k, n, z=1.96):
+    """Wilson score interval for a binomial proportion."""
+    if n == 0:
+        return 0.0, 0.0, 0.0
+    p = k / n
+    denom = 1 + z**2 / n
+    centre = (p + z**2 / (2 * n)) / denom
+    margin = z * np.sqrt((p * (1 - p) + z**2 / (4 * n)) / n) / denom
+    return p, max(0, centre - margin), min(1, centre + margin)
+
+
 def classify_mismatch(row):
     """Classify each penalty into match type based on kicker/goalie sides."""
     ks, gs = row["Kicker_Side"], row["Goalie_Side"]
@@ -106,9 +117,14 @@ def run():
     totals = [counts.loc[o, "total"] for o in order]
 
     fig, ax = plt.subplots(figsize=(4.5, 3.5))
-    bars = ax.bar(order, conv, color=colors, edgecolor="white", linewidth=1.2)
+    goals = [counts.loc[o, "goals"] for o in order]
+    cis = [_wilson_ci(int(g), int(t)) for g, t in zip(goals, totals)]
+    yerr_lo = [c - ci[1] for c, ci in zip(conv, cis)]
+    yerr_hi = [ci[2] - c for c, ci in zip(conv, cis)]
+    bars = ax.bar(order, conv, yerr=[yerr_lo, yerr_hi], capsize=4,
+                  color=colors, edgecolor="white", linewidth=1.2, error_kw={"lw": 1.2})
     for bar, c, t in zip(bars, conv, totals):
-        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.01,
+        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 0.03,
                 f"{c:.1%}\n(n={t})", ha="center", va="bottom", fontsize=9)
     ax.set_ylabel("Conversion rate (goal scored)")
     ax.set_ylim(0, 1.08)

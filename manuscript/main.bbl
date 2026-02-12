@@ -1,10 +1,28 @@
 \begin{thebibliography}{}
 
+\bibitem[Bar-Eli et~al., 2009]{bareli2009irrationality}
+Bar-Eli, M., Azar, O.~H., and Lurie, Y. (2009).
+\newblock (ir)rationality in action: do soccer players and goalkeepers fail to
+  learn how to best perform during a penalty kick?
+\newblock {\em Progress in Brain Research}, 174:97--108.
+
 \bibitem[Bar-Eli et~al., 2007]{bareli2007action}
 Bar-Eli, M., Azar, O.~H., Ritov, I., Keidar-Levin, Y., and Schein, G. (2007).
 \newblock Action bias among elite soccer goalkeepers: The case of penalty
   kicks.
 \newblock {\em Journal of Economic Psychology}, 28(5):606--621.
+
+\bibitem[Chiappori et~al., 2002]{chiappori2002testing}
+Chiappori, P.-A., Levitt, S., and Groseclose, T. (2002).
+\newblock Testing mixed-strategy equilibria when players are heterogeneous: The
+  case of penalty kicks in soccer.
+\newblock {\em American Economic Review}, 92(4):1138--1151.
+
+\bibitem[Cisek and Kalaska, 2010]{cisek2010neural}
+Cisek, P. and Kalaska, J.~F. (2010).
+\newblock Neural mechanisms for interacting with a world full of action
+  choices.
+\newblock {\em Annual Review of Neuroscience}, 33:269--298.
 
 \bibitem[D{\'i}az et~al., 2012]{diaz2012anticipating}
 D{\'i}az, G.~J., Fajen, B.~R., and Phillips, F. (2012).
@@ -18,6 +36,24 @@ Dicks, M., Davids, K., and Button, C. (2010).
   kick.
 \newblock {\em Motor Control}, 15(3):342--358.
 
+\bibitem[Jordet, 2009]{jordet2009superstars}
+Jordet, G. (2009).
+\newblock When superstars flop: Public status and choking under pressure in
+  international soccer penalty shootouts.
+\newblock {\em Journal of Applied Sport Psychology}, 21(2):125--136.
+
+\bibitem[Jordet and Hartman, 2008]{jordet2008avoidance}
+Jordet, G. and Hartman, E. (2008).
+\newblock Avoidance motivation and choking under pressure in soccer penalty
+  shootouts.
+\newblock {\em Journal of Sport and Exercise Psychology}, 30(4):450--457.
+
+\bibitem[Jordet et~al., 2009]{jordet2009temporal}
+Jordet, G., Hartman, E., and Sigmundstad, E. (2009).
+\newblock Temporal links to performing under pressure in international soccer
+  penalty shootouts.
+\newblock {\em Psychology of Sport and Exercise}, 10(6):621--627.
+
 \bibitem[Lopes et~al., 2014]{lopes2014predicting}
 Lopes, J.~E., Jacobs, D.~M., Travieso, D., and Ara{\'u}jo, D. (2014).
 \newblock Predicting the lateral direction of deceptive and non-deceptive
@@ -28,6 +64,18 @@ Lopes, J.~E., Jacobs, D.~M., Travieso, D., and Ara{\'u}jo, D. (2014).
 Mann, D.~L., Williams, A.~M., Ward, P., and Janelle, C.~M. (2007).
 \newblock Perceptual-cognitive expertise in sport: A meta-analysis.
 \newblock {\em Journal of Sport and Exercise Psychology}, 29(4):457--478.
+
+\bibitem[Misirlisoy and Haggard, 2014]{misirlisoy2014asymmetric}
+Misirlisoy, E. and Haggard, P. (2014).
+\newblock Asymmetric predictability and cognitive competition in football
+  penalty shootouts.
+\newblock {\em Current Biology}, 24(16):1918--1922.
+
+\bibitem[No{\"e}l et~al., 2015]{noel2015method}
+No{\"e}l, B., Furley, P., van~der Kamp, J., Dicks, M., and Memmert, D. (2015).
+\newblock The development of a method for identifying penalty kick strategies
+  in association football.
+\newblock {\em Journal of Sports Sciences}, 33(1):1--10.
 
 \bibitem[No{\"e}l et~al., 2021]{noelgomez2021interplay}
 No{\"e}l, B., van~der Kamp, J., Klatt, S., and Masters, R. S.~W. (2021).
@@ -40,11 +88,29 @@ Palacios-Huerta, I. (2003).
 \newblock Professionals play minimax.
 \newblock {\em The Review of Economic Studies}, 70(2):395--415.
 
+\bibitem[Shenoy et~al., 2013]{shenoy2013cortical}
+Shenoy, K.~V., Sahani, M., and Churchland, M.~M. (2013).
+\newblock Cortical control of arm movements: a dynamical systems perspective.
+\newblock {\em Annual Review of Neuroscience}, 36:337--359.
+
 \bibitem[Tafazoli et~al., 2026]{tafazoli2026compositional}
 Tafazoli, S., Bouchacourt, F.~M., Ardalan, A., Markov, N.~T., Uchimura, M.,
   Mattar, M.~G., Daw, N.~D., and Buschman, T.~J. (2026).
 \newblock Building compositional tasks with shared neural subspaces.
 \newblock {\em Nature}, 650:164--172.
+
+\bibitem[Thura and Cisek, 2014]{thura2014urgency}
+Thura, D. and Cisek, P. (2014).
+\newblock Context-dependent urgency influences speed--accuracy trade-offs in
+  decision-making and movement execution.
+\newblock {\em Journal of Neuroscience}, 34(49):16442--16454.
+
+\bibitem[van~der Kamp, 2006]{vanderkamp2006field}
+van~der Kamp, J. (2006).
+\newblock A field simulation study of the effectiveness of penalty kick
+  strategies in soccer: late alterations of kick direction increase errors and
+  reduce accuracy.
+\newblock {\em Journal of Sports Sciences}, 24(5):467--477.
 
 \bibitem[van~der Kamp and Shinji, 2018]{vanderkamp2018goalkeeping}
 van~der Kamp, J. and Shinji, Y. (2018).
@@ -52,10 +118,22 @@ van~der Kamp, J. and Shinji, Y. (2018).
   higher probability of stopping the ball than staying in the goal centre.
 \newblock {\em International Journal of Sport Psychology}, 49:365--388.
 
+\bibitem[Wilson et~al., 2009]{wilson2009anxiety}
+Wilson, M.~R., Wood, G., and Vine, S.~J. (2009).
+\newblock Anxiety, attentional control, and performance impairment in penalty
+  kicks.
+\newblock {\em Journal of Sport and Exercise Psychology}, 31(6):761--775.
+
 \bibitem[Wood et~al., 2017]{wood2015quiet}
 Wood, G., Vine, S.~J., and Wilson, M.~R. (2017).
 \newblock Aiming to deceive: Examining the role of the quiet eye during
   deceptive aiming actions.
 \newblock {\em Journal of Sport and Exercise Psychology}, 39(5):327--338.
+
+\bibitem[Wood and Wilson, 2010]{wood2010moving}
+Wood, G. and Wilson, M.~R. (2010).
+\newblock A moving goalkeeper distracts penalty takers and impairs shooting
+  accuracy.
+\newblock {\em Journal of Sports Sciences}, 28(9):937--946.
 
 \end{thebibliography}

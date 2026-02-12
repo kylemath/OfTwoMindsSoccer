@@ -1,6 +1,6 @@
 % ============================================================
-% The Subspace Penalty Kick: How Shared Neural Representations
-% Shape the Duel Between Goalkeeper and Striker
+% Of Two Minds at the Penalty Spot: Why Indecision Has a
+% Neural Cost in the Goalkeeper–Striker Duel
 % ============================================================
 \documentclass[11pt,twocolumn]{article}
 
@@ -58,9 +58,9 @@
   {\end{minipage}}\smallskip}
 
 % ============================================================
-\title{\textbf{The Subspace Penalty Kick}\\[0.3em]
-\large How Shared Neural Representations Create Exploitable\\
-Interference in the Goalkeeper--Striker Duel}
+\title{\textbf{Of Two Minds at the Penalty Spot}\\[0.3em]
+\large Why Indecision Has a Neural Cost in the\\
+Goalkeeper--Striker Duel}
 
 \author{Kyle E. Mathewson\\
 \small Department of Psychology, University of Alberta\\
@@ -75,17 +75,19 @@ Interference in the Goalkeeper--Striker Duel}
 
 % ============================================================
 \begin{abstract}
+Coaches tell penalty takers to ``pick a side and commit''---don't be \emph{of two minds}.
+But why, exactly, does indecision hurt?
 The penalty kick is among the most dramatic moments in sport: a goalkeeper and striker locked in a rapid duel of anticipation, deception, and motor commitment.
 Existing accounts frame this contest through game theory \citep{palacioshuerta2003minimax}, action bias \citep{bareli2007action}, or perceptual expertise \citep{mann2007perceptual}.
 Here, I propose a complementary neuroscience-grounded framework drawn from recent evidence that the primate brain performs multiple tasks by compositionally engaging shared neural subspaces \citep{tafazoli2026compositional}.
-I argue that both goalkeeper and striker execute their decisions by combining sensory categorisation and motor response subspaces that are \emph{shared} across different action plans.
+I argue that being ``of two minds''---maintaining two competing action plans simultaneously---has a specific neural cost: both goalkeeper and striker execute their decisions by combining sensory categorisation and motor response subspaces that are \emph{shared} across different action plans.
 This sharing confers efficiency---enabling flexible, compositional behaviour---but also creates predictable interference when two potential actions occupy the same motor axis.
-I derive seven testable predictions and evaluate five of them against two public penalty kick datasets ($N = 482$ international penalties and $N = 6{,}392$ Bundesliga penalties from 1963--2025).
-The most striking result concerns sequential effects: goals are significantly more likely after a previous goal than after a save ($\PredTwoGoalAfterGoal$ vs.\ $\PredTwoGoalAfterSave$; $\chi^2 = \PredTwoChiSq$, $p = \PredTwoChiP$), and goalkeepers repeat their dive direction $\PredTwoKaggleRepeatRate$ of the time across same-match penalties ($p = \PredTwoKaggleBinomP$, binomial test), consistent with the ``task-history ghost'' predicted by the subspace framework.
+I derive seven testable predictions and evaluate five of them against two public penalty kick datasets ($N = \PredOneNTotal$ penalties from multiple national leagues and $N = \PredFourNTotal$ Bundesliga penalties from 1963--2017).
+The most striking result concerns sequential effects: goals are significantly more likely after a previous goal than after a previous non-goal ($\PredTwoGoalAfterGoal$ vs.\ $\PredTwoGoalAfterSave$; $\chi^2 = \PredTwoChiSq$, $p = \PredTwoChiP$), and goalkeepers repeat their dive direction $\PredTwoKaggleRepeatRate$ of the time across consecutive same-goalkeeper penalties ($p = \PredTwoKaggleBinomP$, binomial test), consistent with the ``task-history ghost'' predicted by the subspace framework.
 Other predictions---within- versus cross-axis interference, expertise blind spots, keeper centrality, and pre-commitment advantages---yielded null or ambiguous results in these observational data, highlighting the limits of testing a neural-level theory with coarse behavioural records and pointing toward the laboratory experiments needed to adjudicate the framework.
 \end{abstract}
 
-\textbf{Keywords:} penalty kick, shared neural subspaces, compositional cognition, motor interference, action selection, gain modulation, sports neuroscience
+\textbf{Keywords:} penalty kick, of two minds, shared neural subspaces, motor interference, action selection, pre-commitment, decision making in sport, sports neuroscience
 
 \begin{figure*}[t]
 \centering
@@ -97,16 +99,21 @@ Other predictions---within- versus cross-axis interference, expertise blind spot
 % ============================================================
 \section{Introduction}
 
+Every penalty taker has heard the advice: \emph{decide where you're going to shoot, and don't change your mind}.
+The intuition is universal in coaching---being ``of two minds'' at the penalty spot costs you accuracy, power, or both.
+But what is the mechanism?
+Why should entertaining a second option degrade the execution of the first?
 The soccer penalty kick distils the complexity of sport into a single confrontation.
 The striker, standing 12 yards from goal, must place the ball past a goalkeeper who has approximately 500--600\,ms from foot-to-ball contact to the ball crossing the goal line \citep{vanderkamp2018goalkeeping}.
 A goalkeeper's full-stretch dive requires 600--1000\,ms to execute, meaning that purely reactive goalkeeping is geometrically impossible for well-struck shots to the corners \citep{dicks2010anticipation}.
 This temporal asymmetry forces the goalkeeper to act on anticipatory cues from the striker's body---run-up angle, plant-foot position, hip rotation, and kicking-leg trajectory---rather than on the ball's flight path \citep{diaz2012anticipating,lopes2014predicting}.
 
-The result is a high-stakes perceptual-motor guessing game that has attracted analysis from economics \citep{palacioshuerta2003minimax}, psychology \citep{bareli2007action}, biomechanics \citep{diaz2012anticipating}, and perception science \citep{wood2015quiet}.
-Game-theoretic analysis suggests professional kickers and goalkeepers approximate minimax equilibrium play, randomising across directions such that neither player can improve by unilaterally changing strategy \citep{palacioshuerta2003minimax}.
+The result is a high-stakes perceptual-motor guessing game that has attracted analysis from economics \citep{palacioshuerta2003minimax,chiappori2002testing}, psychology \citep{bareli2007action,wilson2009anxiety}, biomechanics \citep{diaz2012anticipating}, and perception science \citep{wood2015quiet}.
+Game-theoretic analysis suggests professional kickers and goalkeepers approximate minimax equilibrium play, randomising across directions such that neither player can improve by unilaterally changing strategy \citep{palacioshuerta2003minimax,chiappori2002testing}.
 Yet the neurobiological mechanisms that actually \emph{implement} these decisions---the neural representations that guide anticipation, categorisation, and motor commitment---have received comparatively little attention.
+In particular, the familiar coaching intuition that being ``of two minds'' is costly has lacked a mechanistic explanation grounded in how the brain actually organises competing action plans.
 
-In this paper I propose that a recent discovery in systems neuroscience offers a surprisingly natural framework for understanding the penalty kick duel, and one that generates novel predictions.
+In this paper I propose that a recent discovery in systems neuroscience offers a surprisingly natural framework for understanding the penalty kick duel---and, specifically, for explaining \emph{why} indecision has a neural cost.
 I then confront five of those predictions with publicly available penalty kick data, finding support for sequential-effect predictions but null results for several others---a pattern that clarifies where this framework adds value and where its limits lie.
 
 \subsection{Compositional Tasks and Shared Subspaces}
@@ -122,10 +129,11 @@ Recording from 1,081 neurons across five brain regions, they found that:
 \end{enumerate}
 
 The key computational trade-off: shared subspaces enable compositionality and generalisation, but they create \emph{interference} when two tasks compete for the same motor output channel.
+These findings sit within a broader dynamical-systems perspective on motor control \citep{shenoy2013cortical} and extend models of urgency-gated commitment in action selection \citep{thura2014urgency,cisek2010neural}.
 
 \subsection{The Penalty Kick as a Compositional Task}
 
-I propose that both the goalkeeper and the striker face compositional task structures with shared subspaces, and that understanding the geometry of this sharing reveals why certain deception strategies work, why goalkeepers exhibit action bias, and why pre-commitment is advantageous for strikers.
+I propose that both the goalkeeper and the striker face compositional task structures with shared subspaces, and that understanding the geometry of this sharing reveals why being ``of two minds'' is costly---why certain deception strategies work, why goalkeepers exhibit action bias, and why pre-commitment is advantageous for strikers.
 The remainder of this paper is organised as follows: Section~2 maps the subspace framework onto the penalty kick; Section~3 derives seven predictions; Section~4 tests five of them empirically; Section~5 integrates the results with existing accounts; Section~6 offers a critical self-assessment; Section~7 proposes targeted experiments; and Section~8 concludes.
 
 % ============================================================
@@ -190,14 +198,14 @@ Switching from a horizontal dive to a vertical collapse engages a different moto
 Tafazoli et al.\ found that task belief persisted through an intervening block of a different task---the C1$\rightarrow$C2$\rightarrow$C1 sequence produced better performance than S1$\rightarrow$C2$\rightarrow$C1.
 
 \textbf{Applied to a shootout:} If a goalkeeper dove left on kick~\#3, was presented with a different situation on kick~\#4, the framework predicts a residual bias toward diving left on kick~\#5.
-This prediction runs counter to the gambler's fallacy (expecting alternation) but is consistent with the neural data showing persistent biases toward recent actions.
+This prediction runs counter to the gambler's fallacy---the well-documented tendency to expect alternation after repeated outcomes \citep{misirlisoy2014asymmetric}---but is consistent with the neural data showing persistent biases toward recent actions.
 
 \begin{keeperbox}
-\textbf{Tip:} After diving left, recognise that your brain maintains a ``ghost'' pull toward left. Use the walk-back to centre to mentally rehearse the \emph{opposite} direction as a corrective.
+\textbf{Speculative training cue:} After diving left, the framework suggests that the brain may maintain a residual pull toward left. Mentally rehearsing the \emph{opposite} direction during the walk-back to centre could, hypothetically, serve as a corrective.
 \end{keeperbox}
 
 \begin{strikerbox}
-\textbf{Tip:} Study the keeper's dive direction from \emph{two kicks ago}, not just the last kick. The neural ghost predicts repetition, so shooting to the same side the keeper dove two kicks prior may exploit this residual bias.
+\textbf{Speculative training cue:} The neural-ghost hypothesis predicts that a goalkeeper's dive direction from \emph{two kicks ago} may be a better predictor of their next dive than the immediately preceding kick, because the intervening kick may not fully overwrite the earlier task representation.
 \end{strikerbox}
 
 \subsection{Prediction 3: The 63\,ms Transformation Window Is Exploitable}
@@ -225,27 +233,27 @@ As the goalkeeper's neural system upweights hip kinematics, it simultaneously do
 A deceptive gaze fixation may therefore be \emph{more} effective against experts who have stronger gain modulation.
 
 \begin{keeperbox}
-\textbf{Tip:} Periodically train with deliberate attention to ``suppressed'' channels (gaze, shoulder angle) to prevent over-compression of potentially informative dimensions.
+\textbf{Speculative training cue:} If gain modulation suppresses gaze-direction cues, periodically training with deliberate attention to ``suppressed'' channels (gaze, shoulder angle) may help prevent over-compression of potentially informative dimensions.
 \end{keeperbox}
 
 \begin{strikerbox}
-\textbf{Tip:} Keep hips neutral as long as possible, then rotate late. The keeper's compressed gaze channel won't compensate for the high-gain hip channel's late arrival.
+\textbf{Speculative training cue:} Keeping hips neutral as long as possible, then rotating late, may exploit the goalkeeper's compressed gaze channel---the high-gain hip channel receives information too late for correction.
 \end{strikerbox}
 
 \subsection{Prediction 5: Keeper Centrality Maximises Striker Interference}
 
-If the goalkeeper stays central and commits late, the striker must maintain both \task{Power Far Post} and \task{Placement Near Post} in parallel.
+If the goalkeeper stays central and commits late, the striker is forced to remain ``of two minds''---maintaining both \task{Power Far Post} and \task{Placement Near Post} in parallel.
 Because these share a motor subspace, the interference degrades both action plans simultaneously.
-This provides a neural-level explanation for why goalkeepers who commit late perform better \citep{noelgomez2021interplay} and a mechanistic complement to the action bias paradox \citep{bareli2007action}: staying central may \emph{actively degrade the striker's motor execution} through shared-subspace interference.
+This provides a neural-level explanation for why goalkeepers who commit late perform better \citep{noelgomez2021interplay} and a mechanistic complement to the action bias paradox \citep{bareli2007action}: staying central may \emph{actively degrade the striker's motor execution} by forcing them to be of two minds for longer, maximising shared-subspace interference.
 
 \subsection{Prediction 6: Pre-Commitment Reduces Interference, Not Reaction Time}
 
-Strikers who pre-decide where to shoot score more frequently than those who react to the goalkeeper \citep{dicks2010anticipation,noelgomez2021interplay}.
+Strikers who pre-decide where to shoot score more frequently than those who react to the goalkeeper \citep{dicks2010anticipation,noelgomez2021interplay}, and late alterations of kick direction increase errors and reduce accuracy \citep{vanderkamp2006field,noel2015method}.
 The standard explanation invokes reaction time limitations.
 
-The subspace framework offers a different account: a pre-committed striker runs a single task with no shared-axis competition---analogous to C2, which uses a unique response axis and is executed accurately from trial~1.
-A reactive striker runs the equivalent of C1 after an S1 block---maximum shared-axis interference.
-The advantage of pre-commitment is not speed but \emph{motor purity} (Figure~\ref{fig:precommit}).
+The subspace framework offers a different account: a pre-committed striker is of \emph{one} mind---running a single task with no shared-axis competition, analogous to C2, which uses a unique response axis and is executed accurately from trial~1.
+A reactive striker is of \emph{two} minds---running the equivalent of C1 after an S1 block, with maximum shared-axis interference.
+The advantage of pre-commitment is not speed but \emph{motor purity}: being of one mind means a cleaner motor programme (Figure~\ref{fig:precommit}).
 
 \begin{figure}[t]
 \centering
@@ -256,7 +264,7 @@ Simulated shot-quality distributions for pre-committed (green) versus reactive (
 \end{figure}
 
 \begin{strikerbox}
-\textbf{Tip:} Pick a side and commit. The neuroscience suggests this is not cowardice---it is motor hygiene.
+\textbf{Speculative training cue:} ``Pick a side and commit'' may be not merely a motivational platitude but a prescription for being of \emph{one} mind---reducing shared-subspace interference and yielding a cleaner motor programme.
 \end{strikerbox}
 
 \subsection{Prediction 7: The Motor Broadcast Lock-In}
@@ -270,9 +278,57 @@ For the goalkeeper, this predicts a dissociation: they can visually register a c
 \section{Empirical Tests}
 \label{sec:empirical}
 
-I tested Predictions 1, 2, 4, 5, and 6 against two publicly available penalty kick datasets: an international-level dataset from Kaggle ($N = \PredOneNTotal$ penalties from 2020--2025 with shot direction, goalkeeper dive direction, and kicker foot) and the Bundesliga dataset ($N = \PredFourNTotal$ penalties from 1963--2017 with match context, goalkeeper identity, and outcome).
+I tested Predictions 1, 2, 4, 5, and 6 against two publicly available penalty kick datasets.
 Predictions 3 and 7 require millisecond-level kinematic or neural data that these behavioural datasets cannot provide.
-All analyses were conducted in Python; code, data, and a reproducible \texttt{Makefile} are available at the project repository.
+
+\subsection{Data and Analysis Plan}
+
+\textbf{Datasets.} Two publicly available datasets were used:
+\begin{enumerate}
+    \item \textbf{Multi-league penalty dataset} ($N = \PredOneNTotal$ penalties, 2020--2025): sourced from Kaggle, covering penalties from multiple national leagues (predominantly Portugal, with additional European leagues). Variables include kicker shot direction (L/C/R), goalkeeper dive direction (L/C/R), kicker dominant foot, binary outcome (goal/no goal), goalkeeper name, and match context (country, minute, score).
+    \item \textbf{Bundesliga dataset} ($N = \PredFourNTotal$ penalties, 1963--2017): a comprehensive record of Bundesliga penalties with outcome (goal, save, miss type), match date, minute, goal difference at time of kick, goalkeeper and penalty-taker identities, club affiliations, and experience (seasons).
+\end{enumerate}
+
+\textbf{Operational definitions.}
+A ``goal'' is a scored penalty; ``non-goal'' includes goalkeeper saves \emph{and} misses (off-target, post, crossbar).
+Goalkeeper ``experience'' is operationalised as the number of Bundesliga seasons in which they faced at least one penalty.
+``Same-goalkeeper sequences'' in the multi-league dataset are defined as consecutive rows where the goalkeeper name and country both match, providing a proxy for same-match or same-competition appearances (note: this is an imperfect proxy and results should be interpreted cautiously).
+``Foot congruence'' classifies a shot as ``natural'' (cross-body: right foot to left, or left foot to right) versus ``unnatural'' (same-side).
+
+\textbf{Statistical approach.}
+All analyses were conducted in Python (scipy, statsmodels, pandas); code, data, and a reproducible \texttt{Makefile} are available at the project repository.
+Because these are exploratory observational checks rather than confirmatory hypothesis tests, I report both \emph{p}-values and effect sizes with 95\% confidence intervals where feasible.
+The primary analyses use chi-squared tests, Fisher exact tests, binomial tests, and logistic regression.
+Where penalties are nested within matches or goalkeepers, I note the clustering but acknowledge that the sample sizes generally preclude mixed-effects models; results should be treated as exploratory.
+
+\textbf{Prediction--measurement alignment.}
+Table~\ref{tab:measurement} maps each prediction to its underlying mechanism and the minimal measurement required, clarifying which predictions can and cannot be tested with the available data.
+
+\begin{table}[t]
+\centering
+\caption{Prediction--measurement alignment.}
+\label{tab:measurement}
+\small
+\begin{tabular}{@{}p{0.7cm}p{2.2cm}p{2.2cm}p{1.2cm}@{}}
+\toprule
+\textbf{P\#} & \textbf{Mechanism} & \textbf{Min.\ measure} & \textbf{Data?} \\
+\midrule
+1 & Motor subspace interference & Kinematic dive correction & No \\
+\addlinespace
+2 & Task-history ghost & Choice direction sequence & \textbf{Yes} \\
+\addlinespace
+3 & Sensory$\rightarrow$motor transform & ms-level timing & No \\
+\addlinespace
+4 & Gain modulation & Deceptive cue response & Partial \\
+\addlinespace
+5 & Shared-axis interference & Shot quality metrics & No \\
+\addlinespace
+6 & Motor purity & Internal commitment state & Partial \\
+\addlinespace
+7 & Motor broadcast & Neural / EMG data & No \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{Prediction 1: Within- vs.\ Cross-Axis Interference}
 
@@ -302,13 +358,15 @@ Testing this prediction properly requires kinematic measures of dive correction-
 \textbf{Method.} Using the Bundesliga dataset, I identified matches containing two or more penalties ($n = \PredTwoNMultiMatches$ matches, $\PredTwoNPairs$ consecutive pairs) and tested whether the outcome of penalty $n-1$ predicted the outcome of penalty $n$ within the same match.
 Separately, using the Kaggle dataset, I identified same-match goalkeeper appearances ($n = \PredTwoKaggleNSameMatch$ pairs) and tested whether goalkeepers repeated their dive direction more than expected by chance.
 
-\textbf{Results.} Goals were significantly more likely after a previous goal ($\PredTwoGoalAfterGoal$, $n = \PredTwoNAfterGoal$) than after a previous save ($\PredTwoGoalAfterSave$, $n = \PredTwoNAfterSave$; $\chi^2 = \PredTwoChiSq$, $p = \PredTwoChiP$).
-In the Kaggle data, goalkeepers repeated their dive direction $\PredTwoKaggleRepeatRate$ of the time, significantly above the $33\%$ expected by chance ($p = \PredTwoKaggleBinomP$, binomial test; Figure~\ref{fig:emp_pred2}).
+\textbf{Results.} Goals were significantly more likely after a previous goal ($\PredTwoGoalAfterGoal$, $n = \PredTwoNAfterGoal$) than after a previous non-goal ($\PredTwoGoalAfterSave$, $n = \PredTwoNAfterSave$; $\chi^2 = \PredTwoChiSq$, $p = \PredTwoChiP$; risk difference $= \PredTwoRiskDiff$, 95\% CI $[\PredTwoRiskDiffCILo, \PredTwoRiskDiffCIHi]$).
+A logistic regression controlling for goal difference, match minute, and home advantage confirmed the sequential effect ($\beta_{\text{prev\_goal}} = \PredTwoLogitCoef$, $p = \PredTwoLogitP$).
+The effect was present for both previous saves and previous misses, though the small number of miss pairs limits fine-grained disaggregation ($\PredTwoGoalAfterSaveOnly$ after saves, $\PredTwoGoalAfterMiss$ after misses).
+In the multi-league data, goalkeepers repeated their dive direction $\PredTwoKaggleRepeatRate$ of the time across consecutive same-goalkeeper penalties ($n = \PredTwoKaggleNSameMatch$ pairs), significantly above the $33\%$ expected by chance ($p = \PredTwoKaggleBinomP$, binomial test; Figure~\ref{fig:emp_pred2}).
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\columnwidth]{figures/empirical_pred2_sequential.png}
-\caption{\textbf{Prediction 2: sequential effects.} \textbf{A.} Bundesliga: goals are significantly more likely after a previous goal than after a save ($p = \PredTwoChiP$). \textbf{B.} Kaggle: goalkeepers repeated their dive direction $\PredTwoKaggleRepeatRate$ of the time in same-match sequences ($p = \PredTwoKaggleBinomP$).}
+\caption{\textbf{Prediction 2: sequential effects.} \textbf{A.} Bundesliga: goals are significantly more likely after a previous goal than after a non-goal ($p = \PredTwoChiP$). Error bars show 95\% Wilson CIs. \textbf{B.} Multi-league data: goalkeepers repeated their dive direction $\PredTwoKaggleRepeatRate$ of the time across consecutive same-goalkeeper penalties ($p = \PredTwoKaggleBinomP$).}
 \label{fig:emp_pred2}
 \end{figure}
 
@@ -316,13 +374,14 @@ In the Kaggle data, goalkeepers repeated their dive direction $\PredTwoKaggleRep
 This is the most striking result.
 Despite the fact that these are in-game penalties (not shootouts), separated by substantial stretches of play, a significant sequential dependency emerges: goals beget goals, and goalkeepers strongly repeat their dive direction.
 This is consistent with the ``task-history ghost'' from \citet{tafazoli2026compositional}, where the prior task's representation persisted through an intervening block.
-The result also runs counter to the gambler's fallacy prediction (alternation) and to the minimax prediction of serial independence \citep{palacioshuerta2003minimax}.
+The result also runs counter to the gambler's fallacy---where goalkeepers have been shown to expect alternation in shootout contexts \citep{misirlisoy2014asymmetric}---and to the minimax prediction of serial independence \citep{palacioshuerta2003minimax}.
+The controlled logistic regression suggests the effect is not fully explained by within-match score context.
 
-However, alternative explanations exist.
-The goal-after-goal effect may reflect within-match psychological momentum, a common penalty taker, or even selection bias (a team awarded multiple penalties may be dominant).
-The goalkeeper repetition effect could reflect a strong side preference rather than a sequential bias.
-The small sample of same-match pairs ($n = \PredTwoKaggleNSameMatch$) warrants caution.
-Dedicated shootout data with sequential structure would provide a stronger test.
+However, alternative explanations exist and must be carefully weighed.
+The goal-after-goal effect may partly reflect within-match psychological momentum \citep{jordet2009superstars}, a common penalty taker, or even selection bias (a team awarded multiple penalties may be dominant).
+The goalkeeper repetition effect could reflect a strong side preference rather than a trial-to-trial sequential bias.
+The small sample of consecutive same-goalkeeper pairs ($n = \PredTwoKaggleNSameMatch$) warrants particular caution.
+Dedicated shootout data---where kicks are tightly sequenced and goalkeeper identity is constant---would provide a substantially stronger test \citep{jordet2008avoidance,jordet2009temporal}.
 
 \subsection{Prediction 4: Expertise Blind Spots}
 
@@ -426,17 +485,17 @@ Table~\ref{tab:integration} summarises how the shared-subspace framework relates
 \toprule
 \textbf{Existing Account} & \textbf{Key Claim} & \textbf{Subspace Reinterpretation} \\
 \midrule
-Game Theory \citep{palacioshuerta2003minimax} & Players randomise to approximate minimax equilibrium & Serial independence may break down via task-history ghosts (P2; empirically supported) \\
+Game Theory \citep{palacioshuerta2003minimax,chiappori2002testing} & Players randomise to approximate minimax equilibrium & Serial independence may break down via task-history ghosts (P2; empirically supported) \\
 \addlinespace
-Action Bias \citep{bareli2007action} & Goalkeepers dive too often due to regret asymmetry & Staying central may also maximise striker motor interference (P5; underpowered test) \\
+Action Bias \citep{bareli2007action,bareli2009irrationality} & Goalkeepers dive too often due to regret asymmetry & Staying central may also maximise striker motor interference (P5; underpowered test) \\
 \addlinespace
 Perceptual Expertise \citep{mann2007perceptual} & Experts read anticipatory cues better & Expertise creates gain modulation that paradoxically suppresses some cues (P4; inconclusive) \\
 \addlinespace
-Quiet Eye \citep{wood2015quiet} & Deceptive gaze exploits attentional capture & Gaze deception exploits a \emph{suppressed} dimension, not an attended one \\
+Quiet Eye / Attention \citep{wood2015quiet,wilson2009anxiety,wood2010moving} & Deceptive gaze exploits attentional capture; anxiety disrupts control & Gaze deception exploits a \emph{suppressed} dimension; anxiety may weaken gain modulation \\
 \addlinespace
-Pre-commitment \citep{dicks2010anticipation} & Fixed-target strategy is better due to RT limits & Pre-commitment eliminates shared-subspace interference (P6; weak proxy) \\
+Pre-commitment \citep{dicks2010anticipation,vanderkamp2006field} & Fixed-target strategy is better; late alterations impair accuracy & Pre-commitment eliminates shared-subspace interference (P6; weak proxy) \\
 \addlinespace
-Point of No Return \citep{vanderkamp2018goalkeeping} & Discrete threshold for dive commitment & Continuous gradient of sensory$\rightarrow$motor transformation (P3; untested) \\
+Point of No Return \citep{vanderkamp2018goalkeeping,thura2014urgency} & Discrete threshold for dive commitment & Continuous gradient of sensory$\rightarrow$motor transformation (P3; untested) \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -499,28 +558,33 @@ I propose six targeted experiments:
 \section{Concluding Remarks}
 
 The penalty kick is not merely a guessing game.
-It is a compositional subspace war in which each player attempts to maximise the opponent's within-axis interference while minimising their own.
-The goalkeeper wants to be a 50\% morph stimulus---maximally ambiguous---for as long as possible, and the striker wants to collapse their own task structure to a single, clean sensory-motor transformation.
+It is a duel over who can force the other to be ``of two minds'' for longest---and who can resolve their own indecision first.
+The goalkeeper wants to remain maximally ambiguous, forcing the striker to maintain two competing motor plans simultaneously; the striker wants to collapse their own task structure to a single, clean sensory-motor transformation.
+Each player attempts to maximise the opponent's within-axis interference while minimising their own.
 
 Of the seven predictions derived from \citet{tafazoli2026compositional}, one receives clear empirical support in observational data: the task-history ghost.
 Goalkeepers repeat their dive direction well above chance, and goals beget goals---a sequential dependency inconsistent with minimax serial independence but consistent with persistent task-belief representations in prefrontal cortex.
 The remaining predictions could not be adequately tested with binary outcome data but remain testable with kinematic and neural measures.
 
-The familiar advice---``pick a corner and commit''---may be not just motivational platitude but neural hygiene.
+The familiar coaching advice---``pick a corner and commit; don't be of two minds''---may be not just motivational platitude but a prescription for neural hygiene.
 Pre-commitment eliminates shared-subspace interference.
-The resulting motor programme is pure, fast, and uncontaminated by the ghost of a road not taken.
+The resulting motor programme is pure, fast, and uncontaminated by the ghost of the road not taken.
 
 Of course, the road from a monkey categorising coloured shapes to a footballer standing over a ball in a World Cup final is a long one.
 But if the brain builds complex behaviour by composing shared representational subspaces---and the evidence suggests it does---then every competitive interaction between two brains is, at some level, a battle over whose subspaces interfere with whose.
-The penalty kick is simply where the stakes make that interference impossible to ignore.
+Being ``of two minds'' is the cost of flexibility.
+The penalty kick is simply where the stakes make that cost impossible to ignore.
 
 % ============================================================
 \section*{Acknowledgements}
 
 I thank Sina Tafazoli, Timothy J.\ Buschman, and colleagues for making their data and code publicly available, and for producing research that is both rigorous and imaginatively stimulating.
 I am grateful to the penalty kick research community, whose meticulous empirical work made the connections drawn here possible, and to the creators of the Kaggle and Bundesliga penalty kick datasets.
-No goalkeepers were harmed in the writing of this manuscript, though several hypothetical ones were thoroughly deceived.
-This paper benefited from discussion with an AI assistant (Claude, Anthropic) in developing the initial framing, exploring the analogy space, and conducting preliminary analyses.
+
+\textbf{Generative AI disclosure.}
+This paper benefited from discussion with AI assistants (Claude, Anthropic; and Google Gemini) in developing the initial framing, exploring the analogy space, and conducting preliminary analyses.
+Figures~\ref{fig:photo_keeper}, \ref{fig:photo_striker}, and~\ref{fig:photo_transform} were generated using AI image generation (Google Imagen) and are conceptual illustrations; they do not depict real individuals.
+All scientific claims, analyses, and interpretations are the sole responsibility of the author.
 
 % ============================================================
 \bibliographystyle{apalike}

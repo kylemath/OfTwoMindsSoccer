@@ -2,7 +2,7 @@
   "id": "OfTwoMindsSoccer",
   "title": "OfTwoMindsSoccer",
   "oneLiner": "Paper discussion of motor interference in soccer",
-  "demoUrl": "https://github.com/kylemath/OfTwoMindsSoccer",
+  "demoUrl": "https://kylemath.github.io/OfTwoMindsSoccer/",
   "screenshot": "https://raw.githubusercontent.com/kylemath/OfTwoMindsSoccer/main/screenshot.png",
   "kind": "project",
   "categories": ["soccer", "neuro", "paper"],

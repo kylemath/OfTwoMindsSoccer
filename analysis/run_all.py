@@ -19,6 +19,7 @@ from utils import init_stats, write_stats, setup_plotting, ensure_dirs
 # Import each prediction module
 import prediction1_within_vs_cross_axis as pred1
 import prediction2_sequential as pred2
+import prediction2_shootout as pred2_shootout
 import prediction4_expertise_blindspots as pred4
 import prediction5_keeper_centrality as pred5
 import prediction6_precommitment as pred6
@@ -37,6 +38,7 @@ def main():
     # Run each prediction analysis (order matches manuscript)
     pred1.run()
     pred2.run()
+    pred2_shootout.run()
     pred4.run()
     pred5.run()
     pred6.run()

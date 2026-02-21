@@ -1,5 +1,10 @@
 \begin{thebibliography}{}
 
+\bibitem[Anderson and Perona, 2014]{anderson2014toward}
+Anderson, D.~J. and Perona, P. (2014).
+\newblock Toward a science of computational ethology.
+\newblock {\em Neuron}, 84(1):18--31.
+
 \bibitem[Bar-Eli et~al., 2009]{bareli2009irrationality}
 Bar-Eli, M., Azar, O.~H., and Lurie, Y. (2009).
 \newblock (ir)rationality in action: do soccer players and goalkeepers fail to
@@ -12,11 +17,25 @@ Bar-Eli, M., Azar, O.~H., Ritov, I., Keidar-Levin, Y., and Schein, G. (2007).
   kicks.
 \newblock {\em Journal of Economic Psychology}, 28(5):606--621.
 
+\bibitem[Cao et~al., 2021]{cao2019openpose}
+Cao, Z., Hidalgo, G., Simon, T., Wei, S.-E., and Sheikh, Y. (2021).
+\newblock Openpose: Realtime multi-person 2d pose estimation using part
+  affinity fields.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  43(1):172--186.
+
 \bibitem[Chiappori et~al., 2002]{chiappori2002testing}
 Chiappori, P.-A., Levitt, S., and Groseclose, T. (2002).
 \newblock Testing mixed-strategy equilibria when players are heterogeneous: The
   case of penalty kicks in soccer.
 \newblock {\em American Economic Review}, 92(4):1138--1151.
+
+\bibitem[Cisek, 2007]{cisek2007cortical}
+Cisek, P. (2007).
+\newblock Cortical mechanisms of action selection: the affordance competition
+  hypothesis.
+\newblock {\em Philosophical Transactions of the Royal Society B: Biological
+  Sciences}, 362(1485):1585--1599.
 
 \bibitem[Cisek and Kalaska, 2010]{cisek2010neural}
 Cisek, P. and Kalaska, J.~F. (2010).
@@ -42,28 +61,29 @@ Jordet, G. (2009).
   international soccer penalty shootouts.
 \newblock {\em Journal of Applied Sport Psychology}, 21(2):125--136.
 
-\bibitem[Jordet and Hartman, 2008]{jordet2008avoidance}
-Jordet, G. and Hartman, E. (2008).
-\newblock Avoidance motivation and choking under pressure in soccer penalty
-  shootouts.
-\newblock {\em Journal of Sport and Exercise Psychology}, 30(4):450--457.
-
-\bibitem[Jordet et~al., 2009]{jordet2009temporal}
-Jordet, G., Hartman, E., and Sigmundstad, E. (2009).
-\newblock Temporal links to performing under pressure in international soccer
-  penalty shootouts.
-\newblock {\em Psychology of Sport and Exercise}, 10(6):621--627.
-
 \bibitem[Lopes et~al., 2014]{lopes2014predicting}
 Lopes, J.~E., Jacobs, D.~M., Travieso, D., and Ara{\'u}jo, D. (2014).
 \newblock Predicting the lateral direction of deceptive and non-deceptive
   penalty kicks in football from the kinematics of the kicker.
 \newblock {\em Human Movement Science}, 36:199--216.
 
+\bibitem[Lugaresi et~al., 2019]{lugaresi2019mediapipe}
+Lugaresi, C., Tang, J., Nash, H., McClanahan, C., Uboweja, E., Hays, M., Zhang,
+  F., Chang, C.-L., Yong, M.~G., Lee, J., et~al. (2019).
+\newblock Mediapipe: A framework for building perception pipelines.
+\newblock {\em arXiv preprint arXiv:1906.08172}.
+
 \bibitem[Mann et~al., 2007]{mann2007perceptual}
 Mann, D.~L., Williams, A.~M., Ward, P., and Janelle, C.~M. (2007).
 \newblock Perceptual-cognitive expertise in sport: A meta-analysis.
 \newblock {\em Journal of Sport and Exercise Psychology}, 29(4):457--478.
+
+\bibitem[Mathis et~al., 2018]{mathis2018deeplabcut}
+Mathis, A., Mamidanna, P., Cuff, K.~M., Dold, D., Yang, M., Bethge, M., and
+  Mathis, M.~W. (2018).
+\newblock Deeplabcut: markerless pose estimation of user-defined body parts
+  with deep learning.
+\newblock {\em Nature Neuroscience}, 21(9):1281--1289.
 
 \bibitem[Misirlisoy and Haggard, 2014]{misirlisoy2014asymmetric}
 Misirlisoy, E. and Haggard, P. (2014).
@@ -87,6 +107,13 @@ No{\"e}l, B., van~der Kamp, J., Klatt, S., and Masters, R. S.~W. (2021).
 Palacios-Huerta, I. (2003).
 \newblock Professionals play minimax.
 \newblock {\em The Review of Economic Studies}, 70(2):395--415.
+
+\bibitem[Pereira et~al., 2022]{pereira2022sleap}
+Pereira, T.~D., Tabris, N., Matsliah, A., Turner, D.~M., Li, J., Ravindranath,
+  S., Papadoyannis, E.~S., Normand, E., Deutsch, D.~S., Wang, Z.~Y., et~al.
+  (2022).
+\newblock Sleap: A deep learning system for multi-animal pose tracking.
+\newblock {\em Nature Methods}, 19(4):486--495.
 
 \bibitem[Shenoy et~al., 2013]{shenoy2013cortical}
 Shenoy, K.~V., Sahani, M., and Churchland, M.~M. (2013).
@@ -135,5 +162,10 @@ Wood, G. and Wilson, M.~R. (2010).
 \newblock A moving goalkeeper distracts penalty takers and impairs shooting
   accuracy.
 \newblock {\em Journal of Sports Sciences}, 28(9):937--946.
+
+\bibitem[Wood and Wilson, 2012]{wood2012quiet}
+Wood, G. and Wilson, M.~R. (2012).
+\newblock Quiet-eye training, perceived control and performing under pressure.
+\newblock {\em Psychology of Sport and Exercise}, 13(6):721--728.
 
 \end{thebibliography}

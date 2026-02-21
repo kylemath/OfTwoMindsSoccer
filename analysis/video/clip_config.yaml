@@ -1,0 +1,1016 @@
+# Penalty kick clip configuration for video analysis pipeline
+# NOTE: All timestamps marked "ESTIMATED" require manual verification before downloading.
+# In shootout replay videos, each penalty segment is ~40-55 seconds.
+# In compilation videos, each penalty clip is ~15-20 seconds.
+# Timestamps were estimated based on typical editing patterns for each video type.
+
+metadata:
+  description: "Penalty kick clip configuration for video analysis pipeline"
+  target_clips: 100
+  timestamp_accuracy: "estimated - requires manual verification"
+  last_updated: "2026-02-20"
+
+padding_seconds: 1.0
+
+clips:
+  # =========================================================================
+  # WORLD CUP 2022 FINAL — Argentina vs France Shootout (original source)
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=2e0aKnMbQLk"
+    source_label: "World Cup 2022 Final - Argentina vs France Shootout"
+    penalties:
+      - id: "WC2022_ARG_mbappe_1"
+        label: "Mbappé penalty 1 (shootout)"
+        start: "0:32"
+        end: "0:52"
+        camera_angle: "wide_broadcast"
+        striker_team: "France"
+        keeper_team: "Argentina"
+
+      - id: "WC2022_ARG_messi_1"
+        label: "Messi penalty (shootout)"
+        start: "1:05"
+        end: "1:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Argentina"
+        keeper_team: "France"
+
+      - id: "WC2022_ARG_coman"
+        label: "Coman penalty (shootout, missed)"
+        start: "1:40"
+        end: "2:00"
+        camera_angle: "wide_broadcast"
+        striker_team: "France"
+        keeper_team: "Argentina"
+
+  # =========================================================================
+  # EURO 2020 FINAL — Italy vs England Shootout (original source)
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=sO5IlmBSKkg"
+    source_label: "Euro 2020 Final - Italy vs England Shootout"
+    penalties:
+      - id: "EURO2020_ITA_belotti"
+        label: "Belotti penalty (shootout)"
+        start: "0:25"
+        end: "0:45"
+        camera_angle: "wide_broadcast"
+        striker_team: "Italy"
+        keeper_team: "England"
+
+      - id: "EURO2020_ENG_rashford"
+        label: "Rashford penalty (shootout, missed)"
+        start: "1:00"
+        end: "1:20"
+        camera_angle: "wide_broadcast"
+        striker_team: "England"
+        keeper_team: "Italy"
+
+      - id: "EURO2020_ENG_sancho"
+        label: "Sancho penalty (shootout, missed)"
+        start: "1:35"
+        end: "1:55"
+        camera_angle: "wide_broadcast"
+        striker_team: "England"
+        keeper_team: "Italy"
+
+  # =========================================================================
+  # UCL 2022 — Penalty Compilation (original source)
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=7abNeQ7mGiM"
+    source_label: "UCL Penalty Kick Compilation 2022"
+    penalties:
+      - id: "UCL2022_comp_pk1"
+        label: "UCL penalty compilation clip 1"
+        start: "0:10"
+        end: "0:30"
+        camera_angle: "behind_goal"
+        striker_team: "unknown"
+        keeper_team: "unknown"
+
+      - id: "UCL2022_comp_pk2"
+        label: "UCL penalty compilation clip 2"
+        start: "0:45"
+        end: "1:05"
+        camera_angle: "wide_broadcast"
+        striker_team: "unknown"
+        keeper_team: "unknown"
+
+      - id: "UCL2022_comp_pk3"
+        label: "UCL penalty compilation clip 3"
+        start: "1:20"
+        end: "1:40"
+        camera_angle: "wide_broadcast"
+        striker_team: "unknown"
+        keeper_team: "unknown"
+
+  # =========================================================================
+  # WORLD CUP 2022 FINAL — FIFA Official Full Penalty Shoot-out
+  # 8 total penalties; first 3 (Mbappé, Messi, Coman) covered above from
+  # a different source — adding the remaining 5 here.
+  # ESTIMATED timestamps — verify before downloading
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=MCWJNOfJoSM"
+    source_label: "Argentina v France: Full Penalty Shoot-out | 2022 FIFA World Cup Final (FIFA Official)"
+    penalties:
+      - id: "WC2022_FIN_dybala"
+        label: "Dybala penalty (shootout, scored)"
+        start: "2:10"
+        end: "2:45"
+        camera_angle: "wide_broadcast"
+        striker_team: "Argentina"
+        keeper_team: "France"
+
+      - id: "WC2022_FIN_tchouameni"
+        label: "Tchouaméni penalty (shootout, missed wide)"
+        start: "3:00"
+        end: "3:35"
+        camera_angle: "wide_broadcast"
+        striker_team: "France"
+        keeper_team: "Argentina"
+
+      - id: "WC2022_FIN_paredes"
+        label: "Paredes penalty (shootout, scored)"
+        start: "3:50"
+        end: "4:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Argentina"
+        keeper_team: "France"
+
+      - id: "WC2022_FIN_kolomuani"
+        label: "Kolo Muani penalty (shootout, saved by Martínez)"
+        start: "4:40"
+        end: "5:15"
+        camera_angle: "wide_broadcast"
+        striker_team: "France"
+        keeper_team: "Argentina"
+
+      - id: "WC2022_FIN_montiel"
+        label: "Montiel penalty (shootout, scored — winning kick)"
+        start: "5:30"
+        end: "6:15"
+        camera_angle: "wide_broadcast"
+        striker_team: "Argentina"
+        keeper_team: "France"
+
+  # =========================================================================
+  # WORLD CUP 2022 FINAL — Alternate / Behind-Goal Angle
+  # All 8 penalties from behind the goal. ~7:45 video.
+  # ESTIMATED timestamps — verify before downloading
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=h6BR21al23E"
+    source_label: "Argentina v France 2022 FIFA World Cup Final Penalty Shoot-out (Alternate Angle)"
+    penalties:
+      - id: "WC2022_ALT_mbappe"
+        label: "Mbappé penalty — behind-goal angle (scored)"
+        start: "0:15"
+        end: "0:55"
+        camera_angle: "behind_goal"
+        striker_team: "France"
+        keeper_team: "Argentina"
+
+      - id: "WC2022_ALT_messi"
+        label: "Messi penalty — behind-goal angle (scored)"
+        start: "1:00"
+        end: "1:40"
+        camera_angle: "behind_goal"
+        striker_team: "Argentina"
+        keeper_team: "France"
+
+      - id: "WC2022_ALT_coman"
+        label: "Coman penalty — behind-goal angle (saved)"
+        start: "1:45"
+        end: "2:25"
+        camera_angle: "behind_goal"
+        striker_team: "France"
+        keeper_team: "Argentina"
+
+      - id: "WC2022_ALT_dybala"
+        label: "Dybala penalty — behind-goal angle (scored)"
+        start: "2:30"
+        end: "3:10"
+        camera_angle: "behind_goal"
+        striker_team: "Argentina"
+        keeper_team: "France"
+
+      - id: "WC2022_ALT_tchouameni"
+        label: "Tchouaméni penalty — behind-goal angle (missed)"
+        start: "3:15"
+        end: "3:55"
+        camera_angle: "behind_goal"
+        striker_team: "France"
+        keeper_team: "Argentina"
+
+      - id: "WC2022_ALT_paredes"
+        label: "Paredes penalty — behind-goal angle (scored)"
+        start: "4:00"
+        end: "4:40"
+        camera_angle: "behind_goal"
+        striker_team: "Argentina"
+        keeper_team: "France"
+
+      - id: "WC2022_ALT_kolomuani"
+        label: "Kolo Muani penalty — behind-goal angle (saved)"
+        start: "4:45"
+        end: "5:25"
+        camera_angle: "behind_goal"
+        striker_team: "France"
+        keeper_team: "Argentina"
+
+      - id: "WC2022_ALT_montiel"
+        label: "Montiel penalty — behind-goal angle (scored — winning)"
+        start: "5:30"
+        end: "6:20"
+        camera_angle: "behind_goal"
+        striker_team: "Argentina"
+        keeper_team: "France"
+
+  # =========================================================================
+  # WORLD CUP 2022 R16 — Croatia vs Japan
+  # Croatia won 3-1 on penalties. Livaković saved 3 Japanese penalties.
+  # ESTIMATED timestamps — verify before downloading
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=e28LKjF8NI4"
+    source_label: "Japan vs Croatia: Full Penalty Shootout | FIFA World Cup 2022"
+    penalties:
+      - id: "WC2022_CRJP_vlasic"
+        label: "Vlašić penalty (scored)"
+        start: "0:15"
+        end: "0:50"
+        camera_angle: "wide_broadcast"
+        striker_team: "Croatia"
+        keeper_team: "Japan"
+
+      - id: "WC2022_CRJP_nanase"
+        label: "Nanase penalty (saved by Livaković)"
+        start: "0:55"
+        end: "1:30"
+        camera_angle: "wide_broadcast"
+        striker_team: "Japan"
+        keeper_team: "Croatia"
+
+      - id: "WC2022_CRJP_brozovic"
+        label: "Brozović penalty (scored)"
+        start: "1:35"
+        end: "2:10"
+        camera_angle: "wide_broadcast"
+        striker_team: "Croatia"
+        keeper_team: "Japan"
+
+      - id: "WC2022_CRJP_mitoma"
+        label: "Mitoma penalty (saved by Livaković)"
+        start: "2:15"
+        end: "2:50"
+        camera_angle: "wide_broadcast"
+        striker_team: "Japan"
+        keeper_team: "Croatia"
+
+      - id: "WC2022_CRJP_livaja"
+        label: "Livaja penalty (scored)"
+        start: "2:55"
+        end: "3:30"
+        camera_angle: "wide_broadcast"
+        striker_team: "Croatia"
+        keeper_team: "Japan"
+
+      - id: "WC2022_CRJP_yoshida"
+        label: "Yoshida penalty (scored)"
+        start: "3:35"
+        end: "4:10"
+        camera_angle: "wide_broadcast"
+        striker_team: "Japan"
+        keeper_team: "Croatia"
+
+      - id: "WC2022_CRJP_pasalic"
+        label: "Pašalić penalty (scored)"
+        start: "4:15"
+        end: "4:50"
+        camera_angle: "wide_broadcast"
+        striker_team: "Croatia"
+        keeper_team: "Japan"
+
+      - id: "WC2022_CRJP_asano"
+        label: "Asano penalty (saved by Livaković)"
+        start: "4:55"
+        end: "5:30"
+        camera_angle: "wide_broadcast"
+        striker_team: "Japan"
+        keeper_team: "Croatia"
+
+  # =========================================================================
+  # WORLD CUP 2022 R16 — Morocco vs Spain
+  # Morocco won 3-0 on penalties. All 3 Spanish penalties failed.
+  # Hakimi won it with a panenka.
+  # ESTIMATED timestamps — verify before downloading
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=yF5mHzhRBWE"
+    source_label: "Morocco vs Spain: Full Penalty Shootout | FIFA World Cup 2022"
+    penalties:
+      - id: "WC2022_MOES_sarabia"
+        label: "Sarabia penalty (hit post, missed)"
+        start: "0:15"
+        end: "0:50"
+        camera_angle: "wide_broadcast"
+        striker_team: "Spain"
+        keeper_team: "Morocco"
+
+      - id: "WC2022_MOES_sabiri"
+        label: "Sabiri penalty (scored)"
+        start: "0:55"
+        end: "1:30"
+        camera_angle: "wide_broadcast"
+        striker_team: "Morocco"
+        keeper_team: "Spain"
+
+      - id: "WC2022_MOES_soler"
+        label: "Soler penalty (saved by Bounou)"
+        start: "1:35"
+        end: "2:10"
+        camera_angle: "wide_broadcast"
+        striker_team: "Spain"
+        keeper_team: "Morocco"
+
+      - id: "WC2022_MOES_ziyech"
+        label: "Ziyech penalty (scored)"
+        start: "2:15"
+        end: "2:50"
+        camera_angle: "wide_broadcast"
+        striker_team: "Morocco"
+        keeper_team: "Spain"
+
+      - id: "WC2022_MOES_busquets"
+        label: "Busquets penalty (saved by Bounou)"
+        start: "2:55"
+        end: "3:30"
+        camera_angle: "wide_broadcast"
+        striker_team: "Spain"
+        keeper_team: "Morocco"
+
+      - id: "WC2022_MOES_hakimi"
+        label: "Hakimi penalty (scored — panenka, winning)"
+        start: "3:35"
+        end: "4:15"
+        camera_angle: "wide_broadcast"
+        striker_team: "Morocco"
+        keeper_team: "Spain"
+
+  # =========================================================================
+  # WORLD CUP 2022 QF — Netherlands vs Argentina
+  # Argentina won 4-3 on penalties. Martínez saved van Dijk and Berghuis.
+  # Full 5 rounds (10 penalties).
+  # ESTIMATED timestamps — verify before downloading
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=BmioYKIGzTg"
+    source_label: "Netherlands vs Argentina: Full Penalty Shootout | FIFA World Cup 2022"
+    penalties:
+      - id: "WC2022_NEAR_messi"
+        label: "Messi penalty (scored)"
+        start: "0:15"
+        end: "0:55"
+        camera_angle: "wide_broadcast"
+        striker_team: "Argentina"
+        keeper_team: "Netherlands"
+
+      - id: "WC2022_NEAR_vandijk"
+        label: "Van Dijk penalty (saved by Martínez)"
+        start: "1:00"
+        end: "1:40"
+        camera_angle: "wide_broadcast"
+        striker_team: "Netherlands"
+        keeper_team: "Argentina"
+
+      - id: "WC2022_NEAR_dybala"
+        label: "Dybala penalty (scored)"
+        start: "1:45"
+        end: "2:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Argentina"
+        keeper_team: "Netherlands"
+
+      - id: "WC2022_NEAR_berghuis"
+        label: "Berghuis penalty (saved by Martínez)"
+        start: "2:30"
+        end: "3:10"
+        camera_angle: "wide_broadcast"
+        striker_team: "Netherlands"
+        keeper_team: "Argentina"
+
+      - id: "WC2022_NEAR_paredes"
+        label: "Paredes penalty (scored)"
+        start: "3:15"
+        end: "3:55"
+        camera_angle: "wide_broadcast"
+        striker_team: "Argentina"
+        keeper_team: "Netherlands"
+
+      - id: "WC2022_NEAR_koopmeiners"
+        label: "Koopmeiners penalty (scored)"
+        start: "4:00"
+        end: "4:40"
+        camera_angle: "wide_broadcast"
+        striker_team: "Netherlands"
+        keeper_team: "Argentina"
+
+      - id: "WC2022_NEAR_fernandez"
+        label: "Enzo Fernández penalty (missed)"
+        start: "4:45"
+        end: "5:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Argentina"
+        keeper_team: "Netherlands"
+
+      - id: "WC2022_NEAR_weghorst"
+        label: "Weghorst penalty (scored)"
+        start: "5:30"
+        end: "6:10"
+        camera_angle: "wide_broadcast"
+        striker_team: "Netherlands"
+        keeper_team: "Argentina"
+
+  # =========================================================================
+  # EURO 2020 FINAL — Italy vs England Full Penalty Shootout
+  # Italy won 3-2. All 10 penalties from dedicated shootout video.
+  # Different source than the original 3 above (which are from a clip).
+  # ESTIMATED timestamps — verify before downloading
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=cXe9cHGbgnw"
+    source_label: "Italy England Euro 2020 Final Penalty Shootout FULL"
+    penalties:
+      - id: "EURO2020_FULL_berardi"
+        label: "Berardi penalty (scored)"
+        start: "0:15"
+        end: "0:55"
+        camera_angle: "wide_broadcast"
+        striker_team: "Italy"
+        keeper_team: "England"
+
+      - id: "EURO2020_FULL_kane"
+        label: "Kane penalty (scored)"
+        start: "1:00"
+        end: "1:40"
+        camera_angle: "wide_broadcast"
+        striker_team: "England"
+        keeper_team: "Italy"
+
+      - id: "EURO2020_FULL_bonucci"
+        label: "Bonucci penalty (scored)"
+        start: "1:45"
+        end: "2:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Italy"
+        keeper_team: "England"
+
+      - id: "EURO2020_FULL_maguire"
+        label: "Maguire penalty (scored)"
+        start: "2:30"
+        end: "3:10"
+        camera_angle: "wide_broadcast"
+        striker_team: "England"
+        keeper_team: "Italy"
+
+      - id: "EURO2020_FULL_bernardeschi"
+        label: "Bernardeschi penalty (scored)"
+        start: "3:15"
+        end: "3:55"
+        camera_angle: "wide_broadcast"
+        striker_team: "Italy"
+        keeper_team: "England"
+
+      - id: "EURO2020_FULL_rashford"
+        label: "Rashford penalty (hit post, missed)"
+        start: "4:00"
+        end: "4:40"
+        camera_angle: "wide_broadcast"
+        striker_team: "England"
+        keeper_team: "Italy"
+
+      - id: "EURO2020_FULL_belotti"
+        label: "Belotti penalty (saved by Pickford)"
+        start: "4:45"
+        end: "5:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Italy"
+        keeper_team: "England"
+
+      - id: "EURO2020_FULL_sancho"
+        label: "Sancho penalty (saved by Donnarumma)"
+        start: "5:30"
+        end: "6:10"
+        camera_angle: "wide_broadcast"
+        striker_team: "England"
+        keeper_team: "Italy"
+
+      - id: "EURO2020_FULL_jorginho"
+        label: "Jorginho penalty (saved by Pickford)"
+        start: "6:15"
+        end: "6:55"
+        camera_angle: "wide_broadcast"
+        striker_team: "Italy"
+        keeper_team: "England"
+
+      - id: "EURO2020_FULL_saka"
+        label: "Saka penalty (saved by Donnarumma — decisive)"
+        start: "7:00"
+        end: "7:50"
+        camera_angle: "wide_broadcast"
+        striker_team: "England"
+        keeper_team: "Italy"
+
+  # =========================================================================
+  # EURO 2020 R16 — France vs Switzerland Highlights (includes shootout)
+  # Switzerland won 5-4. Full 5 rounds. Mbappé's kick saved by Sommer.
+  # Shootout embedded in highlights video — timestamps are rough estimates.
+  # ESTIMATED timestamps — verify before downloading
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=zoWPsJAN_b4"
+    source_label: "HIGHLIGHTS | France OUT after penalty shootout with Switzerland | Euro 2020"
+    penalties:
+      - id: "EURO2020_FRSUI_pk1"
+        label: "Switzerland taker 1 (scored)"
+        start: "7:10"
+        end: "7:30"
+        camera_angle: "wide_broadcast"
+        striker_team: "Switzerland"
+        keeper_team: "France"
+
+      - id: "EURO2020_FRSUI_pk2"
+        label: "France taker 1 (scored)"
+        start: "7:35"
+        end: "7:55"
+        camera_angle: "wide_broadcast"
+        striker_team: "France"
+        keeper_team: "Switzerland"
+
+      - id: "EURO2020_FRSUI_pk3"
+        label: "Switzerland taker 2 (scored)"
+        start: "8:00"
+        end: "8:20"
+        camera_angle: "wide_broadcast"
+        striker_team: "Switzerland"
+        keeper_team: "France"
+
+      - id: "EURO2020_FRSUI_pk4"
+        label: "France taker 2 (scored)"
+        start: "8:25"
+        end: "8:45"
+        camera_angle: "wide_broadcast"
+        striker_team: "France"
+        keeper_team: "Switzerland"
+
+      - id: "EURO2020_FRSUI_pk5"
+        label: "Switzerland taker 3 (scored)"
+        start: "8:50"
+        end: "9:10"
+        camera_angle: "wide_broadcast"
+        striker_team: "Switzerland"
+        keeper_team: "France"
+
+      - id: "EURO2020_FRSUI_pk6"
+        label: "France taker 3 (scored)"
+        start: "9:15"
+        end: "9:35"
+        camera_angle: "wide_broadcast"
+        striker_team: "France"
+        keeper_team: "Switzerland"
+
+      - id: "EURO2020_FRSUI_pk7"
+        label: "Switzerland taker 4 (scored)"
+        start: "9:40"
+        end: "10:00"
+        camera_angle: "wide_broadcast"
+        striker_team: "Switzerland"
+        keeper_team: "France"
+
+      - id: "EURO2020_FRSUI_pk8"
+        label: "France taker 4 (scored)"
+        start: "10:05"
+        end: "10:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "France"
+        keeper_team: "Switzerland"
+
+      - id: "EURO2020_FRSUI_pk9"
+        label: "Switzerland taker 5 (scored)"
+        start: "10:30"
+        end: "10:50"
+        camera_angle: "wide_broadcast"
+        striker_team: "Switzerland"
+        keeper_team: "France"
+
+      - id: "EURO2020_FRSUI_mbappe"
+        label: "Mbappé penalty (saved by Sommer — decisive)"
+        start: "10:55"
+        end: "11:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "France"
+        keeper_team: "Switzerland"
+
+  # =========================================================================
+  # UCL 2023/24 R16 — Atlético Madrid vs Inter Milan
+  # Atlético won on penalties after 1-1 aggregate.
+  # Dedicated shootout video.
+  # ESTIMATED timestamps — verify before downloading
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=Z7lXgwtsAcA"
+    source_label: "FULL PENALTY SHOOTOUT | Atlético beat Inter on penalties | Champions League 2023/24"
+    penalties:
+      - id: "UCL2024_ATINT_pk1"
+        label: "Atlético taker 1 (scored)"
+        start: "0:10"
+        end: "0:45"
+        camera_angle: "wide_broadcast"
+        striker_team: "Atlético Madrid"
+        keeper_team: "Inter Milan"
+
+      - id: "UCL2024_ATINT_pk2"
+        label: "Inter taker 1 (scored)"
+        start: "0:50"
+        end: "1:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Inter Milan"
+        keeper_team: "Atlético Madrid"
+
+      - id: "UCL2024_ATINT_pk3"
+        label: "Atlético taker 2 (scored)"
+        start: "1:30"
+        end: "2:05"
+        camera_angle: "wide_broadcast"
+        striker_team: "Atlético Madrid"
+        keeper_team: "Inter Milan"
+
+      - id: "UCL2024_ATINT_pk4"
+        label: "Inter taker 2 (scored)"
+        start: "2:10"
+        end: "2:45"
+        camera_angle: "wide_broadcast"
+        striker_team: "Inter Milan"
+        keeper_team: "Atlético Madrid"
+
+      - id: "UCL2024_ATINT_pk5"
+        label: "Atlético taker 3 (scored)"
+        start: "2:50"
+        end: "3:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Atlético Madrid"
+        keeper_team: "Inter Milan"
+
+      - id: "UCL2024_ATINT_pk6"
+        label: "Inter taker 3 (missed)"
+        start: "3:30"
+        end: "4:05"
+        camera_angle: "wide_broadcast"
+        striker_team: "Inter Milan"
+        keeper_team: "Atlético Madrid"
+
+      - id: "UCL2024_ATINT_pk7"
+        label: "Atlético taker 4 (scored)"
+        start: "4:10"
+        end: "4:45"
+        camera_angle: "wide_broadcast"
+        striker_team: "Atlético Madrid"
+        keeper_team: "Inter Milan"
+
+      - id: "UCL2024_ATINT_pk8"
+        label: "Inter taker 4 (scored)"
+        start: "4:50"
+        end: "5:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Inter Milan"
+        keeper_team: "Atlético Madrid"
+
+  # =========================================================================
+  # UCL 2023/24 R16 — Arsenal vs Porto
+  # Arsenal won on penalties.
+  # Dedicated shootout video.
+  # ESTIMATED timestamps — verify before downloading
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=-H_80e02qFA"
+    source_label: "FULL PENALTY SHOOTOUT | Arsenal beat Porto on penalties | Champions League 2023/24"
+    penalties:
+      - id: "UCL2024_ARPOR_pk1"
+        label: "Arsenal taker 1 (scored)"
+        start: "0:10"
+        end: "0:45"
+        camera_angle: "wide_broadcast"
+        striker_team: "Arsenal"
+        keeper_team: "Porto"
+
+      - id: "UCL2024_ARPOR_pk2"
+        label: "Porto taker 1 (scored)"
+        start: "0:50"
+        end: "1:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Porto"
+        keeper_team: "Arsenal"
+
+      - id: "UCL2024_ARPOR_pk3"
+        label: "Arsenal taker 2 (scored)"
+        start: "1:30"
+        end: "2:05"
+        camera_angle: "wide_broadcast"
+        striker_team: "Arsenal"
+        keeper_team: "Porto"
+
+      - id: "UCL2024_ARPOR_pk4"
+        label: "Porto taker 2 (missed)"
+        start: "2:10"
+        end: "2:45"
+        camera_angle: "wide_broadcast"
+        striker_team: "Porto"
+        keeper_team: "Arsenal"
+
+      - id: "UCL2024_ARPOR_pk5"
+        label: "Arsenal taker 3 (scored)"
+        start: "2:50"
+        end: "3:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Arsenal"
+        keeper_team: "Porto"
+
+      - id: "UCL2024_ARPOR_pk6"
+        label: "Porto taker 3 (scored)"
+        start: "3:30"
+        end: "4:05"
+        camera_angle: "wide_broadcast"
+        striker_team: "Porto"
+        keeper_team: "Arsenal"
+
+      - id: "UCL2024_ARPOR_pk7"
+        label: "Arsenal taker 4 (scored)"
+        start: "4:10"
+        end: "4:45"
+        camera_angle: "wide_broadcast"
+        striker_team: "Arsenal"
+        keeper_team: "Porto"
+
+      - id: "UCL2024_ARPOR_pk8"
+        label: "Porto taker 4 (missed — decisive)"
+        start: "4:50"
+        end: "5:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Porto"
+        keeper_team: "Arsenal"
+
+  # =========================================================================
+  # UCL 2023/24 QF — Real Madrid vs Manchester City
+  # Real Madrid won on penalties after 1-1 aggregate.
+  # Dedicated shootout video.
+  # ESTIMATED timestamps — verify before downloading
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=bsQDXhyD5Ws"
+    source_label: "FULL PENALTY SHOOTOUT | Real Madrid beat Man City on pens | Champions League 2023/24"
+    penalties:
+      - id: "UCL2024_RMMC_pk1"
+        label: "Real Madrid taker 1 (scored)"
+        start: "0:10"
+        end: "0:45"
+        camera_angle: "wide_broadcast"
+        striker_team: "Real Madrid"
+        keeper_team: "Manchester City"
+
+      - id: "UCL2024_RMMC_pk2"
+        label: "Man City taker 1 (scored)"
+        start: "0:50"
+        end: "1:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Manchester City"
+        keeper_team: "Real Madrid"
+
+      - id: "UCL2024_RMMC_pk3"
+        label: "Real Madrid taker 2 (scored)"
+        start: "1:30"
+        end: "2:05"
+        camera_angle: "wide_broadcast"
+        striker_team: "Real Madrid"
+        keeper_team: "Manchester City"
+
+      - id: "UCL2024_RMMC_pk4"
+        label: "Man City taker 2 (missed)"
+        start: "2:10"
+        end: "2:45"
+        camera_angle: "wide_broadcast"
+        striker_team: "Manchester City"
+        keeper_team: "Real Madrid"
+
+      - id: "UCL2024_RMMC_pk5"
+        label: "Real Madrid taker 3 (scored)"
+        start: "2:50"
+        end: "3:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Real Madrid"
+        keeper_team: "Manchester City"
+
+      - id: "UCL2024_RMMC_pk6"
+        label: "Man City taker 3 (scored)"
+        start: "3:30"
+        end: "4:05"
+        camera_angle: "wide_broadcast"
+        striker_team: "Manchester City"
+        keeper_team: "Real Madrid"
+
+      - id: "UCL2024_RMMC_pk7"
+        label: "Real Madrid taker 4 (scored — decisive)"
+        start: "4:10"
+        end: "4:50"
+        camera_angle: "wide_broadcast"
+        striker_team: "Real Madrid"
+        keeper_team: "Manchester City"
+
+  # =========================================================================
+  # COPA AMERICA 2024 QF — Argentina vs Ecuador
+  # Argentina won 4-2 on penalties (1-1 after extra time).
+  # Messi's panenka was saved. Highlights video — shootout near end.
+  # ESTIMATED timestamps — verify before downloading
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=abVrP4o4FCM"
+    source_label: "HIGHLIGHTS | Argentina 1-1 Ecuador (4-2 pens) | Copa América 2024"
+    penalties:
+      - id: "COPA2024_ARECU_messi"
+        label: "Messi panenka attempt (saved)"
+        start: "7:40"
+        end: "8:05"
+        camera_angle: "wide_broadcast"
+        striker_team: "Argentina"
+        keeper_team: "Ecuador"
+
+      - id: "COPA2024_ARECU_pk2"
+        label: "Ecuador taker 1 (scored)"
+        start: "8:10"
+        end: "8:30"
+        camera_angle: "wide_broadcast"
+        striker_team: "Ecuador"
+        keeper_team: "Argentina"
+
+      - id: "COPA2024_ARECU_pk3"
+        label: "Argentina taker 2 (scored)"
+        start: "8:35"
+        end: "8:55"
+        camera_angle: "wide_broadcast"
+        striker_team: "Argentina"
+        keeper_team: "Ecuador"
+
+      - id: "COPA2024_ARECU_pk4"
+        label: "Ecuador taker 2 (missed)"
+        start: "9:00"
+        end: "9:20"
+        camera_angle: "wide_broadcast"
+        striker_team: "Ecuador"
+        keeper_team: "Argentina"
+
+      - id: "COPA2024_ARECU_pk5"
+        label: "Argentina taker 3 (scored)"
+        start: "9:25"
+        end: "9:45"
+        camera_angle: "wide_broadcast"
+        striker_team: "Argentina"
+        keeper_team: "Ecuador"
+
+      - id: "COPA2024_ARECU_pk6"
+        label: "Ecuador taker 3 (missed)"
+        start: "9:50"
+        end: "10:10"
+        camera_angle: "wide_broadcast"
+        striker_team: "Ecuador"
+        keeper_team: "Argentina"
+
+      - id: "COPA2024_ARECU_pk7"
+        label: "Argentina taker 4 (scored)"
+        start: "10:15"
+        end: "10:35"
+        camera_angle: "wide_broadcast"
+        striker_team: "Argentina"
+        keeper_team: "Ecuador"
+
+      - id: "COPA2024_ARECU_pk8"
+        label: "Ecuador taker 4 (scored)"
+        start: "10:40"
+        end: "11:05"
+        camera_angle: "wide_broadcast"
+        striker_team: "Ecuador"
+        keeper_team: "Argentina"
+
+  # =========================================================================
+  # AFCON 2024 SF — Nigeria vs South Africa
+  # Nigeria won 4-2 on penalties. Nwabali saved 2.
+  # Highlights video — shootout embedded near end.
+  # ESTIMATED timestamps — verify before downloading
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=-4XPl3uKiMI"
+    source_label: "Late DRAMA leads to penalty shootout! | Nigeria 1-1 South Africa | AFCON 2024 Semi-final"
+    penalties:
+      - id: "AFCON2024_NIRSA_pk1"
+        label: "Nigeria taker 1 (scored)"
+        start: "7:00"
+        end: "7:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Nigeria"
+        keeper_team: "South Africa"
+
+      - id: "AFCON2024_NIRSA_pk2"
+        label: "South Africa taker 1 (saved by Nwabali)"
+        start: "7:30"
+        end: "7:55"
+        camera_angle: "wide_broadcast"
+        striker_team: "South Africa"
+        keeper_team: "Nigeria"
+
+      - id: "AFCON2024_NIRSA_pk3"
+        label: "Nigeria taker 2 (scored)"
+        start: "8:00"
+        end: "8:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Nigeria"
+        keeper_team: "South Africa"
+
+      - id: "AFCON2024_NIRSA_pk4"
+        label: "South Africa taker 2 (scored)"
+        start: "8:30"
+        end: "8:55"
+        camera_angle: "wide_broadcast"
+        striker_team: "South Africa"
+        keeper_team: "Nigeria"
+
+      - id: "AFCON2024_NIRSA_pk5"
+        label: "Nigeria taker 3 (scored)"
+        start: "9:00"
+        end: "9:25"
+        camera_angle: "wide_broadcast"
+        striker_team: "Nigeria"
+        keeper_team: "South Africa"
+
+      - id: "AFCON2024_NIRSA_pk6"
+        label: "South Africa taker 3 (saved by Nwabali)"
+        start: "9:30"
+        end: "9:55"
+        camera_angle: "wide_broadcast"
+        striker_team: "South Africa"
+        keeper_team: "Nigeria"
+
+      - id: "AFCON2024_NIRSA_pk7"
+        label: "Nigeria taker 4 (scored — winning)"
+        start: "10:00"
+        end: "10:30"
+        camera_angle: "wide_broadcast"
+        striker_team: "Nigeria"
+        keeper_team: "South Africa"
+
+  # =========================================================================
+  # PREMIER LEAGUE 2023/24 — Every Penalty Scored (compilation)
+  # Long compilation of all PL penalties scored that season.
+  # Penalties are shown back-to-back, ~15-18 seconds each.
+  # Only first 6 clipped here; full video contains ~60+ penalties.
+  # ESTIMATED timestamps — verify before downloading
+  # =========================================================================
+  - source_url: "https://www.youtube.com/watch?v=OGTvmQ7pphY"
+    source_label: "EVERY Penalty SCORED In The Premier League 2023/24"
+    penalties:
+      - id: "EPL2024_comp_pk1"
+        label: "EPL 2023/24 penalty 1"
+        start: "0:03"
+        end: "0:18"
+        camera_angle: "wide_broadcast"
+        striker_team: "unknown"
+        keeper_team: "unknown"
+
+      - id: "EPL2024_comp_pk2"
+        label: "EPL 2023/24 penalty 2"
+        start: "0:20"
+        end: "0:35"
+        camera_angle: "wide_broadcast"
+        striker_team: "unknown"
+        keeper_team: "unknown"
+
+      - id: "EPL2024_comp_pk3"
+        label: "EPL 2023/24 penalty 3"
+        start: "0:37"
+        end: "0:52"
+        camera_angle: "wide_broadcast"
+        striker_team: "unknown"
+        keeper_team: "unknown"
+
+      - id: "EPL2024_comp_pk4"
+        label: "EPL 2023/24 penalty 4"
+        start: "0:54"
+        end: "1:09"
+        camera_angle: "wide_broadcast"
+        striker_team: "unknown"
+        keeper_team: "unknown"
+
+      - id: "EPL2024_comp_pk5"
+        label: "EPL 2023/24 penalty 5"
+        start: "1:11"
+        end: "1:26"
+        camera_angle: "wide_broadcast"
+        striker_team: "unknown"
+        keeper_team: "unknown"
+
+      - id: "EPL2024_comp_pk6"
+        label: "EPL 2023/24 penalty 6"
+        start: "1:28"
+        end: "1:43"
+        camera_angle: "wide_broadcast"
+        striker_team: "unknown"
+        keeper_team: "unknown"
+
+output_directory: "clips"
+video_format: "mp4"
+video_quality: "best[height<=720]"

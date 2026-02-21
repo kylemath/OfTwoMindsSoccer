@@ -19,6 +19,7 @@ STATS_FILE = os.path.join(PROJECT_ROOT, "manuscript", "generated_stats.tex")
 
 KAGGLE_CSV = os.path.join(DATA_DIR, "kaggle_penalty_kicks_2020_2025.csv")
 BUNDESLIGA_CSV = os.path.join(DATA_DIR, "bundesliga_penalties_1963_2017.csv")
+SHOOTOUT_CSV = os.path.join(DATA_DIR, "worldcup_shootout_penalty_kicks.csv")
 
 
 def ensure_dirs():
@@ -30,6 +31,18 @@ def load_kaggle():
     """Load and return the Kaggle penalty-kick dataset (2020-2025)."""
     df = pd.read_csv(KAGGLE_CSV)
     df["Country"] = df["Country"].str.strip()
+    return df
+
+
+def load_shootout():
+    """Load the FIFA World Cup penalty shootout dataset (1982-2022).
+
+    Source: github.com/jfjelstul/worldcup — penalty_kicks.csv
+    Each row is one kick in a shootout.  Key columns:
+        match_id, team_name, family_name, converted (1/0)
+    """
+    df = pd.read_csv(SHOOTOUT_CSV)
+    df["converted"] = df["converted"].astype(int)
     return df
 
 
